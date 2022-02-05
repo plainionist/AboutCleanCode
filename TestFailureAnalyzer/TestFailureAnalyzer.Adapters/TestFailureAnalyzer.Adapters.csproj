@@ -2,12 +2,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TestFailureAnalyzer.Core\TestFailureAnalyzer.Core.csproj" />
-    <ProjectReference Include="..\TestFailureAnalyzer.IO\TestFailureAnalyzer.IO.csproj" />
-    <ProjectReference Include="..\TestFailureAnalyzer.Adapters\TestFailureAnalyzer.Adapters.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 

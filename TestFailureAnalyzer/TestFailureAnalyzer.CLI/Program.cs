@@ -1,4 +1,5 @@
 ﻿using System;
+using TestFailureAnalyzer.Adapters;
 using TestFailureAnalyzer.IO;
 
 namespace TestFailureAnalyzer.CLI
@@ -11,10 +12,12 @@ namespace TestFailureAnalyzer.CLI
             var testResultsRepository = new TestDatabaseClient();
             var configReader = new ConfigurationReader();
 
+            var mailClientAdapter = new MailClientAdapter(mailClient);
+
             var interactor = new MailNotificationInteractor(
                 configReader,
                 testResultsRepository,
-                mailClient
+                mailClientAdapter
             );
         }
     }

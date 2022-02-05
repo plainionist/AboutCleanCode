@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TestFailureAnalyzer.Core\TestFailureAnalyzer.Core.csproj" />
+    <ProjectReference Include="..\TestFailureAnalyzer.Adapters\TestFailureAnalyzer.Adapters.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

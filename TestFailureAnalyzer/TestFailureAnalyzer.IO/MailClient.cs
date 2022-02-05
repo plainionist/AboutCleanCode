@@ -1,13 +1,11 @@
 
+using TestFailureAnalyzer.Adapters;
+
 namespace TestFailureAnalyzer.IO
 {
-    public class MailClient : IMailClient
+    public class MailClient : Adapters.IMailClient
     {
-        public void Send(InternalErrorMail mail)
-        {
-        }
-
-        public void Send(NetworkFailureMail mail)
+        public void Send(HtmlMail mail)
         {
         }
     }
