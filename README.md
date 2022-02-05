@@ -1,2 +1,4 @@
+
 # AboutCleanCode
-Hosts the code developed in the coding tutorials at https://www.youtube.com/channel/UCQuMnhieoyiWRQTFazgKXMg
+
+Hosts the code developed in the coding tutorials of the YouTube channel [AboutCleanCode](https://www.youtube.com/channel/UCQuMnhieoyiWRQTFazgKXMg)
