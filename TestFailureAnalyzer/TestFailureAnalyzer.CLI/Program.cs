@@ -7,14 +7,14 @@ namespace TestFailureAnalyzer.CLI
     {
         static void Main(string[] args)
         {
-            var mailCient = new MailClient();
+            var mailClient = new MailClient();
             var testResultsRepository = new TestDatabaseClient();
             var configReader = new ConfigurationReader();
 
             var interactor = new MailNotificationInteractor(
                 configReader,
                 testResultsRepository,
-                mailCient
+                mailClient
             );
         }
     }
