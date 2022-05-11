@@ -74,12 +74,12 @@ namespace TestFailureAnalyzer.Core
         }
 
         private DefectInput CreateDefectInput(string buildNumber, TestFailure failure) =>
-            throw new NotImplementedException();
+            new DefectInput();
 
         private Mail CreateDefectsSuccessMail(string buildNumber, int defectCount) =>
-            throw new NotImplementedException();
+            new Mail();
 
         private Mail CreateProcessingFailedMail(string buildNumber, Exception exception) =>
-            throw new NotImplementedException();
+            new Mail();
     }
 }

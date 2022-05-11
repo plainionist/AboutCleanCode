@@ -34,10 +34,6 @@ namespace TestFailureAnalyzer.CLI
                 bool IsOption(string option) =>
                         arg.Equals($"-{option}", StringComparison.OrdinalIgnoreCase);
 
-                bool IsCommand(string longCmd, string shortCmd) =>
-                        arg.Equals(longCmd, StringComparison.OrdinalIgnoreCase) ||
-                        arg.Equals(shortCmd, StringComparison.OrdinalIgnoreCase);
-
                 if (IsOption("h") || IsOption("help"))
                 {
                     options.ShowHelp = true;
