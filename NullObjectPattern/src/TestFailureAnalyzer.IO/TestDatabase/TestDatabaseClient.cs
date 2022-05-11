@@ -19,9 +19,9 @@ namespace TestFailureAnalyzer.IO.TestDatabase
         {
             using (var conn = new SqlConnection(ConnectionString))
             {
-                // querying DB goes here ...
+                // TODO: querying DB goes here ...
 
-                return null;
+                return new List<TestFailure>();
             }
         }
 
@@ -34,7 +34,7 @@ namespace TestFailureAnalyzer.IO.TestDatabase
 
             using (var conn = new SqlConnection(ConnectionString))
             {
-                // update of DB goes here ...
+                // TODO: update of DB goes here ...
             }
         }
     }

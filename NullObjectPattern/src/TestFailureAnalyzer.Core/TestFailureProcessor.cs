@@ -35,7 +35,7 @@ namespace TestFailureAnalyzer.Core
                         var existingDefect = myDefectRepository.Find(failure.DefectId);
                         existingDefect.Fields["Description"] = existingDefect.Fields["Description"] + Environment.NewLine + failure.TestCaseName;
                         existingDefect.Links.Add(failure.TestOutputUrl);
-                        
+
                         myDefectRepository.UpdateDefect(existingDefect);
 
                         continue;
@@ -58,11 +58,8 @@ namespace TestFailureAnalyzer.Core
                     myTestFailureDB.UpdateFailure(failure, defect.Id);
                 }
 
-                if (myEmailClient != null)
-                {
-                    var mail = CreateDefectsSuccessMail(buildNumber, defectCount);
-                    myEmailClient.Send(mail);
-                }
+                var mail = CreateDefectsSuccessMail(buildNumber, defectCount);
+                myEmailClient.Send(mail);
             }
             catch (Exception exception)
             {
