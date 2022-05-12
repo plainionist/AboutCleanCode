@@ -25,14 +25,14 @@ namespace TestFailureAnalyzer.CLI
                     cli.PrintHelp();
                     return 0;
                 }
-                
+
                 var mailClient = options.IsDryRun ? null : new MailClient(Environment.GetEnvironmentVariable("SMTP_SERVER"));
                 var testDatabaseClient = new TestDatabaseClient(options.IsDryRun);
                 var tfsClient = new TfsClient(options.IsDryRun);
 
                 var processor = new TestFailureProcessor(testDatabaseClient, tfsClient, mailClient);
 
-                processor.ProcessFailedTests(options.BuildNumber,options.IsDryRun);
+                processor.ProcessFailedTests(options.BuildNumber, options.IsDryRun);
 
                 return 0;
             }

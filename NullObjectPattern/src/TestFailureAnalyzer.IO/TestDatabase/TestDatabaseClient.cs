@@ -3,7 +3,7 @@ using TestFailureAnalyzer.Core.Tests;
 
 namespace TestFailureAnalyzer.IO.TestDatabase
 {
-    public class TestDatabaseClient : ITestFailureDB
+    public class TestDatabaseClient : ITestDatabase
     {
         private readonly bool myIsDryRun;
 

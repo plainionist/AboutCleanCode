@@ -2,7 +2,7 @@
 
 namespace TestFailureAnalyzer.Core.Tests
 {
-    public interface ITestFailureDB
+    public interface ITestDatabase
     {
         IReadOnlyCollection<TestFailure> GetTestFailures(string buildNumber);
         void UpdateFailure(TestFailure failure, int id);

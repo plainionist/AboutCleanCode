@@ -7,11 +7,11 @@ namespace TestFailureAnalyzer.Core
 {
     public class TestFailureProcessor
     {
-        private readonly ITestFailureDB myTestFailureDB;
+        private readonly ITestDatabase myTestFailureDB;
         private readonly IMailClient myEmailClient;
         private readonly IDefectRepository myDefectRepository;
 
-        public TestFailureProcessor(ITestFailureDB dwhClient, IDefectRepository defectRepository, IMailClient emailClient)
+        public TestFailureProcessor(ITestDatabase dwhClient, IDefectRepository defectRepository, IMailClient emailClient)
         {
             myTestFailureDB = dwhClient;
             myDefectRepository = defectRepository;
