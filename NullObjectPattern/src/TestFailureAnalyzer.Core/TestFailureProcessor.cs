@@ -7,23 +7,29 @@ namespace TestFailureAnalyzer.Core
 {
     public class TestFailureProcessor
     {
-        private readonly ITestDatabase myTestFailureDB;
+        private readonly ITestDatabaseReader myTestDatabaseReader;
+        private readonly ITestDatabaseWriter myTestDatabaseWriter;
         private readonly IMailClient myEmailClient;
         private readonly IDefectRepository myDefectRepository;
 
-        public TestFailureProcessor(ITestDatabase dwhClient, IDefectRepository defectRepository, IMailClient emailClient)
+        public TestFailureProcessor(
+            ITestDatabaseReader testDatabaseReader,
+            ITestDatabaseWriter testDatabaseWriter,
+            IDefectRepository defectRepository,
+            IMailClient emailClient)
         {
-            myTestFailureDB = dwhClient;
+            myTestDatabaseReader = testDatabaseReader;
+            myTestDatabaseWriter = testDatabaseWriter;
             myDefectRepository = defectRepository;
             myEmailClient = emailClient;
         }
 
-        public void ProcessFailedTests(string buildNumber, bool isDryRunEnabled)
+        public void ProcessFailedTests(string buildNumber)
         {
             try
             {
                 var defectCount = 0;
-                foreach (var failure in myTestFailureDB.GetTestFailures(buildNumber))
+                foreach (var failure in myTestDatabaseReader.GetTestFailures(buildNumber))
                 {
                     // Processing of test failures like removing duplicates
                     // goes here ...
@@ -43,19 +49,12 @@ namespace TestFailureAnalyzer.Core
 
                     defectCount++;
 
-                    if (isDryRunEnabled)
-                    {
-                        // report to the operator that we would create a new defect for this failure
-                        Console.WriteLine($"Creating defect for {failure.TestCaseName}");
-                        Console.WriteLine($"  {failure.Exception.Message}");
-                    }
-
                     var input = CreateDefectInput(buildNumber, failure);
 
                     var defect = myDefectRepository.CreateDefect(input);
 
                     // remember that this kind of failure already got documented by a defect
-                    myTestFailureDB.UpdateFailure(failure, defect.Id);
+                    myTestDatabaseWriter.UpdateFailure(failure, defect.Id);
                 }
 
                 var mail = CreateDefectsSuccessMail(buildNumber, defectCount);
@@ -63,11 +62,8 @@ namespace TestFailureAnalyzer.Core
             }
             catch (Exception exception)
             {
-                if (myEmailClient != null)
-                {
-                    var mail = CreateProcessingFailedMail(buildNumber, exception);
-                    myEmailClient.Send(mail);
-                }
+                var mail = CreateProcessingFailedMail(buildNumber, exception);
+                myEmailClient.Send(mail);
 
                 throw;
             }
