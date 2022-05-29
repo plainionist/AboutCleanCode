@@ -2,9 +2,9 @@
 
 namespace MyApp
 {
-    public class Person2
+    public class ImmutablePerson
     {
-        public Person2(string firstName, string secondName, string lastName)
+        public ImmutablePerson(string firstName, string secondName, string lastName)
         {
             FirstName = firstName;
             SecondName = secondName;
