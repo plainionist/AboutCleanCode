@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Entities\BuildDefinition.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="NDepend.API">
+      <HintPath>C:\bin\NDepend\Lib\NDepend.API.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
