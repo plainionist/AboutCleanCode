@@ -6,10 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Entities\BuildDefinition.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="NDepend.API">
       <HintPath>C:\bin\NDepend\Lib\NDepend.API.dll</HintPath>
       <Private>true</Private>
