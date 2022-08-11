@@ -2,7 +2,6 @@
 {
     public class CodeType
     {
-
         public CodeType(string assembly, string nameSpace, string name)
         {
             Contract.RequiresNotNullNotEmpty(assembly, nameof(assembly));

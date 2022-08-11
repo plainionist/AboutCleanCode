@@ -1,22 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using ImpactAnalyzer.Entities;
 
 namespace ImpactAnalyzer
 {
     class Analyzer
     {
-        /* a lot of business logic */
-
-        private bool ShouldAssemblyBeConsidered(string assembly)
+        public void Analyze(IReadOnlyCollection<CodeType> types)
         {
-            // filter logic goes here
+            foreach (var type in types)
+            {
+                // ...
 
-            return true
+                if (IsThirdParty(type.NameSpace))
+                {
+                    // ...
+                }
+
+                // ...
+            }
         }
 
-        /* even more business logic */
+        private bool IsThirdParty(string assembly)
+        {
+            // ...
+
+            return true;
+        }
     }
 }
