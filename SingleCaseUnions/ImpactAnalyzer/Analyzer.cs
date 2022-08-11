@@ -11,7 +11,7 @@ namespace ImpactAnalyzer
             {
                 // ...
 
-                if (IsThirdParty(type.NameSpace))
+                if (IsThirdParty(type.Assembly))
                 {
                     // ...
                 }
@@ -20,7 +20,7 @@ namespace ImpactAnalyzer
             }
         }
 
-        private bool IsThirdParty(string assembly)
+        private bool IsThirdParty(Assembly assembly)
         {
             // ...
 

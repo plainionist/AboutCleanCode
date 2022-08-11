@@ -1,19 +1,25 @@
 
 namespace ImpactAnalyzer.Entities
 {
-    public record Assembly
+    public class Assembly
     {
-        private readonly string myValue;
-
         public Assembly(string value)
         {
             Contract.RequiresNotNullNotEmpty(value, nameof(value));
 
-            myValue = value;
+            Value = value;
         }
 
-        public static implicit operator string(Assembly v) => v.myValue;
+        public string Value { get; }
 
-        public override string ToString() => myValue;
+        public override bool Equals(object obj) =>
+            obj is Assembly other ? Value == other.Value : false;
+
+        public override int GetHashCode() => Value.GetHashCode();
+
+        public static bool operator ==(Assembly lhs, Assembly rhs) =>
+            ReferenceEquals(lhs, null) ? rhs == null : lhs.Equals(rhs);
+
+        public static bool operator !=(Assembly lhs, Assembly rhs) => !(lhs == rhs);
     }
 }

@@ -17,9 +17,9 @@ namespace ImpactAnalyzer.Import
         private CodeType CreateCodeType(IType type)
         {
             return new CodeType(
-                type.ParentNamespace.FullName,
-                type.Name,
-                type.ParentAssembly.FullName);
+                new Assembly(type.ParentAssembly.FullName),
+                new NameSpace(type.ParentNamespace.FullName),
+                new TypeName(type.Name));
         }
 
 

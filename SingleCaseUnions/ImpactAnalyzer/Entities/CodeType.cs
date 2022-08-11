@@ -2,19 +2,19 @@
 {
     public class CodeType
     {
-        public CodeType(string assembly, string nameSpace, string name)
+        public CodeType(Assembly assembly, NameSpace nameSpace, TypeName name)
         {
-            Contract.RequiresNotNullNotEmpty(assembly, nameof(assembly));
-            Contract.RequiresNotNullNotEmpty(nameSpace, nameof(nameSpace));
-            Contract.RequiresNotNullNotEmpty(name, nameof(name));
+            Contract.RequiresNotNull(assembly, nameof(assembly));
+            Contract.RequiresNotNull(nameSpace, nameof(nameSpace));
+            Contract.RequiresNotNull(name, nameof(name));
 
             Assembly = assembly;
             NameSpace = nameSpace;
             Name = name;
         }
 
-        public string Assembly { get; }
-        public string NameSpace { get; }
-        public string Name { get; }
+        public Assembly Assembly { get; }
+        public NameSpace NameSpace { get; }
+        public TypeName Name { get; }
     }
 }
