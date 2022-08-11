@@ -1,4 +1,6 @@
 
+using System;
+
 namespace ImpactAnalyzer.Entities
 {
     public record Assembly
@@ -12,6 +14,8 @@ namespace ImpactAnalyzer.Entities
             myValue = value;
         }
 
-        public static implicit operator string(Assembly v) => v.myValue;
-     }
+        public bool Filter(Func<string, bool> f) => f(myValue);
+
+        public Assembly Map(Func<string, string> f) => new Assembly(f(myValue));
+    }
 }
