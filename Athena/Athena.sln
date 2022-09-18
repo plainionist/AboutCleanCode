@@ -28,6 +28,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athena.Governance", "Athena
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athena.Governance.IO", "Athena.Governance.IO\Athena.Governance.IO.csproj", "{A21AD879-C36A-497F-BFF5-EB985E590806}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athena.Governance.Specs", "Athena.Governance.Specs\Athena.Governance.Specs.csproj", "{EEAF9572-0AB9-466E-9E3C-317927C38D63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athena.BurnDown.Specs", "Athena.BurnDown.Specs\Athena.BurnDown.Specs.csproj", "{0756263E-0B58-48F8-9897-01A164B3F352}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,5 +81,13 @@ Global
 		{A21AD879-C36A-497F-BFF5-EB985E590806}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A21AD879-C36A-497F-BFF5-EB985E590806}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A21AD879-C36A-497F-BFF5-EB985E590806}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEAF9572-0AB9-466E-9E3C-317927C38D63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEAF9572-0AB9-466E-9E3C-317927C38D63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEAF9572-0AB9-466E-9E3C-317927C38D63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEAF9572-0AB9-466E-9E3C-317927C38D63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0756263E-0B58-48F8-9897-01A164B3F352}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0756263E-0B58-48F8-9897-01A164B3F352}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0756263E-0B58-48F8-9897-01A164B3F352}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0756263E-0B58-48F8-9897-01A164B3F352}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
