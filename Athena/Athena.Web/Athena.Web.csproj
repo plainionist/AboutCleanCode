@@ -8,9 +8,6 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Athena.Backlog\Athena.Backlog.csproj" />
-    <ProjectReference Include="..\Athena.Backlog.Adapters\Athena.Backlog.Adapters.csproj" />
-    <ProjectReference Include="..\Athena.Backlog.UseCases\Athena.Backlog.UseCases.csproj" />
     <ProjectReference Include="..\Athena.Backlog.IO\Athena.Backlog.IO.csproj" />
   </ItemGroup>
 </Project>
