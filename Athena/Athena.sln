@@ -1,4 +1,4 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
@@ -9,6 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{A5BD1EDE-9
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athena.Backlog", "Athena.Backlog\Athena.Backlog.csproj", "{3C7E9C4A-8F0B-4318-B808-315035BB2286}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athena.Backlog.Specs", "Athena.Backlog.Specs\Athena.Backlog.Specs.csproj", "{ECC6674B-6BE4-4CE6-B82A-DDC1275651BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athena.Backlog.Tests", "Athena.Backlog.Tests\Athena.Backlog.Tests.csproj", "{B3798E69-8135-4931-87F2-1115E503CFB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,5 +27,13 @@ Global
 		{3C7E9C4A-8F0B-4318-B808-315035BB2286}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C7E9C4A-8F0B-4318-B808-315035BB2286}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C7E9C4A-8F0B-4318-B808-315035BB2286}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECC6674B-6BE4-4CE6-B82A-DDC1275651BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECC6674B-6BE4-4CE6-B82A-DDC1275651BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECC6674B-6BE4-4CE6-B82A-DDC1275651BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECC6674B-6BE4-4CE6-B82A-DDC1275651BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3798E69-8135-4931-87F2-1115E503CFB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3798E69-8135-4931-87F2-1115E503CFB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3798E69-8135-4931-87F2-1115E503CFB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3798E69-8135-4931-87F2-1115E503CFB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
