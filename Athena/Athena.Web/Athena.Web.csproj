@@ -9,5 +9,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Athena.Backlog.IO\Athena.Backlog.IO.csproj" />
+    <ProjectReference Include="..\Athena.BurnDown.IO\Athena.BurnDown.IO.csproj" />
+    <ProjectReference Include="..\Athena.Governance.IO\Athena.Governance.IO.csproj" />
   </ItemGroup>
 </Project>
