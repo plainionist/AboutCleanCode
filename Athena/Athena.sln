@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athena.Backlog.Specs", "Ath
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athena.Backlog.Tests", "Athena.Backlog.Tests\Athena.Backlog.Tests.csproj", "{B3798E69-8135-4931-87F2-1115E503CFB2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athena.Web", "Athena.Web\Athena.Web.csproj", "{ECBFA34E-F6D7-44A7-9F4B-83F9750FED51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,5 +37,9 @@ Global
 		{B3798E69-8135-4931-87F2-1115E503CFB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3798E69-8135-4931-87F2-1115E503CFB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3798E69-8135-4931-87F2-1115E503CFB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECBFA34E-F6D7-44A7-9F4B-83F9750FED51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECBFA34E-F6D7-44A7-9F4B-83F9750FED51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECBFA34E-F6D7-44A7-9F4B-83F9750FED51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECBFA34E-F6D7-44A7-9F4B-83F9750FED51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

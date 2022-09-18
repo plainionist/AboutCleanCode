@@ -2,14 +2,13 @@ namespace Athena.Backlog.Specs;
 
 public class ComputingBacklog
 {
-    [SetUp]
-    public void Setup()
-    {
-    }
-
     [Test]
-    public void Test1()
+    public void WhenWorkItemsExists_ThenBacklogShouldNotBeEmpty()
     {
-        Assert.Pass();
+        var testApi = new Backlog.TestApi.TestApi();
+
+        var vm = testApi.GetBacklog("TeamA");
+
+        Assert.That(vm.WorkItems, Is.Not.Empty);
     }
 }
