@@ -18,6 +18,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Athena.Backlog\Athena.Backlog.csproj" />
+    <ProjectReference Include="..\Athena.Backlog.Adapters\Athena.Backlog.Adapters.csproj" />
+    <ProjectReference Include="..\Athena.Backlog.UseCases\Athena.Backlog.UseCases.csproj" />
   </ItemGroup>
 
 </Project>

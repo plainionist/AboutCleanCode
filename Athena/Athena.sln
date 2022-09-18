@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
@@ -8,13 +8,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{A5BD1EDE-9
 		ReadMe.md = ReadMe.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athena.Backlog", "Athena.Backlog\Athena.Backlog.csproj", "{3C7E9C4A-8F0B-4318-B808-315035BB2286}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athena.Backlog.Adapters", "Athena.Backlog.Adapters\Athena.Backlog.Adapters.csproj", "{3C7E9C4A-8F0B-4318-B808-315035BB2286}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athena.Backlog.Specs", "Athena.Backlog.Specs\Athena.Backlog.Specs.csproj", "{ECC6674B-6BE4-4CE6-B82A-DDC1275651BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athena.Backlog.Tests", "Athena.Backlog.Tests\Athena.Backlog.Tests.csproj", "{B3798E69-8135-4931-87F2-1115E503CFB2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athena.Web", "Athena.Web\Athena.Web.csproj", "{ECBFA34E-F6D7-44A7-9F4B-83F9750FED51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athena.Backlog.UseCases", "Athena.Backlog.UseCases\Athena.Backlog.UseCases.csproj", "{1BD5B710-D0A8-48D8-B0CE-A6E9888477D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,5 +43,9 @@ Global
 		{ECBFA34E-F6D7-44A7-9F4B-83F9750FED51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECBFA34E-F6D7-44A7-9F4B-83F9750FED51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECBFA34E-F6D7-44A7-9F4B-83F9750FED51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BD5B710-D0A8-48D8-B0CE-A6E9888477D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BD5B710-D0A8-48D8-B0CE-A6E9888477D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BD5B710-D0A8-48D8-B0CE-A6E9888477D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BD5B710-D0A8-48D8-B0CE-A6E9888477D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
