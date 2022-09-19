@@ -13,4 +13,7 @@ Check out the history of this project to review the steps taken to build up this
 Read the [blog series](http://www.plainionist.net/Implementing-Clean-Architecture-Overview/)
 this project is based on for further, in depth considerations.
 
+Watch the tutorials this project was created for:
+
+- [How to setup a project in Clean Architecture?](https://youtu.be/1IE8RC-IOSE)
 
