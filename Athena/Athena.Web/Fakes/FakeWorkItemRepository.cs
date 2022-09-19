@@ -1,11 +1,19 @@
 using System.Collections.Generic;
+using System.Linq;
+using Athena.Backlog.UseCases;
 
 namespace Athena.Web.Fakes;
 
-public class FakeWorkItemRepository : Athena.Backlog.UseCases.IWorkItemRepository
+public class FakeWorkItemRepository : IWorkItemRepository
 {
-    public IReadOnlyCollection<Athena.Backlog.UseCases.WorkItem> GetWorkItems()
+    public IReadOnlyCollection<WorkItem> GetWorkItems()
     {
-        return null;
+        return Enumerable.Range(1, 5).Select(index => new WorkItem
+        {
+            Id = index,
+            Title = $"Title {index}",
+            AssignedTo = $"Developer {index}"
+        })
+        .ToArray();
     }
 }
