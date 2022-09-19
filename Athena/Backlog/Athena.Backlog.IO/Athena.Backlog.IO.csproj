@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Athena.Backlog.Adapters\Athena.Backlog.Adapters.csproj" />
+    <ProjectReference Include="..\..\Foundation\Athena.Core\Athena.Core.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,15 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
+  
   <ItemGroup>
-    <ProjectReference Include="..\Athena.Backlog.IO\Athena.Backlog.IO.csproj" />
-    <ProjectReference Include="..\Athena.BurnDown.IO\Athena.BurnDown.IO.csproj" />
-    <ProjectReference Include="..\Athena.Governance.IO\Athena.Governance.IO.csproj" />
+    <ProjectReference Include="..\Backlog\Athena.Backlog.IO\Athena.Backlog.IO.csproj" />
+    <ProjectReference Include="..\BurnDown\Athena.BurnDown.IO\Athena.BurnDown.IO.csproj" />
+    <ProjectReference Include="..\Governance\Athena.Governance.IO\Athena.Governance.IO.csproj" />
   </ItemGroup>
+  
 </Project>

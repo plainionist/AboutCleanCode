@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Athena.Backlog.UseCases\Athena.Backlog.UseCases.csproj" />
+    <ProjectReference Include="..\..\Foundation\Athena.Core\Athena.Core.csproj" />
+    <ProjectReference Include="..\..\Foundation\Athena.Adapters\Athena.Adapters.csproj" />
+  </ItemGroup>
+
+</Project>
