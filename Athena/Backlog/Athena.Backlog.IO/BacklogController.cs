@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 [Route("[controller]")]
 public class BacklogController : ControllerBase
 {
-    private Athena.Backlog.Adapters.BacklogController myImpl;
-    public BacklogController(Athena.Backlog.Adapters.BacklogController controller)
+    private Athena.Backlog.Adapters.BacklogControllerAdapter myImpl;
+    public BacklogController(Athena.Backlog.Adapters.BacklogControllerAdapter controller)
     {
         myImpl = controller;
     }

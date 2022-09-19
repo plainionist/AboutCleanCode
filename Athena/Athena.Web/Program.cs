@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddSingleton(typeof(Athena.Backlog.Adapters.BacklogController));
+builder.Services.AddSingleton(typeof(Athena.Backlog.Adapters.BacklogControllerAdapter));
 builder.Services.AddSingleton(typeof(Athena.Backlog.UseCases.BacklogInteractor));
 builder.Services.AddSingleton(typeof(Athena.Backlog.UseCases.IWorkItemRepository), typeof(Athena.Web.Fakes.FakeWorkItemRepository));
 
