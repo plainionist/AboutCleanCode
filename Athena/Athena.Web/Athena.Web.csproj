@@ -14,4 +14,8 @@
     <ProjectReference Include="..\Governance\Athena.Governance.IO\Athena.Governance.IO.csproj" />
   </ItemGroup>
   
+  <ItemGroup>
+    <Folder Include="WebUI\src\components\" />
+  </ItemGroup>
+  
 </Project>
