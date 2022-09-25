@@ -1,12 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\Foundation\Athena.Entities\Athena.Entities.csproj" />
     <ProjectReference Include="..\..\Foundation\Athena.Core\Athena.Core.csproj" />
   </ItemGroup>
-
 </Project>

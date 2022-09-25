@@ -1,0 +1,8 @@
+<Project>
+    <PropertyGroup>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="NsDepCop" Version="2.2.0" />
+    </ItemGroup>
+</Project>

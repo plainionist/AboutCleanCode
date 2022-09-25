@@ -1,13 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <OutputType>Library</OutputType>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\Foundation\Athena.Core\Athena.Core.csproj" />
     <ProjectReference Include="..\Athena.BurnDown\Athena.BurnDown.csproj" />
   </ItemGroup>
-
 </Project>

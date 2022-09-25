@@ -1,0 +1,28 @@
+<NsDepCopConfig IsEnabled="true" ChildCanDependOnParentImplicitly="true">
+
+    <Allowed From="*" To="System.*" />
+
+    <Allowed From="Athena.?.UseCases.*" To="Athena.?.Entities.*" />
+    <Allowed From="Athena.?.Adapters.*" To="Athena.?.UseCases.*" />
+    <Allowed From="Athena.?.TestApi.*" To="Athena.?.Adapters.*" />
+    <Allowed From="Athena.?.IO.*" To="Athena.?.Adapters.*" />
+    <Allowed From="Athena.?.IO.*" To="Microsoft.*" />
+
+    <Allowed From="Athena.*.Specs" To="Athena.?.Adapters.*" />
+    <Allowed From="Athena.*.Specs" To="Athena.?.TestApi.*" />
+    <Allowed From="Athena.*.Specs" To="NUnit.*" />
+    <Allowed From="Athena.*.Tests" To="NUnit.*" />
+
+    <Allowed From="Athena.Web.*" To="Athena.?.UseCases.*" />
+    <Allowed From="Athena.Web.*" To="Athena.?.Adapters.*" />
+    <Allowed From="Athena.Web.*" To="Athena.?.IO.*" />
+    <Allowed From="Athena.Web.*" To="Microsoft.*" />
+
+    <Disallowed From="*.Backlog.*" To="*.BurnDown.*" />
+    <Disallowed From="*.Backlog.*" To="*.Governance.*" />
+    <Disallowed From="*.BurnDown.*" To="*.Backlog.*" />
+    <Disallowed From="*.BurnDown.*" To="*.Governance.*" />
+    <Disallowed From="*.Governance.*" To="*.Backlog.*" />
+    <Disallowed From="*.Governance.*" To="*.BurnDown.*" />
+
+</NsDepCopConfig>
