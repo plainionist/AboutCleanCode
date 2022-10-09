@@ -3,6 +3,8 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading;
+using System.Threading.Channels;
+using System.Threading.Tasks;
 using System.Xml.Linq;
 
 [assembly: InternalsVisibleTo("Orchestrator.Tests")]
@@ -12,18 +14,17 @@ namespace AboutCleanCode.Orchestrator
     internal abstract class AbstractAgent : IAgent
     {
         private readonly ILogger myLogger;
-        private readonly BlockingCollection<Envelope> myQueue;
-        private Thread myThread;
+        private readonly Channel<Envelope> myQueue;
 
         internal AbstractAgent(ILogger logger)
         {
             myLogger = logger;
-            myQueue = new BlockingCollection<Envelope>();
+            myQueue = Channel.CreateUnbounded<Envelope>();
         }
 
         public void Post(IAgent sender, object message)
         {
-            myQueue.Add(new Envelope
+            myQueue.Writer.WriteAsync(new Envelope
             {
                 Sender = sender,
                 Messages = message
@@ -38,18 +39,15 @@ namespace AboutCleanCode.Orchestrator
 
         public void Start()
         {
-            myThread = new Thread(Body);
-            myThread.Start();
+            _ = Listen();
 
             myLogger.Info(this, "started");
         }
 
-        private void Body()
+        private async Task Listen()
         {
-            while (true)
+            await foreach( var envelope in myQueue.Reader.ReadAllAsync())
             {
-                var envelope = myQueue.Take();
-
                 if (envelope.Messages is PoisonPill)
                 {
                     break;
@@ -67,8 +65,7 @@ namespace AboutCleanCode.Orchestrator
         {
             Post(this, new PoisonPill());
 
-            myThread.Join();
-            myThread = null;
+            // TODO: wait for task to be completed
 
             myLogger.Info(this, "stopped");
         }
