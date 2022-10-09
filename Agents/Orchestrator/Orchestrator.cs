@@ -1,33 +1,36 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Threading;
 using System.Xml.Linq;
 
 [assembly: InternalsVisibleTo("Orchestrator.Tests")]
 
 namespace AboutCleanCode.Orchestrator
 {
-    internal class Orchestrator
+    internal class Orchestrator : AbstractAgent
     {
         private readonly ILogger myLogger;
-        private readonly DataCollectorTask myDataCollectorTask;
+        private readonly IAgent myDataCollectorTask;
         private readonly IDictionary<Guid, Job> myActiveJobs;
 
-        internal Orchestrator(ILogger logger, DataCollectorTask dataCollectorTask)
+        internal Orchestrator(ILogger logger, IAgent dataCollectorTask)
+            : base(logger)
         {
             myLogger = logger;
             myDataCollectorTask = dataCollectorTask;
             myActiveJobs = new Dictionary<Guid, Job>();
         }
 
-        public void ProcessJobRequest(string request)
+        private void OnJobRequestReceived(string request)
         {
             var job = ParseRequest(request);
             myActiveJobs[job.Id] = job;
 
             // trigger collection of all relevant data before the data
             // of the job can be processed
-            myDataCollectorTask.Process(job.Id);
+            myDataCollectorTask.Post(this, new CollectDataCommand { JobId = job.Id });
         }
 
         private Job ParseRequest(string request)
@@ -36,23 +39,38 @@ namespace AboutCleanCode.Orchestrator
             return new Job(new Guid(requestXml.Element("Id").Value));
         }
 
-        public void Start()
+        protected override void OnReceive(IAgent sender, object message)
         {
-            myDataCollectorTask.TaskStarted += OnDataCollectionStarted;
-            myDataCollectorTask.TaskCompleted += OnDataCollectionCompleted;
-            myDataCollectorTask.TaskFailed += OnDataCollectionFailed;
-
-            myLogger.Info(this, "started");
+            if (message is JobRequestReceivedMessage jrrm)
+            {
+                OnJobRequestReceived(jrrm.Content);
+            }
+            else if (message is TaskStartedEvent tse)
+            {
+                OnDataCollectionStarted(tse);
+            }
+            else if (message is TaskCompletedEvent tce)
+            {
+                OnDataCollectionCompleted(tce);
+            }
+            else if (message is TaskFailedEvent tfe)
+            {
+                OnDataCollectionFailed(tfe);
+            }
+            else
+            {
+                throw new NotSupportedException(message.GetType().FullName);
+            }
         }
 
-        private void OnDataCollectionStarted(object sender, TaskStartedEventArgs e)
+        private void OnDataCollectionStarted(TaskStartedEvent e)
         {
             myLogger.Info(this, "OnDataCollectionStarted");
-            
+
             myActiveJobs[e.JobId].Status = "DataCollectionStarted";
         }
 
-        private void OnDataCollectionCompleted(object sender, TaskCompletedEventArgs e)
+        private void OnDataCollectionCompleted(TaskCompletedEvent e)
         {
             myLogger.Info(this, "OnDataCollectionCompleted");
 
@@ -61,7 +79,7 @@ namespace AboutCleanCode.Orchestrator
             // TODO: decide about next step and trigger its execution
         }
 
-        private void OnDataCollectionFailed(object sender, TaskFailedEventArgs e)
+        private void OnDataCollectionFailed(TaskFailedEvent e)
         {
             myLogger.Info(this, "OnDataCollectionFailed");
 
@@ -75,14 +93,5 @@ namespace AboutCleanCode.Orchestrator
         /// </summary>
         public string GetJobStatus(Guid jobId) =>
             myActiveJobs.TryGetValue(jobId, out var job) ? job.Status : "<unknown>";
-
-        public void Stop()
-        {
-            myDataCollectorTask.TaskStarted -= OnDataCollectionStarted;
-            myDataCollectorTask.TaskCompleted -= OnDataCollectionCompleted;
-            myDataCollectorTask.TaskFailed -= OnDataCollectionFailed;
-
-            myLogger.Info(this, "stopped");
-        }
     }
 }

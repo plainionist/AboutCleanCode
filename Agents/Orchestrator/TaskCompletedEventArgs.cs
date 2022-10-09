@@ -2,9 +2,9 @@
 
 namespace AboutCleanCode.Orchestrator;
 
-class TaskCompletedEventArgs : EventArgs
+class TaskCompletedEvent 
 {
-    public TaskCompletedEventArgs(Guid jobId, object payload)
+    public TaskCompletedEvent(Guid jobId, object payload)
     {
         JobId = jobId;
         Payload = payload;

@@ -12,15 +12,22 @@ public class OrchestratorTests
     public void DataCollectionCompletesSuccessfully()
     {
         var logger = new FakeLogger();
-        var orchestrator = new Orchestrator(logger, new DataCollectorTask());
+        
+        var dataCollectorTask = new DataCollectorTask(logger);
+        dataCollectorTask.Start();
+
+        var orchestrator = new Orchestrator(logger, dataCollectorTask);
         orchestrator.Start();
 
         var jobId = Guid.NewGuid();
 
-        orchestrator.ProcessJobRequest(new XElement("JobRequest",
-            new XElement("Id", jobId.ToString()),
-            new XElement("CreatedAt", DateTime.Now))
-            .ToString());
+        orchestrator.Post(orchestrator, new JobRequestReceivedMessage
+        {
+            Content = new XElement("JobRequest",
+                new XElement("Id", jobId.ToString()),
+                new XElement("CreatedAt", DateTime.Now))
+                .ToString()
+        });
 
         WaitForJobCompleted(orchestrator, jobId);
 

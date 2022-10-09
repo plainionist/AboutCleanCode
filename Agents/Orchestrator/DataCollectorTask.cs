@@ -3,29 +3,39 @@ using System.Threading.Tasks;
 
 namespace AboutCleanCode.Orchestrator;
 
-class DataCollectorTask 
+class DataCollectorTask : AbstractAgent
 {
-    public event EventHandler<TaskStartedEventArgs> TaskStarted;
-    public event EventHandler<TaskCompletedEventArgs> TaskCompleted;
-    public event EventHandler<TaskFailedEventArgs> TaskFailed;
+    public DataCollectorTask(ILogger logger)
+        : base(logger)
+    { }
 
-    public void Process(Guid jobId)
+    private void Process(IAgent sender, Guid jobId)
     {
-        Task.Run(() => {
-            try
-            {
-                TaskStarted?.Invoke(this, new TaskStartedEventArgs(jobId));
+        try
+        {
+            sender.Post(this, new TaskStartedEvent(jobId));
 
-                // TODO: collect all necessary data which takes quite some time
+            // TODO: collect all necessary data which takes quite some time
 
-                object payload = null; // TODO: carries the collected data
+            object payload = null; // TODO: carries the collected data
 
-                TaskCompleted?.Invoke(this, new TaskCompletedEventArgs(jobId, payload));
-            }
-            catch (Exception exception)
-            {
-                TaskFailed?.Invoke(this, new TaskFailedEventArgs(jobId, exception));
-            }
-        });
+            sender.Post(this, new TaskCompletedEvent(jobId, payload));
+        }
+        catch (Exception exception)
+        {
+            sender.Post(this, new TaskFailedEvent(jobId, exception));
+        }
+    }
+
+    protected override void OnReceive(IAgent sender, object message)
+    {
+        if (message is CollectDataCommand cdc)
+        {
+            Process(sender, cdc.JobId);
+        }
+        else
+        {
+            throw new NotSupportedException(message.GetType().FullName);
+        }
     }
 }

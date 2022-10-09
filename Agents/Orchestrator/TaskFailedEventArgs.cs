@@ -2,9 +2,9 @@
 
 namespace AboutCleanCode.Orchestrator;
 
-class TaskFailedEventArgs : EventArgs
+class TaskFailedEvent 
 {
-    public TaskFailedEventArgs(Guid jobId, Exception exception)
+    public TaskFailedEvent(Guid jobId, Exception exception)
     {
         JobId = jobId;
         Exception = exception;

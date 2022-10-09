@@ -2,9 +2,9 @@
 
 namespace AboutCleanCode.Orchestrator;
 
-internal class TaskStartedEventArgs : EventArgs
+internal class TaskStartedEvent 
 {
-    public TaskStartedEventArgs(Guid jobId)
+    public TaskStartedEvent(Guid jobId)
     {
         JobId = jobId;
     }
