@@ -12,11 +12,15 @@ public class OrchestratorTests
     public void DataCollectionCompletesSuccessfully()
     {
         var logger = new FakeLogger();
-        
+
+        var observer = new ObserverAgent(logger);
+        observer.Start();
+
         var dataCollectorTask = new DataCollectorTask(logger);
         dataCollectorTask.Start();
 
         var orchestrator = new Orchestrator(logger, dataCollectorTask);
+        orchestrator.StateObserver = observer;
         orchestrator.Start();
 
         var jobId = Guid.NewGuid();
@@ -29,25 +33,27 @@ public class OrchestratorTests
                 .ToString()
         });
 
-        WaitForJobCompleted(orchestrator, jobId);
+        observer.JobStateChanged.WaitOne();
 
+        dataCollectorTask.Stop();
         orchestrator.Stop();
+        observer.Stop();
 
         Assert.True(logger.Messages.Any(x => x.Contains("DataCollectionStarted")), "DataCollectionStarted not found in logger");
         Assert.True(logger.Messages.Any(x => x.Contains("DataCollectionCompleted")), "DataCollectionCompleted not found in logger");
     }
 
-    private void WaitForJobCompleted(Orchestrator orchestrator, Guid jobId)
+    private class ObserverAgent : AbstractAgent
     {
-        while (true)
+        public ObserverAgent(ILogger logger) : base(logger) { }
+
+        public ManualResetEvent JobStateChanged { get; } = new(false);
+
+        protected override void OnReceive(IAgent sender, object message)
         {
-            Thread.Sleep(100);
-
-            if (orchestrator.GetJobStatus(jobId).EndsWith("completed", StringComparison.OrdinalIgnoreCase))
-            {
-                break;
+            if (message is JobStateChanged _) {
+                JobStateChanged.Set();
             }
-
         }
     }
 }

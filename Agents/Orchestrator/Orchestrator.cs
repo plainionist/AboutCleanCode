@@ -23,6 +23,11 @@ namespace AboutCleanCode.Orchestrator
             myActiveJobs = new Dictionary<Guid, Job>();
         }
 
+        /// <summary>
+        /// Test API
+        /// </summary>
+        public IAgent StateObserver { get; set; }
+
         private void OnJobRequestReceived(string request)
         {
             var job = ParseRequest(request);
@@ -77,6 +82,8 @@ namespace AboutCleanCode.Orchestrator
             myActiveJobs[e.JobId].Status = "DataCollectionCompleted";
 
             // TODO: decide about next step and trigger its execution
+
+            StateObserver?.Post(this, new JobStateChanged(e.JobId));
         }
 
         private void OnDataCollectionFailed(TaskFailedEvent e)
@@ -86,12 +93,8 @@ namespace AboutCleanCode.Orchestrator
             myActiveJobs[e.JobId].Status = "DataCollectionFailed";
 
             // TODO: error handling - inform operators
-        }
 
-        /// <summary>
-        /// Test Api
-        /// </summary>
-        public string GetJobStatus(Guid jobId) =>
-            myActiveJobs.TryGetValue(jobId, out var job) ? job.Status : "<unknown>";
+            StateObserver?.Post(this, new JobStateChanged(e.JobId));
+        }
     }
 }
