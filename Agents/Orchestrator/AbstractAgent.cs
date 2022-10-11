@@ -8,14 +8,15 @@ namespace AboutCleanCode.Orchestrator
 {
     internal abstract class AbstractAgent : IAgent
     {
-        private readonly ILogger myLogger;
         private readonly Channel<Envelope> myQueue;
 
         internal AbstractAgent(ILogger logger)
         {
-            myLogger = logger;
+            Logger = logger;
             myQueue = Channel.CreateUnbounded<Envelope>();
         }
+
+        protected ILogger Logger { get; }
 
         public void Post(IAgent sender, object message)
         {
@@ -36,7 +37,7 @@ namespace AboutCleanCode.Orchestrator
         {
             _ = Listen();
 
-            myLogger.Info(this, "started");
+            Logger.Info(this, "started");
         }
 
         private async Task Listen()
@@ -62,7 +63,7 @@ namespace AboutCleanCode.Orchestrator
 
             // TODO: wait for task to be completed
 
-            myLogger.Info(this, "stopped");
+            Logger.Info(this, "stopped");
         }
     }
 }

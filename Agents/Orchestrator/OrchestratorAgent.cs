@@ -9,14 +9,12 @@ namespace AboutCleanCode.Orchestrator
 {
     internal class OrchestratorAgent : AbstractAgent
     {
-        private readonly ILogger myLogger;
         private readonly IAgent myDataCollectorTask;
         private readonly IDictionary<Guid, Job> myActiveJobs;
 
         internal OrchestratorAgent(ILogger logger, IAgent dataCollectorTask)
             : base(logger)
         {
-            myLogger = logger;
             myDataCollectorTask = dataCollectorTask;
             myActiveJobs = new Dictionary<Guid, Job>();
         }
@@ -68,14 +66,14 @@ namespace AboutCleanCode.Orchestrator
 
         private void OnDataCollectionStarted(TaskStartedEvent e)
         {
-            myLogger.Info(this, "OnDataCollectionStarted");
+            Logger.Info(this, "OnDataCollectionStarted");
 
             myActiveJobs[e.JobId].Status = "DataCollectionStarted";
         }
 
         private void OnDataCollectionCompleted(TaskCompletedEvent e)
         {
-            myLogger.Info(this, "OnDataCollectionCompleted");
+            Logger.Info(this, "OnDataCollectionCompleted");
 
             myActiveJobs[e.JobId].Status = "DataCollectionCompleted";
 
@@ -86,7 +84,7 @@ namespace AboutCleanCode.Orchestrator
 
         private void OnDataCollectionFailed(TaskFailedEvent e)
         {
-            myLogger.Info(this, "OnDataCollectionFailed");
+            Logger.Info(this, "OnDataCollectionFailed");
 
             myActiveJobs[e.JobId].Status = "DataCollectionFailed";
 
