@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.CompilerServices;
 using System.Threading.Channels;
 using System.Threading.Tasks;
@@ -23,14 +24,14 @@ namespace AboutCleanCode.Orchestrator
             myQueue.Writer.WriteAsync(new Envelope
             {
                 Sender = sender,
-                Messages = message
+                Message = message
             });
         }
 
         private class Envelope
         {
             public IAgent Sender { get; init; }
-            public object Messages { get; init; }
+            public object Message { get; init; }
         }
 
         public void Start()
@@ -42,15 +43,21 @@ namespace AboutCleanCode.Orchestrator
 
         private async Task Listen()
         {
-            await foreach( var envelope in myQueue.Reader.ReadAllAsync())
+            await foreach (var envelope in myQueue.Reader.ReadAllAsync())
             {
-                if (envelope.Messages is PoisonPill)
+                if (envelope.Message is PoisonPill)
                 {
                     break;
                 }
-                else
+
+                try
                 {
-                    OnReceive(envelope.Sender, envelope.Messages);
+                    OnReceive(envelope.Sender, envelope.Message);
+                }
+                catch (Exception ex)
+                {
+                    Logger.Error(this, $"Failed to process '{envelope.Message}' from " +
+                        $"'{envelope.Sender.GetType().FullName}': {Environment.NewLine}{ex}");
                 }
             }
         }
