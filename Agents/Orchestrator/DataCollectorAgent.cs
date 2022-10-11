@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace AboutCleanCode.Orchestrator;
 
@@ -14,9 +15,7 @@ class DataCollectorAgent : AbstractAgent
         {
             sender.Post(this, new TaskStartedEvent(jobId));
 
-            // TODO: collect all necessary data which takes quite some time
-
-            object payload = null; // TODO: carries the collected data
+            var payload = CollectData();
 
             sender.Post(this, new TaskCompletedEvent(jobId, payload));
         }
@@ -24,6 +23,20 @@ class DataCollectorAgent : AbstractAgent
         {
             sender.Post(this, new TaskFailedEvent(jobId, exception));
         }
+    }
+
+    // this takes a long time
+    private object CollectData()
+    {
+        // TODO: implement
+
+        for (int i = 0; i < 10; ++i)
+        {
+            Logger.Debug(this, $"Chunk {i}");
+            Thread.Sleep(100);
+        }
+
+        return null;
     }
 
     protected override void OnReceive(IAgent sender, object message)
