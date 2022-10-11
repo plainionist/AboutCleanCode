@@ -56,7 +56,7 @@ namespace AboutCleanCode.Orchestrator
                 }
                 catch (Exception ex)
                 {
-                    Logger.Error(this, $"Failed to process '{envelope.Message}' from " +
+                    Logger.Error(this, $"Failed to process '{envelope.Message.GetType().FullName}' from " +
                         $"'{envelope.Sender.GetType().FullName}': {Environment.NewLine}{ex}");
                 }
             }

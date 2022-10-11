@@ -34,7 +34,7 @@ class DataCollectorAgent : AbstractAgent
         }
         else
         {
-            throw new NotSupportedException(message.GetType().FullName);
+            Logger.Warning(this, $"Unknown message: '{message.GetType().FullName}'");
         }
     }
 }
