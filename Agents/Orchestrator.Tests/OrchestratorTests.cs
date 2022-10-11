@@ -16,10 +16,10 @@ public class OrchestratorTests
         var observer = new ObserverAgent(logger);
         observer.Start();
 
-        var dataCollectorTask = new DataCollectorTask(logger);
+        var dataCollectorTask = new DataCollectorAgent(logger);
         dataCollectorTask.Start();
 
-        var orchestrator = new Orchestrator(logger, dataCollectorTask);
+        var orchestrator = new OrchestratorAgent(logger, dataCollectorTask);
         orchestrator.StateObserver = observer;
         orchestrator.Start();
 

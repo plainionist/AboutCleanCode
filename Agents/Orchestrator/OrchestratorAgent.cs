@@ -1,21 +1,19 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using System.Threading;
 using System.Xml.Linq;
 
 [assembly: InternalsVisibleTo("Orchestrator.Tests")]
 
 namespace AboutCleanCode.Orchestrator
 {
-    internal class Orchestrator : AbstractAgent
+    internal class OrchestratorAgent : AbstractAgent
     {
         private readonly ILogger myLogger;
         private readonly IAgent myDataCollectorTask;
         private readonly IDictionary<Guid, Job> myActiveJobs;
 
-        internal Orchestrator(ILogger logger, IAgent dataCollectorTask)
+        internal OrchestratorAgent(ILogger logger, IAgent dataCollectorTask)
             : base(logger)
         {
             myLogger = logger;

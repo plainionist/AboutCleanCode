@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Threading.Tasks;
 
 namespace AboutCleanCode.Orchestrator;
 
-class DataCollectorTask : AbstractAgent
+class DataCollectorAgent : AbstractAgent
 {
-    public DataCollectorTask(ILogger logger)
+    public DataCollectorAgent(ILogger logger)
         : base(logger)
     { }
 
