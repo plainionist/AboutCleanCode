@@ -45,15 +45,12 @@ public class OrchestratorTests
 
     private class ObserverAgent : AbstractAgent
     {
-        public ObserverAgent(ILogger logger) : base(logger) { }
+        public ObserverAgent(ILogger logger)
+            : base(logger)
+        {
+            Receive<JobStateChanged>((_, _) => JobStateChanged.Set());
+        }
 
         public ManualResetEvent JobStateChanged { get; } = new(false);
-
-        protected override void OnReceive(IAgent sender, object message)
-        {
-            if (message is JobStateChanged _) {
-                JobStateChanged.Set();
-            }
-        }
     }
 }

@@ -17,6 +17,11 @@ namespace AboutCleanCode.Orchestrator
         {
             myDataCollectorTask = dataCollectorTask;
             myActiveJobs = new Dictionary<Guid, Job>();
+
+            Receive<JobRequestReceivedMessage>(OnJobRequestReceived);
+            Receive<TaskStartedEvent>(OnDataCollectionStarted);
+            Receive<TaskCompletedEvent>(OnDataCollectionCompleted);
+            Receive<TaskFailedEvent>(OnDataCollectionFailed);
         }
 
         /// <summary>
@@ -24,9 +29,9 @@ namespace AboutCleanCode.Orchestrator
         /// </summary>
         public IAgent StateObserver { get; set; }
 
-        private void OnJobRequestReceived(string request)
+        private void OnJobRequestReceived(IAgent _, JobRequestReceivedMessage command)
         {
-            var job = ParseRequest(request);
+            var job = ParseRequest(command.Content);
             myActiveJobs[job.Id] = job;
 
             // trigger collection of all relevant data before the data
@@ -40,38 +45,14 @@ namespace AboutCleanCode.Orchestrator
             return new Job(new Guid(requestXml.Element("Id").Value));
         }
 
-        protected override void OnReceive(IAgent sender, object message)
-        {
-            if (message is JobRequestReceivedMessage jrrm)
-            {
-                OnJobRequestReceived(jrrm.Content);
-            }
-            else if (message is TaskStartedEvent tse)
-            {
-                OnDataCollectionStarted(tse);
-            }
-            else if (message is TaskCompletedEvent tce)
-            {
-                OnDataCollectionCompleted(tce);
-            }
-            else if (message is TaskFailedEvent tfe)
-            {
-                OnDataCollectionFailed(tfe);
-            }
-            else
-            {
-                Logger.Warning(this, $"Unknown message: '{message.GetType().FullName}'");
-            }
-        }
-
-        private void OnDataCollectionStarted(TaskStartedEvent e)
+        private void OnDataCollectionStarted(IAgent _, TaskStartedEvent e)
         {
             Logger.Info(this, "OnDataCollectionStarted");
 
             myActiveJobs[e.JobId].Status = "DataCollectionStarted";
         }
 
-        private void OnDataCollectionCompleted(TaskCompletedEvent e)
+        private void OnDataCollectionCompleted(IAgent _, TaskCompletedEvent e)
         {
             Logger.Info(this, "OnDataCollectionCompleted");
 
@@ -82,7 +63,7 @@ namespace AboutCleanCode.Orchestrator
             StateObserver?.Post(this, new JobStateChanged(e.JobId));
         }
 
-        private void OnDataCollectionFailed(TaskFailedEvent e)
+        private void OnDataCollectionFailed(IAgent _, TaskFailedEvent e)
         {
             Logger.Info(this, "OnDataCollectionFailed");
 

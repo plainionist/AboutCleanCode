@@ -7,21 +7,23 @@ class DataCollectorAgent : AbstractAgent
 {
     public DataCollectorAgent(ILogger logger)
         : base(logger)
-    { }
+    {
+        Receive<CollectDataCommand>(OnCollectDataCommand);
+    }
 
-    private void Process(IAgent sender, Guid jobId)
+    private void OnCollectDataCommand(IAgent sender, CollectDataCommand command)
     {
         try
         {
-            sender.Post(this, new TaskStartedEvent(jobId));
+            sender.Post(this, new TaskStartedEvent(command.JobId));
 
             var payload = CollectData();
 
-            sender.Post(this, new TaskCompletedEvent(jobId, payload));
+            sender.Post(this, new TaskCompletedEvent(command.JobId, payload));
         }
         catch (Exception exception)
         {
-            sender.Post(this, new TaskFailedEvent(jobId, exception));
+            sender.Post(this, new TaskFailedEvent(command.JobId, exception));
         }
     }
 
@@ -37,17 +39,5 @@ class DataCollectorAgent : AbstractAgent
         }
 
         return null;
-    }
-
-    protected override void OnReceive(IAgent sender, object message)
-    {
-        if (message is CollectDataCommand cdc)
-        {
-            Process(sender, cdc.JobId);
-        }
-        else
-        {
-            Logger.Warning(this, $"Unknown message: '{message.GetType().FullName}'");
-        }
     }
 }

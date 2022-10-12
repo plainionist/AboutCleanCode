@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading.Channels;
 using System.Threading.Tasks;
@@ -10,11 +11,24 @@ namespace AboutCleanCode.Orchestrator
     internal abstract class AbstractAgent : IAgent
     {
         private readonly Channel<Envelope> myQueue;
+        private readonly Dictionary<Type, Delegate> myMessageHandlers;
 
         internal AbstractAgent(ILogger logger)
         {
             Logger = logger;
+
             myQueue = Channel.CreateUnbounded<Envelope>();
+            myMessageHandlers = new Dictionary<Type, Delegate>();
+        }
+
+        protected void Receive<T>(Action<IAgent, T> handler)
+        {
+            if (myMessageHandlers.ContainsKey(typeof(T)))
+            {
+                throw new ArgumentException($"Handler already registered for messages of type: {typeof(T)}");
+            }
+
+            myMessageHandlers[typeof(T)] = handler;
         }
 
         protected ILogger Logger { get; }
@@ -62,7 +76,17 @@ namespace AboutCleanCode.Orchestrator
             }
         }
 
-        protected abstract void OnReceive(IAgent sender, object message);
+        protected virtual void OnReceive(IAgent sender, object message)
+        {
+            if (myMessageHandlers.TryGetValue(message.GetType(), out var handler))
+            {
+                handler.DynamicInvoke(sender, message);
+            }
+            else
+            {
+                Logger.Warning(this, $"Unexpected message: {message.GetType()}");
+            }
+        }
 
         public void Stop()
         {
