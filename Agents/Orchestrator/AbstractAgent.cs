@@ -61,6 +61,7 @@ namespace AboutCleanCode.Orchestrator
             {
                 if (envelope.Message is PoisonPill)
                 {
+                    Logger.Info(this, "stopped");
                     break;
                 }
 
@@ -93,8 +94,6 @@ namespace AboutCleanCode.Orchestrator
             Post(this, new PoisonPill());
 
             // TODO: wait for task to be completed
-
-            Logger.Info(this, "stopped");
         }
     }
 }
