@@ -12,6 +12,7 @@ namespace AboutCleanCode.Orchestrator
     {
         private readonly Channel<Envelope> myQueue;
         private readonly Dictionary<Type, Delegate> myMessageHandlers;
+        private Task myListeningTask;
 
         internal AbstractAgent(ILogger logger)
         {
@@ -50,7 +51,7 @@ namespace AboutCleanCode.Orchestrator
 
         public void Start()
         {
-            _ = Listen();
+            myListeningTask = Listen();
 
             Logger.Info(this, "started");
         }
@@ -93,7 +94,7 @@ namespace AboutCleanCode.Orchestrator
         {
             Post(this, new PoisonPill());
 
-            // TODO: wait for task to be completed
+            myListeningTask.Wait();
         }
     }
 }
