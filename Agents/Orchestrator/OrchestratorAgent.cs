@@ -27,7 +27,7 @@ namespace AboutCleanCode.Orchestrator
         /// <summary>
         /// Test API
         /// </summary>
-        public IAgent StateObserver { get; set; }
+        public IAgent JobObserver { get; set; }
 
         private void OnJobRequestReceived(IAgent _, JobRequestReceivedMessage command)
         {
@@ -47,31 +47,31 @@ namespace AboutCleanCode.Orchestrator
 
         private void OnDataCollectionStarted(IAgent _, TaskStartedEvent e)
         {
-            Logger.Info(this, "OnDataCollectionStarted");
+            Logger.Info(this, $"OnDataCollectionStarted({e.JobId})");
 
             myActiveJobs[e.JobId].Status = "DataCollectionStarted";
         }
 
         private void OnDataCollectionCompleted(IAgent _, TaskCompletedEvent e)
         {
-            Logger.Info(this, "OnDataCollectionCompleted");
+            Logger.Info(this, $"OnDataCollectionCompleted({e.JobId})");
 
             myActiveJobs[e.JobId].Status = "DataCollectionCompleted";
 
             // TODO: decide about next step and trigger its execution
 
-            StateObserver?.Post(this, new JobStateChanged(e.JobId));
+            JobObserver?.Post(this, new JobStateChanged(e.JobId));
         }
 
         private void OnDataCollectionFailed(IAgent _, TaskFailedEvent e)
         {
-            Logger.Info(this, "OnDataCollectionFailed");
+            Logger.Info(this, $"OnDataCollectionFailed({e.JobId})");
 
             myActiveJobs[e.JobId].Status = "DataCollectionFailed";
 
             // TODO: error handling - inform operators
 
-            StateObserver?.Post(this, new JobStateChanged(e.JobId));
+            JobObserver?.Post(this, new JobStateChanged(e.JobId));
         }
     }
 }
