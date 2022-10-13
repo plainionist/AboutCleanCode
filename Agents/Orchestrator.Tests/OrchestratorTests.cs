@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Xml.Linq;
@@ -8,49 +9,73 @@ namespace AboutCleanCode.Orchestrator.Tests;
 
 public class OrchestratorTests
 {
-    [Test]
-    public void DataCollectionCompletesSuccessfully()
+    [TestCase(1)]
+    [TestCase(2)]
+    [TestCase(3)]
+    public void DataCollectionCompletesSuccessfully(int numJobs)
     {
         var logger = new FakeLogger();
 
-        var observer = new ObserverAgent(logger);
+        var jobIds = Enumerable.Range(0, numJobs)
+            .Select(x => Guid.NewGuid())
+            .ToList();
+
+        var observer = new JobObserverAgent(logger, jobIds);
         observer.Start();
 
         var dataCollectorTask = new DataCollectorAgent(logger);
         dataCollectorTask.Start();
 
         var orchestrator = new OrchestratorAgent(logger, dataCollectorTask);
-        orchestrator.StateObserver = observer;
+        orchestrator.JobObserver = observer;
         orchestrator.Start();
 
-        var jobId = Guid.NewGuid();
-
-        orchestrator.Post(orchestrator, new JobRequestReceivedMessage
+        foreach (var jobId in jobIds)
         {
-            Content = new XElement("JobRequest",
-                new XElement("Id", jobId.ToString()),
-                new XElement("CreatedAt", DateTime.Now))
-                .ToString()
-        });
+            orchestrator.Post(orchestrator, new JobRequestReceivedMessage
+            {
+                Content = new XElement("JobRequest",
+                    new XElement("Id", jobId.ToString()),
+                    new XElement("CreatedAt", DateTime.Now))
+                    .ToString()
+            });
+        }
 
-        observer.JobStateChanged.WaitOne();
+        observer.AllJobsProcessed.WaitOne();
 
         dataCollectorTask.Stop();
         orchestrator.Stop();
         observer.Stop();
 
-        Assert.True(logger.Messages.Any(x => x.Contains("DataCollectionStarted")), "DataCollectionStarted not found in logger");
-        Assert.True(logger.Messages.Any(x => x.Contains("DataCollectionCompleted")), "DataCollectionCompleted not found in logger");
+        foreach (var jobId in jobIds)
+        {
+            Assert.True(logger.Messages.Any(x => x.Contains($"DataCollectionStarted({jobId})")), "DataCollectionStarted not found in logger");
+            Assert.True(logger.Messages.Any(x => x.Contains($"DataCollectionCompleted({jobId})")), "DataCollectionCompleted not found in logger");
+        }
     }
 
-    private class ObserverAgent : AbstractAgent
+    private class JobObserverAgent : AbstractAgent
     {
-        public ObserverAgent(ILogger logger)
+        private IList<Guid> myRemainingJobs;
+
+        public JobObserverAgent(ILogger logger, IEnumerable<Guid> jobsToObserve)
             : base(logger)
         {
-            Receive<JobStateChanged>((_, _) => JobStateChanged.Set());
+            myRemainingJobs = jobsToObserve.ToList();
+
+            Receive<JobStateChanged>(OnJobStateChanged);
         }
 
-        public ManualResetEvent JobStateChanged { get; } = new(false);
+        private void OnJobStateChanged(IAgent _, JobStateChanged evt)
+        {
+            myRemainingJobs.Remove(evt.JobId);
+            
+            if (myRemainingJobs.Count == 0)
+            {
+                AllJobsProcessed.Set();
+            }
+        }
+
+        public ManualResetEvent AllJobsProcessed { get; } = new(false);
     }
 }
