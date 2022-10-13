@@ -4,9 +4,13 @@ namespace AboutCleanCode.Orchestrator;
 
 class DataCollectorWorkerAgent : AbstractAgent
 {
-    public DataCollectorWorkerAgent(ILogger logger)
+    private readonly string myName;
+
+    public DataCollectorWorkerAgent(ILogger logger, string name)
         : base(logger)
     {
+        myName = name;
+
         Receive<CollectDataCommand>(OnCollectDataCommand);
     }
 
@@ -24,7 +28,7 @@ class DataCollectorWorkerAgent : AbstractAgent
 
         for (int i = 0; i < 10; ++i)
         {
-            Logger.Debug(this, $"Chunk {i}");
+            Logger.Debug(this, $"{myName}|Chunk {i}");
             Thread.Sleep(100);
         }
 
