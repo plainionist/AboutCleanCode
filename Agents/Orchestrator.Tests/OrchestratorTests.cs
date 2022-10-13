@@ -20,6 +20,8 @@ public class OrchestratorTests
             .Select(x => Guid.NewGuid())
             .ToList();
 
+        // setup all agents
+
         var observer = new JobObserverAgent(logger, jobIds);
         observer.Start();
 
@@ -29,6 +31,8 @@ public class OrchestratorTests
         var orchestrator = new OrchestratorAgent(logger, dataCollectorTask);
         orchestrator.JobObserver = observer;
         orchestrator.Start();
+
+        // queue all jobs
 
         foreach (var jobId in jobIds)
         {
@@ -41,12 +45,23 @@ public class OrchestratorTests
             });
         }
 
+        // wait for all jobs to finish
+
         observer.AllJobsProcessed.WaitOne();
+
+        // stop "agent system"
 
         dataCollectorTask.Stop();
         orchestrator.Stop();
         observer.Stop();
 
+        // for diagnosis purpose
+        foreach (var messages in logger.Messages)
+        {
+            Console.WriteLine(messages);
+        }
+
+        // verify proper processing of the jobs
         foreach (var jobId in jobIds)
         {
             Assert.True(logger.Messages.Any(x => x.Contains($"DataCollectionStarted({jobId})")), "DataCollectionStarted not found in logger");
@@ -54,9 +69,12 @@ public class OrchestratorTests
         }
     }
 
+    /// <summary>
+    /// Raises an event when all jobs to observe are processed.
+    /// </summary>
     private class JobObserverAgent : AbstractAgent
     {
-        private IList<Guid> myRemainingJobs;
+        private readonly IList<Guid> myRemainingJobs;
 
         public JobObserverAgent(ILogger logger, IEnumerable<Guid> jobsToObserve)
             : base(logger)
@@ -69,7 +87,7 @@ public class OrchestratorTests
         private void OnJobStateChanged(IAgent _, JobStateChanged evt)
         {
             myRemainingJobs.Remove(evt.JobId);
-            
+
             if (myRemainingJobs.Count == 0)
             {
                 AllJobsProcessed.Set();
