@@ -50,10 +50,18 @@ namespace AboutCleanCode.Orchestrator
 
         public void Start()
         {
+            PreStart();
+
             _ = Listen();
 
             Logger.Info(this, "started");
+
+            PostStart();
         }
+
+        protected virtual void PreStart() { }
+        protected virtual void PostStart() { }
+        protected virtual void PreStop() { }
 
         private async Task Listen()
         {
@@ -61,7 +69,10 @@ namespace AboutCleanCode.Orchestrator
             {
                 if (envelope.Message is PoisonPill)
                 {
+                    PreStop();
+
                     Logger.Info(this, "stopped");
+
                     break;
                 }
 

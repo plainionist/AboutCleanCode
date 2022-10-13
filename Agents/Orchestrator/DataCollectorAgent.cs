@@ -6,62 +6,80 @@ namespace AboutCleanCode.Orchestrator;
 
 class DataCollectorAgent : AbstractAgent
 {
-    private record Request(IAgent Requester, Guid JobId)
+    private record Request(IAgent Requester, Guid JobId);
+    private record Worker(AbstractAgent Agent)
     {
-        public bool IsRunning => Worker != null;
-        public IAgent Worker { get; set; }
+        public Request ActiveRequest { get; set; }
     }
 
-    private int myWorkerIdSeq = 0;
     private const int MaxChildren = 2;
 
-    private readonly List<Request> myWorkers;
+    private readonly Queue<Request> myRequests;
+    private readonly List<Worker> myWorkers;
 
     public DataCollectorAgent(ILogger logger)
         : base(logger)
     {
+        myRequests = new();
         myWorkers = new();
 
         Receive<CollectDataCommand>(OnCollectDataCommand);
         Receive<DataCollectedEvent>(OnDataCollectedEvent);
     }
 
+    protected override void PostStart()
+    {
+        for (int i = 0; i < MaxChildren; ++i)
+        {
+            var worker = new DataCollectorWorkerAgent(Logger, i.ToString());
+            worker.Start();
+            myWorkers.Add(new Worker(worker));
+        }
+    }
+
+    protected override void PreStop()
+    {
+        foreach (var worker in myWorkers)
+        {
+            worker.Agent.Stop();
+        }
+    }
+
     private void OnCollectDataCommand(IAgent sender, CollectDataCommand command)
     {
-        var request = new Request(sender, command.JobId);
-        myWorkers.Add(request);
+        myRequests.Enqueue(new Request(sender, command.JobId));
 
-        if (myWorkers.Count(x => x.IsRunning) < MaxChildren)
-        {
-            StartChild(request);
-        }
+        DispatchNextRequest();
     }
 
-    private void StartChild(Request request)
+    private void DispatchNextRequest()
     {
-        request.Requester.Post(this, new TaskStartedEvent(request.JobId));
+        if (!myRequests.Any())
+        {
+            return;
+        }
 
-        var worker = new DataCollectorWorkerAgent(Logger, (myWorkerIdSeq++).ToString());
-        worker.Start();
+        var worker = myWorkers.FirstOrDefault(x => x.ActiveRequest == null);
+        if (worker == null)
+        {
+            return;
+        }
 
-        worker.Post(this, new CollectDataCommand(request.JobId));
+        worker.ActiveRequest = myRequests.Dequeue();
 
-        request.Worker = worker;
+        worker.ActiveRequest.Requester.Post(this, new TaskStartedEvent(worker.ActiveRequest.JobId));
+
+        worker.Agent.Post(this, new CollectDataCommand(worker.ActiveRequest.JobId));
     }
 
-    private void OnDataCollectedEvent(IAgent worker, DataCollectedEvent evt)
+    private void OnDataCollectedEvent(IAgent sender, DataCollectedEvent evt)
     {
-        var request = myWorkers.Single(x => x.Worker == worker);
+        var worker = myWorkers.Single(x => x.Agent == sender);
 
-        request.Requester.Post(this, new TaskCompletedEvent(evt.JobId, evt.Payload));
-        worker.Post(this, new PoisonPill());
+        worker.ActiveRequest.Requester.Post(this, new TaskCompletedEvent(evt.JobId, evt.Payload));
 
-        myWorkers.Remove(request);
+        worker.ActiveRequest = null;
 
-        var nextRequest = myWorkers.FirstOrDefault(x => !x.IsRunning);
-        if (nextRequest != null)
-        {
-            StartChild(nextRequest);
-        }
+        DispatchNextRequest();
     }
 }
