@@ -10,11 +10,18 @@ namespace AboutCleanCode.Orchestrator
 {
     internal abstract class AbstractAgent : IAgent
     {
+        private readonly IAgent mySupervisor;
         private readonly Channel<Envelope> myQueue;
         private readonly Dictionary<Type, Delegate> myMessageHandlers;
 
         internal AbstractAgent(ILogger logger)
+            : this(null, logger)
         {
+        }
+
+        internal AbstractAgent(IAgent supervisor, ILogger logger)
+        {
+            mySupervisor = supervisor;
             Logger = logger;
 
             myQueue = Channel.CreateUnbounded<Envelope>();
@@ -82,8 +89,15 @@ namespace AboutCleanCode.Orchestrator
                 }
                 catch (Exception ex)
                 {
-                    Logger.Error(this, $"Failed to process '{envelope.Message.GetType().FullName}' from " +
-                        $"'{envelope.Sender.GetType().FullName}': {Environment.NewLine}{ex}");
+                    if (mySupervisor != null)
+                    {
+                        mySupervisor.Post(this, new MessageProcessingFailedEvent(envelope.Message, ex));
+                    }
+                    else
+                    {
+                        Logger.Error(this, $"Failed to process '{envelope.Message.GetType().FullName}' from " +
+                            $"'{envelope.Sender.GetType().FullName}': {Environment.NewLine}{ex}");
+                    }
                 }
             }
         }

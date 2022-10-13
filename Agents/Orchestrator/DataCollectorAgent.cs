@@ -25,13 +25,14 @@ class DataCollectorAgent : AbstractAgent
 
         Receive<CollectDataCommand>(OnCollectDataCommand);
         Receive<DataCollectedEvent>(OnDataCollectedEvent);
+        Receive<MessageProcessingFailedEvent>(OnMessageProcessingFailed);
     }
 
     protected override void PostStart()
     {
         for (int i = 0; i < MaxChildren; ++i)
         {
-            var worker = new DataCollectorWorkerAgent(Logger, i.ToString());
+            var worker = new DataCollectorWorkerAgent(this, Logger, i.ToString());
             worker.Start();
             myWorkers.Add(new Worker(worker));
         }
@@ -77,6 +78,17 @@ class DataCollectorAgent : AbstractAgent
         var worker = myWorkers.Single(x => x.Agent == sender);
 
         worker.ActiveRequest.Requester.Post(this, new TaskCompletedEvent(evt.JobId, evt.Payload));
+
+        worker.ActiveRequest = null;
+
+        DispatchNextRequest();
+    }
+
+    private void OnMessageProcessingFailed(IAgent sender, MessageProcessingFailedEvent evt)
+    {
+        var worker = myWorkers.Single(x => x.Agent == sender);
+
+        worker.ActiveRequest.Requester.Post(this, new TaskFailedEvent(worker.ActiveRequest.JobId, evt.Exception));
 
         worker.ActiveRequest = null;
 

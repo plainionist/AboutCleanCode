@@ -69,6 +69,62 @@ public class OrchestratorTests
         }
     }
 
+    [Test]
+    public void MessageProcessingFailed()
+    {
+        var logger = new FakeLogger();
+
+        var jobIds = new[] { new Guid("991bb0c7-b0d7-4fcb-8c79-cbb55613e772") };
+
+        // setup all agents
+
+        var observer = new JobObserverAgent(logger, jobIds);
+        observer.Start();
+
+        var dataCollectorTask = new DataCollectorAgent(logger);
+        dataCollectorTask.Start();
+
+        var orchestrator = new OrchestratorAgent(logger, dataCollectorTask);
+        orchestrator.JobObserver = observer;
+        orchestrator.Start();
+
+        // queue all jobs
+
+        foreach (var jobId in jobIds)
+        {
+            orchestrator.Post(orchestrator, new JobRequestReceivedMessage
+            {
+                Content = new XElement("JobRequest",
+                    new XElement("Id", jobId.ToString()),
+                    new XElement("CreatedAt", DateTime.Now))
+                    .ToString()
+            });
+        }
+
+        // wait for all jobs to finish
+
+        observer.AllJobsProcessed.WaitOne();
+
+        // stop "agent system"
+
+        dataCollectorTask.Stop();
+        orchestrator.Stop();
+        observer.Stop();
+
+        // for diagnosis purpose
+        foreach (var messages in logger.Messages)
+        {
+            Console.WriteLine(messages);
+        }
+
+        // verify proper processing of the jobs
+        foreach (var jobId in jobIds)
+        {
+            Assert.True(logger.Messages.Any(x => x.Contains($"DataCollectionStarted({jobId})")), "DataCollectionStarted not found in logger");
+            Assert.True(logger.Messages.Any(x => x.Contains($"DataCollectionFailed({jobId})")), "DataCollectionFailed not found in logger");
+        }
+    }
+
     /// <summary>
     /// Raises an event when all jobs to observe are processed.
     /// </summary>
