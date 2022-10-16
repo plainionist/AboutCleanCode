@@ -9,9 +9,9 @@ namespace AboutCleanCode.Orchestrator.Tests;
 
 public class OrchestratorTests
 {
-    [TestCase(1)]
-    [TestCase(2)]
-    [TestCase(3)]
+    // [TestCase(1)]
+    // [TestCase(2)]
+    [TestCase(4)]
     public void DataCollectionCompletesSuccessfully(int numJobs)
     {
         var logger = new FakeLogger();

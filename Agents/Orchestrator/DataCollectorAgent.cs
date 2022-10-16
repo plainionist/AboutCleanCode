@@ -1,43 +1,42 @@
-﻿using System;
-using System.Threading;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace AboutCleanCode.Orchestrator;
 
 class DataCollectorAgent : AbstractAgent
 {
+    private record Request(IAgent Requester, IAgent Worker);
+    private readonly List<Request> myRequests;
+    private int myWorkerIdSeq = 0;
+
     public DataCollectorAgent(ILogger logger)
         : base(logger)
     {
+        myRequests = new();
+
         Receive<CollectDataCommand>(OnCollectDataCommand);
+        Receive<DataCollectedEvent>(OnDataCollectedEvent);
     }
 
     private void OnCollectDataCommand(IAgent sender, CollectDataCommand command)
     {
-        try
-        {
-            sender.Post(this, new TaskStartedEvent(command.JobId));
+        sender.Post(this, new TaskStartedEvent(command.JobId));
 
-            var payload = CollectData();
+        var worker = new DataCollectorWorkerAgent(Logger, (myWorkerIdSeq++).ToString());
+        worker.Start();
 
-            sender.Post(this, new TaskCompletedEvent(command.JobId, payload));
-        }
-        catch (Exception exception)
-        {
-            sender.Post(this, new TaskFailedEvent(command.JobId, exception));
-        }
+        myRequests.Add(new Request(sender, worker));
+
+        worker.Post(this, command);
     }
 
-    // this takes a long time
-    private object CollectData()
+    private void OnDataCollectedEvent(IAgent sender, DataCollectedEvent evt)
     {
-        // TODO: implement
+        var request = myRequests.Single(x => x.Worker == sender);
+        myRequests.Remove(request);
 
-        for (int i = 0; i < 10; ++i)
-        {
-            Logger.Debug(this, $"Chunk {i}");
-            Thread.Sleep(100);
-        }
+        request.Requester.Post(this, new TaskCompletedEvent(evt.JobId,evt.Payload));
 
-        return null;
+        sender.Post(this, new PoisonPill());
     }
 }
