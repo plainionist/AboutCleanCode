@@ -18,6 +18,14 @@ class DataCollectorAgent : AbstractAgent
         Receive<DataCollectedEvent>(OnDataCollectedEvent);
     }
 
+    protected override void PreStop()
+    {
+        foreach(var request in myRequests)
+        {
+            request.Worker.Post(this, new PoisonPill());
+        }
+    }
+
     private void OnCollectDataCommand(IAgent sender, CollectDataCommand command)
     {
         sender.Post(this, new TaskStartedEvent(command.JobId));

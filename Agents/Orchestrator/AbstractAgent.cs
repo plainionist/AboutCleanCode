@@ -51,6 +51,8 @@ internal abstract class AbstractAgent : IAgent
         myListeningTask = Listen();
 
         Logger.Info(this, "started");
+
+        PostStart();
     }
 
     private async Task Listen()
@@ -59,7 +61,10 @@ internal abstract class AbstractAgent : IAgent
         {
             if (envelope.Message is PoisonPill)
             {
+                PreStop();
+
                 Logger.Info(this, "stopped");
+
                 break;
             }
 
@@ -74,6 +79,9 @@ internal abstract class AbstractAgent : IAgent
             }
         }
     }
+
+    protected virtual void PreStop() {}
+    protected virtual void PostStart() {}
 
     protected virtual void OnReceive(IAgent sender, object message)
     {
