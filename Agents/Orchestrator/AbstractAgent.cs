@@ -1,10 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using System.Threading.Channels;
 using System.Threading.Tasks;
-
-[assembly: InternalsVisibleTo("Orchestrator.Tests")]
 
 namespace AboutCleanCode.Orchestrator
 {
