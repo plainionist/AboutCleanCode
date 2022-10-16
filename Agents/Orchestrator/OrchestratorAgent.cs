@@ -31,7 +31,7 @@ internal class OrchestratorAgent : AbstractAgent
 
         // trigger collection of all relevant data before the data
         // of the job can be processed
-        myDataCollectorTask.Post(this, new CollectDataCommand { JobId = job.Id });
+        myDataCollectorTask.Post(this, new CollectDataCommand(job.Id));
     }
 
     private Job ParseRequest(string request)
