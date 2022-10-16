@@ -10,10 +10,16 @@ internal abstract class AbstractAgent : IAgent
     private readonly Channel<Envelope> myQueue;
     private readonly Dictionary<Type, Delegate> myMessageHandlers;
     private Task myListeningTask;
+    private readonly IAgent mySupervisor;
 
     internal AbstractAgent(ILogger logger)
+        : this(logger, null)
+    { }
+
+    internal AbstractAgent(ILogger logger, IAgent supervisor)
     {
         Logger = logger;
+        mySupervisor = supervisor;
 
         myQueue = Channel.CreateUnbounded<Envelope>();
         myMessageHandlers = new Dictionary<Type, Delegate>();
@@ -74,14 +80,21 @@ internal abstract class AbstractAgent : IAgent
             }
             catch (Exception ex)
             {
-                Logger.Error(this, $"Failed to process '{envelope.Message.GetType().FullName}' from " +
-                    $"'{envelope.Sender.GetType().FullName}': {Environment.NewLine}{ex}");
+                if (mySupervisor != null)
+                {
+                    mySupervisor.Post(this, new MessageProcessingFailedEvent(envelope.Message,ex));
+                }
+                else
+                {
+                    Logger.Error(this, $"Failed to process '{envelope.Message.GetType().FullName}' from " +
+                        $"'{envelope.Sender.GetType().FullName}': {Environment.NewLine}{ex}");
+                }
             }
         }
     }
 
-    protected virtual void PreStop() {}
-    protected virtual void PostStart() {}
+    protected virtual void PreStop() { }
+    protected virtual void PostStart() { }
 
     protected virtual void OnReceive(IAgent sender, object message)
     {
