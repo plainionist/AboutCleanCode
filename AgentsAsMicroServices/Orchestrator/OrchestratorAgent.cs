@@ -12,10 +12,10 @@ internal class OrchestratorAgent : AbstractAgent
     private readonly IAgent myDataCollectorTask;
     private readonly IDictionary<Guid, Job> myActiveJobs;
 
-    internal OrchestratorAgent(ILogger logger, IAgent dataCollectorTask)
-        : base(logger)
+    internal OrchestratorAgent(ILogger logger, IAgentSystem agentSystem)
+        : base(logger, "/user/orchestrator")
     {
-        myDataCollectorTask = dataCollectorTask;
+        myDataCollectorTask = agentSystem.Select("/user/dataCollector");
         myActiveJobs = new Dictionary<Guid, Job>();
 
         Receive<JobRequestReceivedMessage>(OnJobRequestReceived);

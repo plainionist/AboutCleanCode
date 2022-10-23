@@ -16,7 +16,7 @@ class DataCollectorAgent : AbstractAgent
     private const int MaxWorker = 2;
 
     public DataCollectorAgent(ILogger logger)
-        : base(logger)
+        : base(logger, "/user/dataCollector")
     {
         myRequests = new();
         myWorkers = new();

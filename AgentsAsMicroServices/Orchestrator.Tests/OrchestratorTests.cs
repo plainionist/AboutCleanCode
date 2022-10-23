@@ -11,7 +11,7 @@ public class OrchestratorTests
 {
     // [TestCase(1)]
     // [TestCase(2)]
-    // [TestCase(4)]
+    [TestCase(4)]
     public void DataCollectionCompletesSuccessfully(int numJobs)
     {
         var logger = new FakeLogger();
@@ -22,15 +22,20 @@ public class OrchestratorTests
 
         // setup all agents
 
+        var agentSystem = new AgentSystem();
+
         var observer = new JobObserverAgent(logger, jobIds);
         observer.Start();
+        agentSystem.Register(observer);
 
-        var dataCollectorTask = new DataCollectorAgent(logger);
-        dataCollectorTask.Start();
+        var dataCollector = new DataCollectorAgent(logger);
+        dataCollector.Start();
+        agentSystem.Register(dataCollector);
 
-        var orchestrator = new OrchestratorAgent(logger, dataCollectorTask);
+        var orchestrator = new OrchestratorAgent(logger, agentSystem);
         orchestrator.JobObserver = observer;
         orchestrator.Start();
+        agentSystem.Register(orchestrator);
 
         // queue all jobs
 
@@ -51,7 +56,7 @@ public class OrchestratorTests
 
         // stop "agent system"
 
-        dataCollectorTask.Stop();
+        dataCollector.Stop();
         orchestrator.Stop();
         observer.Stop();
 
@@ -69,7 +74,7 @@ public class OrchestratorTests
         }
     }
 
-    [Test]
+    //[Test]
     public void MessageProcessingFailed()
     {
         var logger = new FakeLogger();
@@ -78,15 +83,20 @@ public class OrchestratorTests
 
         // setup all agents
 
+        var agentSystem = new AgentSystem();
+
         var observer = new JobObserverAgent(logger, jobIds);
         observer.Start();
+        agentSystem.Register(observer);
 
-        var dataCollectorTask = new DataCollectorAgent(logger);
-        dataCollectorTask.Start();
+        var dataCollector = new DataCollectorAgent(logger);
+        dataCollector.Start();
+        agentSystem.Register(dataCollector);
 
-        var orchestrator = new OrchestratorAgent(logger, dataCollectorTask);
+        var orchestrator = new OrchestratorAgent(logger, agentSystem);
         orchestrator.JobObserver = observer;
         orchestrator.Start();
+        agentSystem.Register(orchestrator);
 
         // queue all jobs
 
@@ -107,7 +117,7 @@ public class OrchestratorTests
 
         // stop "agent system"
 
-        dataCollectorTask.Stop();
+        dataCollector.Stop();
         orchestrator.Stop();
         observer.Stop();
 
@@ -133,7 +143,7 @@ public class OrchestratorTests
         private readonly IList<Guid> myRemainingJobs;
 
         public JobObserverAgent(ILogger logger, IEnumerable<Guid> jobsToObserve)
-            : base(logger)
+            : base(logger, "/user/tests/jobObserver")
         {
             myRemainingJobs = jobsToObserve.ToList();
 

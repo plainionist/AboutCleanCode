@@ -8,7 +8,7 @@ class DataCollectorWorkerAgent : AbstractAgent
     private readonly string myName;
 
     public DataCollectorWorkerAgent(ILogger logger, IAgent supervisor, string name)
-        : base(logger, supervisor)
+        : base(logger, $"/user/dataCollector/worker/{name}", supervisor)
     {
         myName = name;
 

@@ -12,18 +12,21 @@ internal abstract class AbstractAgent : IAgent
     private Task myListeningTask;
     private readonly IAgent mySupervisor;
 
-    internal AbstractAgent(ILogger logger)
-        : this(logger, null)
+    internal AbstractAgent(ILogger logger, string name)
+        : this(logger, name, null)
     { }
 
-    internal AbstractAgent(ILogger logger, IAgent supervisor)
+    internal AbstractAgent(ILogger logger, string name, IAgent supervisor)
     {
         Logger = logger;
+        Name = name;
         mySupervisor = supervisor;
 
         myQueue = Channel.CreateUnbounded<Envelope>();
         myMessageHandlers = new Dictionary<Type, Delegate>();
     }
+
+    public string Name { get; }
 
     protected void Receive<T>(Action<IAgent, T> handler)
     {
@@ -82,7 +85,7 @@ internal abstract class AbstractAgent : IAgent
             {
                 if (mySupervisor != null)
                 {
-                    mySupervisor.Post(this, new MessageProcessingFailedEvent(envelope.Message,ex));
+                    mySupervisor.Post(this, new MessageProcessingFailedEvent(envelope.Message, ex));
                 }
                 else
                 {
