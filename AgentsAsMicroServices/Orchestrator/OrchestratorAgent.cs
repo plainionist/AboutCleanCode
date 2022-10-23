@@ -9,19 +9,27 @@ namespace AboutCleanCode.Orchestrator;
 
 internal class OrchestratorAgent : AbstractAgent
 {
-    private readonly IAgent myDataCollectorTask;
+    private readonly IAgentSystem myAgentSystem;
+    private IAgent myDataCollectorTask;
+    private IAgent myJobObserver;
     private readonly IDictionary<Guid, Job> myActiveJobs;
 
     internal OrchestratorAgent(ILogger logger, IAgentSystem agentSystem)
         : base(logger, "/user/orchestrator")
     {
-        myDataCollectorTask = agentSystem.Select("/user/dataCollector");
+        myAgentSystem = agentSystem;
         myActiveJobs = new Dictionary<Guid, Job>();
 
         Receive<JobRequestReceivedMessage>(OnJobRequestReceived);
         Receive<TaskStartedEvent>(OnDataCollectionStarted);
         Receive<TaskCompletedEvent>(OnDataCollectionCompleted);
         Receive<TaskFailedEvent>(OnDataCollectionFailed);
+    }
+
+    protected override void PostStart()
+    {
+        myDataCollectorTask = myAgentSystem.Select("/user/dataCollector");
+        myJobObserver = myAgentSystem.TrySelect("/user/tests/jobObserver");
     }
 
     private void OnJobRequestReceived(IAgent _, JobRequestReceivedMessage command)
@@ -55,7 +63,7 @@ internal class OrchestratorAgent : AbstractAgent
 
         // TODO: decide about next step and trigger its execution
 
-        JobObserver?.Post(this, new JobStateChanged(e.JobId));
+        myJobObserver?.Post(this, new JobStateChanged(e.JobId));
     }
 
     private void OnDataCollectionFailed(IAgent _, TaskFailedEvent e)
@@ -66,11 +74,6 @@ internal class OrchestratorAgent : AbstractAgent
 
         // TODO: error handling - inform operators
 
-        JobObserver?.Post(this, new JobStateChanged(e.JobId));
+        myJobObserver?.Post(this, new JobStateChanged(e.JobId));
     }
-
-    /// <summary>
-    /// Test API
-    /// </summary>
-    public IAgent JobObserver { get; set; }
 }

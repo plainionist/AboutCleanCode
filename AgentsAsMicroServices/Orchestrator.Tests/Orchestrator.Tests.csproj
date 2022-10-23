@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Orchestrator\Orchestrator.csproj" />
+    <ProjectReference Include="..\AgentHost\AgentHost.csproj" />
   </ItemGroup>
 
 </Project>

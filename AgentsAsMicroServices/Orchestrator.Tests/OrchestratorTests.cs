@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Xml.Linq;
+using AboutCleanCode.AgentHost;
 using NUnit.Framework;
 
 namespace AboutCleanCode.Orchestrator.Tests;
@@ -22,23 +23,21 @@ public class OrchestratorTests
 
         // setup all agents
 
-        var agentSystem = new AgentSystem();
+        var orchestratorHost = new HttpAgentsHost(logger);
+        orchestratorHost.RunAsync("--name=Orchestrator");
+
+        var dataCollectorHost = new HttpAgentsHost(logger);
+        dataCollectorHost.RunAsync("--name=DataCollector");
+
+        var testHost  = new HttpAgentsHost(logger);
+        testHost.RunAsync("--name=Tests");
 
         var observer = new JobObserverAgent(logger, jobIds);
         observer.Start();
-        agentSystem.Register(observer);
-
-        var dataCollector = new DataCollectorAgent(logger);
-        dataCollector.Start();
-        agentSystem.Register(dataCollector);
-
-        var orchestrator = new OrchestratorAgent(logger, agentSystem);
-        orchestrator.JobObserver = observer;
-        orchestrator.Start();
-        agentSystem.Register(orchestrator);
+        testHost.AgentSystem.Register(observer);
 
         // queue all jobs
-
+        var orchestrator = testHost.AgentSystem.Select("/user/orchestrator");
         foreach (var jobId in jobIds)
         {
             orchestrator.Post(orchestrator, new JobRequestReceivedMessage
@@ -56,9 +55,9 @@ public class OrchestratorTests
 
         // stop "agent system"
 
-        dataCollector.Stop();
-        orchestrator.Stop();
-        observer.Stop();
+        testHost.Stop();
+        orchestratorHost.Stop();
+        dataCollectorHost.Stop();
 
         // for diagnosis purpose
         foreach (var messages in logger.Messages)
@@ -71,67 +70,6 @@ public class OrchestratorTests
         {
             Assert.True(logger.Messages.Any(x => x.Contains($"DataCollectionStarted({jobId})")), "DataCollectionStarted not found in logger");
             Assert.True(logger.Messages.Any(x => x.Contains($"DataCollectionCompleted({jobId})")), "DataCollectionCompleted not found in logger");
-        }
-    }
-
-    //[Test]
-    public void MessageProcessingFailed()
-    {
-        var logger = new FakeLogger();
-
-        var jobIds = new[] { new Guid("991bb0c7-b0d7-4fcb-8c79-cbb55613e772") };
-
-        // setup all agents
-
-        var agentSystem = new AgentSystem();
-
-        var observer = new JobObserverAgent(logger, jobIds);
-        observer.Start();
-        agentSystem.Register(observer);
-
-        var dataCollector = new DataCollectorAgent(logger);
-        dataCollector.Start();
-        agentSystem.Register(dataCollector);
-
-        var orchestrator = new OrchestratorAgent(logger, agentSystem);
-        orchestrator.JobObserver = observer;
-        orchestrator.Start();
-        agentSystem.Register(orchestrator);
-
-        // queue all jobs
-
-        foreach (var jobId in jobIds)
-        {
-            orchestrator.Post(orchestrator, new JobRequestReceivedMessage
-            {
-                Content = new XElement("JobRequest",
-                    new XElement("Id", jobId.ToString()),
-                    new XElement("CreatedAt", DateTime.Now))
-                    .ToString()
-            });
-        }
-
-        // wait for all jobs to finish
-
-        observer.AllJobsProcessed.WaitOne();
-
-        // stop "agent system"
-
-        dataCollector.Stop();
-        orchestrator.Stop();
-        observer.Stop();
-
-        // for diagnosis purpose
-        foreach (var messages in logger.Messages)
-        {
-            Console.WriteLine(messages);
-        }
-
-        // verify proper processing of the jobs
-        foreach (var jobId in jobIds)
-        {
-            Assert.True(logger.Messages.Any(x => x.Contains($"DataCollectionStarted({jobId})")), "DataCollectionStarted not found in logger");
-            Assert.True(logger.Messages.Any(x => x.Contains($"DataCollectionFailed({jobId})")), "DataCollectionFailed not found in logger");
         }
     }
 

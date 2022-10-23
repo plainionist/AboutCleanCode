@@ -1,4 +1,7 @@
+using System;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Net.Http.Json;
 using Newtonsoft.Json;
 
 namespace AboutCleanCode.Orchestrator;
@@ -6,36 +9,66 @@ namespace AboutCleanCode.Orchestrator;
 public interface IAgentSystem
 {
     IAgent Select(string name);
+    IAgent TrySelect(string name);
 }
 
 public class AgentSystem : IAgentSystem
 {
-    private Dictionary<string, IAgent> myAgents = new();
+    private Dictionary<string, IHostedAgent> myAgents = new();
 
     public IAgent Select(string name) =>
         myAgents[name];
 
-    public void Register(IAgent agent)
+    public IAgent TrySelect(string name) =>
+        myAgents.TryGetValue(name, out var agent) ? agent : null;
+
+    public void Register(IHostedAgent agent)
     {
-        var serverProxy = new AgentServerProxy(agent);
-        // TODO: intermediate step - AgentClientProxy will later implement the real remoting
-        var clientProxy = new AgentClientProxy(serverProxy);
-        myAgents.Add(agent.Name, clientProxy);
+        myAgents.Add(agent.Name, agent);
+    }
+
+    public void Register(string name, Uri baseUrl)
+    {
+        var clientProxy = new AgentClientProxy(name, baseUrl);
+        myAgents.Add(name, clientProxy);
+    }
+
+    public void Start()
+    {
+        foreach (var agent in myAgents.Values)
+        {
+            agent.Start();
+        }
+    }
+
+    public void Stop()
+    {
+        foreach (var agent in myAgents.Values)
+        {
+            agent.Stop();
+        }
     }
 }
 
-class AgentClientProxy : IAgent
+public class AgentMessage
 {
-    private readonly IAgent myImpl;
+    public string Sender { get; set; }
+    public string Message { get; set; }
+}
 
-    public AgentClientProxy(IAgent impl)
+class AgentClientProxy : IHostedAgent
+{
+    private readonly string myBaseUrl;
+
+    public AgentClientProxy(string name, Uri baseUrl)
     {
-        myImpl = impl;
+        Name = name;
+        myBaseUrl = baseUrl.ToString().TrimEnd('/');
     }
 
-    public string Name => $"/system/clientProxyOf({myImpl.Name})";
+    public string Name { get; }
 
-    public void Post(IAgent sender, object message)
+    public async void Post(IAgent sender, object message)
     {
         var settings = new JsonSerializerSettings
         {
@@ -43,11 +76,36 @@ class AgentClientProxy : IAgent
         };
 
         var json = JsonConvert.SerializeObject(message, settings);
-        myImpl.Post(sender, json);
+
+        var agentMessage = new AgentMessage
+        {
+            Sender = sender.Name,
+            Message = json
+        };
+
+        using (var client = new HttpClient())
+        {
+            var response = await client.PostAsync(new Uri($"{myBaseUrl}{Name}"),
+                JsonContent.Create(agentMessage));
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new InvalidOperationException($"Failed to send message {message.GetType().Name} to {Name}");
+            }
+        }
+    }
+
+    public void Start()
+    {
+        // nothing to do
+    }
+
+    public void Stop()
+    {
+        // nothing to do
     }
 }
 
-class AgentServerProxy : IAgent
+public class AgentServerProxy : IAgent
 {
     private readonly IAgent myImpl;
 

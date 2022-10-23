@@ -1,6 +1,5 @@
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+using AboutCleanCode.AgentHost;
 
-app.Run();
+var host = new HttpAgentsHost(new ConsoleLogger());
+host.RunAsync(args);

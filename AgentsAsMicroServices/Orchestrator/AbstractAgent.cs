@@ -5,7 +5,13 @@ using System.Threading.Tasks;
 
 namespace AboutCleanCode.Orchestrator;
 
-internal abstract class AbstractAgent : IAgent
+public interface IHostedAgent : IAgent
+{
+    void Start();
+    void Stop();
+}
+
+internal abstract class AbstractAgent : IHostedAgent
 {
     private readonly Channel<Envelope> myQueue;
     private readonly Dictionary<Type, Delegate> myMessageHandlers;
