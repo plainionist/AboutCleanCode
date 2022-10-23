@@ -23,13 +23,13 @@ public class OrchestratorTests
 
         // setup all agents
 
-        var orchestratorHost = new HttpAgentsHost(logger);
-        orchestratorHost.RunAsync("--name=Orchestrator");
+        var orchestratorHost = new Launcher(logger);
+        orchestratorHost.Start("Orchestrator");
 
-        var dataCollectorHost = new HttpAgentsHost(logger);
-        dataCollectorHost.RunAsync("--name=DataCollector");
+        var dataCollectorHost = new Launcher(logger);
+        dataCollectorHost.Start("DataCollector");
 
-        var testHost  = new HttpAgentsHost(logger);
+        var testHost = new HttpAgentsHost(logger);
         testHost.RunAsync("--name=Tests");
 
         var observer = new JobObserverAgent(logger, jobIds);
