@@ -4,10 +4,21 @@ namespace Athena.Core.Domain;
 
 public class Improvement
 {
-    public int Id { get; init; }
-    public string Title { get; init; }
-    public string Description { get; init; }
-    public string IterationPath { get; init; }
-    public string AssignedTo { get; init; }
-    public IList<WorkPackage> WorkPackages { get; } = new List<WorkPackage>();
+    public Improvement(int id, string title, string description, IterationPath iterationPath,
+        EMail assignedTo, IReadOnlyList<WorkPackage> workPackages)
+    {
+        Id = id;
+        Title = title;
+        Description = description;
+        IterationPath = iterationPath;
+        AssignedTo = assignedTo;
+        WorkPackages = workPackages;
+    }
+
+    public int Id { get; }
+    public string Title { get; }
+    public string Description { get; }
+    public IterationPath IterationPath { get; }
+    public EMail AssignedTo { get; }
+    public IReadOnlyList<WorkPackage> WorkPackages { get; }
 }

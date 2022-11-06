@@ -4,12 +4,26 @@ namespace Athena.Core.Domain;
 
 public class WorkPackage
 {
-    public int Id { get; init; }
-    public string Title { get; init; }
-    public string Description { get; init; }
-    public string IterationPath { get; init; }
-    public string AreaPath { get; init; }
-    public string AssignedTo { get; init; }
-    public Improvement Improvement { get; init; }
-    public IList<UserStory> WorkPackages { get; } = new List<UserStory>();
+    public WorkPackage(int id, string title, string description, IterationPath iterationPath,
+        AreaPath areaPath, EMail assignedTo, Improvement improvement,
+        IReadOnlyCollection<UserStory> workPackages)
+    {
+        Id = id;
+        Title = title;
+        Description = description;
+        IterationPath = iterationPath;
+        AreaPath = areaPath;
+        AssignedTo = assignedTo;
+        Improvement = improvement;
+        WorkPackages = workPackages;
+    }
+
+    public int Id { get; }
+    public string Title { get; }
+    public string Description { get; }
+    public IterationPath IterationPath { get; }
+    public AreaPath AreaPath { get; }
+    public EMail AssignedTo { get; }
+    public Improvement Improvement { get; }
+    public IReadOnlyCollection<UserStory> WorkPackages { get; }
 }
