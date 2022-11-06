@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using Athena.Core.Domain;
 using Athena.Core.UseCases;
 using Microsoft.EntityFrameworkCore;
 
-namespace Athena.Adapters.DataAccess;
+namespace Athena.IO.DataAccess;
 
 internal class EntityFrameworkRepository : IBacklogRepository
 {
