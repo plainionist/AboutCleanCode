@@ -13,6 +13,6 @@ internal class FakeDatabase : IDatabase
         myWorkItems = workItems;
     }
 
-    public IQueryable<ImprovementDTO> GetBacklog() =>
+    public IEnumerable<ImprovementDTO> GetBacklog() =>
         myWorkItems.AsQueryable();
 }

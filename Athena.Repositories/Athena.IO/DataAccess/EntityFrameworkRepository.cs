@@ -1,4 +1,4 @@
-using System.Linq;
+using System.Collections.Generic;
 using Athena.Adapters.DataAccess;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,7 +13,7 @@ internal class EntityFrameworkRepository : IDatabase
         myDbContext = new BacklogContext();
     }
 
-    public IQueryable<ImprovementDTO> GetBacklog() =>
+    public IEnumerable<ImprovementDTO> GetBacklog() =>
         myDbContext.Improvements;
 
     class BacklogContext : DbContext

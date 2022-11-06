@@ -1,8 +1,8 @@
-using System.Linq;
+using System.Collections.Generic;
 
 namespace Athena.Adapters.DataAccess;
 
 public interface IDatabase
 {
-    IQueryable<ImprovementDTO> GetBacklog();
+    IEnumerable<ImprovementDTO> GetBacklog();
 }
