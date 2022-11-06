@@ -5,7 +5,7 @@ using Microsoft.Data.Sqlite;
 
 namespace Athena.IO.DataAccess;
 
-internal class SqlRepository : IDatabase
+internal class SqlRepository : ISqlDatabase
 {
     private readonly SqliteConnection myConnection;
 
@@ -15,32 +15,32 @@ internal class SqlRepository : IDatabase
         myConnection.Open();
     }
 
-    public IEnumerable<ImprovementDTO> GetBacklog()
+    public IEnumerable<WorkItemDTO> Query(string sql)
     {
         var cmd = myConnection.CreateCommand();
-        cmd.CommandText = "SELECT * FROM Improvements ....";
+        cmd.CommandText = sql;
 
         using var reader = cmd.ExecuteReader();
         while (reader.Read())
         {
-            yield return new ImprovementDTO
+            var fields = new Dictionary<string, object>();
+            for (int i = 0; i < reader.FieldCount; ++i)
+            {
+                fields.Add(reader.GetName(i), reader.GetValue(i));
+            }
+
+            yield return new WorkItemDTO
             {
                 Id = Convert.ToInt32(reader["Id"]),
-                Title = reader["Title"].ToString(),
-                Description = reader["Description"].ToString(),
-                IterationPath = reader["IterationPath"].ToString(),
-                AssignedTo = reader["AssignedTo"].ToString(),
-                // TODO: add WorkPackages
+                Fields = fields
             };
         }
     }
 
-    public void CreateSchema()
+    public void Execute(string sql)
     {
         var cmd = myConnection.CreateCommand();
-        cmd.CommandText = "CREATE TABLE Improvements { ... }";
+        cmd.CommandText = sql;
         cmd.ExecuteNonQuery();
-
-        // TODO: create other tables
     }
 }
