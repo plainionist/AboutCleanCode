@@ -1,12 +1,10 @@
-using System.Collections.Generic;
 using System.Linq;
-using Athena.Core.Domain;
-using Athena.Core.UseCases;
+using Athena.Adapters.DataAccess;
 using Microsoft.EntityFrameworkCore;
 
 namespace Athena.IO.DataAccess;
 
-internal class EntityFrameworkRepository : IBacklogRepository
+internal class EntityFrameworkRepository : IDatabase
 {
     private readonly BacklogContext myDbContext;
 
@@ -15,14 +13,12 @@ internal class EntityFrameworkRepository : IBacklogRepository
         myDbContext = new BacklogContext();
     }
 
-    public IReadOnlyCollection<Improvement> GetBacklog()
-    {
-        return myDbContext.Improvements.ToList();
-    }
+    public IQueryable<ImprovementDTO> GetBacklog() =>
+        myDbContext.Improvements;
 
     class BacklogContext : DbContext
     {
-        public DbSet<Improvement> Improvements { get; set; }
+        public DbSet<ImprovementDTO> Improvements { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

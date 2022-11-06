@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Athena.Adapters.DataAccess;
 using Athena.Adapters.TestApi;
 using NUnit.Framework;
 
@@ -13,7 +14,7 @@ internal class ScopingBacklogTests
         var testApi = new ScopeBacklogApi();
 
         // TODO: create backlog
-        var workItems = new List<WorkItem>();
+        var workItems = new List<ImprovementDTO>();
 
         var vm = testApi.ScopeBacklog(workItems);
 
