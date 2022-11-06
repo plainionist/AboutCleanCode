@@ -21,7 +21,7 @@ internal class SqlBacklogRepository : IBacklogRepository
         return workItems
             .Where(x => x.Fields["WorkItemType"].ToString() == "Improvement")
             .Select(x => new Improvement(
-                id: x.Id,
+                id: x.Id.Value,
                 title: x.Fields["Title"].ToString(),
                 description: x.Fields["Description"].ToString(),
                 iterationPath: x.Fields["IterationPath"] != null ? new IterationPath(x.Fields["IterationPath"].ToString()) : null,
