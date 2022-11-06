@@ -11,7 +11,7 @@ public class ScopeBacklogUseCase
 
     public ScopedBacklogResponse ScopeBacklog()
     {
-        // TODO: implement
+        // TODO: implement ranking and cut-line computation
         return null;
     }
 }
