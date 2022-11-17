@@ -1,4 +1,4 @@
-using System.Threading;
+using System.Threading.Tasks;
 using NUnit.Framework;
 
 namespace AwaitableEvents.Tests;
@@ -6,23 +6,13 @@ namespace AwaitableEvents.Tests;
 public class Tests
 {
     [Test]
-    public void WaitForEvents()
+    public async Task WaitForEvents()
     {
         var component = new AlgorithmsComponent();
 
         component.RunAsync(new InputData(21));
 
-        // TODO: isn't there a better way?
-
-        var evt = new ManualResetEvent(false);
-        AlgorithmResult result =null;
-        component.AlgorithmFinished += (_, e) =>
-        {
-            result = e.Result;
-            evt.Set();
-        };
-
-        evt.WaitOne();
+        var result = await component;
 
         Assert.That(result.Value, Is.EqualTo(42));
     }
