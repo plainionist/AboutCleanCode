@@ -8,13 +8,17 @@ public interface IAlgorithmsComponent
 {
     void RunAsync(InputData input);
 
+    Guid LatestRequestId { get; }
+
     event EventHandler<AlgorithmFinishedEventArgs> AlgorithmFinished;
 }
 
 public static class AlgorithmsComponentExtensions
 {
-    public static TaskAwaiter<AlgorithmResult> GetAwaiter(this IAlgorithmsComponent self, Guid requestId)
+    public static TaskAwaiter<AlgorithmResult> GetAwaiter(this IAlgorithmsComponent self)
     {
+        var requestId = self.LatestRequestId;
+
         var tcs = new TaskCompletionSource<AlgorithmResult>();
 
         void OnAlgorithmFinished(object _, AlgorithmFinishedEventArgs e)
