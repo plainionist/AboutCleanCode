@@ -14,5 +14,6 @@ internal class SomeComponent
         using var logger = myLogger.Scope(this);
 
         // ... all the logic goes here ...
+
     }
 }
