@@ -13,12 +13,17 @@ public interface IAlgorithmsComponent
 
 public static class AlgorithmsComponentExtensions
 {
-    public static TaskAwaiter<AlgorithmResult> GetAwaiter(this IAlgorithmsComponent self)
+    public static TaskAwaiter<AlgorithmResult> GetAwaiter(this IAlgorithmsComponent self, Guid requestId)
     {
         var tcs = new TaskCompletionSource<AlgorithmResult>();
 
         void OnAlgorithmFinished(object _, AlgorithmFinishedEventArgs e)
         {
+            if (requestId != e.RequestId)
+            {
+                return;
+            }
+
             self.AlgorithmFinished -= OnAlgorithmFinished;
             tcs.SetResult(e.Result);
         }

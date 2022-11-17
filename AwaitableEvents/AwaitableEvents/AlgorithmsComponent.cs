@@ -11,6 +11,6 @@ public class AlgorithmsComponent : IAlgorithmsComponent
     {
         // dummy implmentation
         Task.Delay(5000)
-            .ContinueWith(_ => AlgorithmFinished?.Invoke(this, new AlgorithmFinishedEventArgs(new AlgorithmResult(42))));
+            .ContinueWith(_ => AlgorithmFinished?.Invoke(this, new AlgorithmFinishedEventArgs(input.RequestId, new AlgorithmResult(42))));
     }
 }
