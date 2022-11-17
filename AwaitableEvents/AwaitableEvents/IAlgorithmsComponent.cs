@@ -6,33 +6,31 @@ namespace AwaitableEvents;
 
 public interface IAlgorithmsComponent
 {
-    void RunAsync(InputData input);
-
-    Guid LatestRequestId { get; }
+    Future RunAsync(InputData input);
 
     event EventHandler<AlgorithmFinishedEventArgs> AlgorithmFinished;
 }
 
 public static class AlgorithmsComponentExtensions
 {
-    public static TaskAwaiter<AlgorithmResult> GetAwaiter(this IAlgorithmsComponent self)
+    public static TaskAwaiter<AlgorithmResult> GetAwaiter(this Future self)
     {
-        var requestId = self.LatestRequestId;
-
         var tcs = new TaskCompletionSource<AlgorithmResult>();
+
+        // TODO: we should probably check whether result is already available
 
         void OnAlgorithmFinished(object _, AlgorithmFinishedEventArgs e)
         {
-            if (requestId != e.RequestId)
+            if (self.RequestId != e.RequestId)
             {
                 return;
             }
 
-            self.AlgorithmFinished -= OnAlgorithmFinished;
+            self.AlgorithmsComponent.AlgorithmFinished -= OnAlgorithmFinished;
             tcs.SetResult(e.Result);
         }
 
-        self.AlgorithmFinished += OnAlgorithmFinished;
+        self.AlgorithmsComponent.AlgorithmFinished += OnAlgorithmFinished;
 
         return tcs.Task.GetAwaiter();
     }

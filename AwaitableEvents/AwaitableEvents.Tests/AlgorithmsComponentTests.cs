@@ -10,9 +10,7 @@ public class Tests
     {
         var component = new AlgorithmsComponent();
 
-        component.RunAsync(new InputData(21));
-
-        var result = await component;
+        var result = await component.RunAsync(new InputData(21));
 
         Assert.That(result.Value, Is.EqualTo(42));
     }
