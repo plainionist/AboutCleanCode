@@ -4,7 +4,7 @@ internal class Caller
 {
     public void Initialize(SomeModel model)
     {
-        // TODO: temporarily disable events ?
+        using var guard = model.CreateChangedGuard();
 
         model.Value1 = "foo";
         model.Value2 = "bar";
@@ -15,7 +15,7 @@ internal class Caller
 
     public void SetFromConfiguration(SomeModel model)
     {
-        // TODO: temporarily disable events ?
+        using var guard = model.CreateChangedGuard();
 
         model.Value2 = GetConfigurationValue("Value2", model.Value2);
         model.Value3 = GetConfigurationValue("Value3", model.Value3);

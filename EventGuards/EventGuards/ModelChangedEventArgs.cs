@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace EventGuards;
 
@@ -6,9 +8,14 @@ public class ModelChangedEventArgs : EventArgs
 {
     public ModelChangedEventArgs(string propertyName)
     {
-        PropertyName = propertyName;
+        PropertyNames = new List<string> { propertyName };
     }
 
-    public string PropertyName { get; }
+    public ModelChangedEventArgs(IEnumerable<string> propertyNames)
+    {
+        PropertyNames = propertyNames.ToList();
+    }
+
+    public IReadOnlyCollection<string> PropertyNames { get; }
 }
 
