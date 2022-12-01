@@ -2,9 +2,9 @@
 
 namespace AwaitableEvents;
 
-public class InputData
+public class AlgorithmInput
 {
-    public InputData(int value)
+    public AlgorithmInput(int value)
     {
         RequestId = Guid.NewGuid();
         Value = value;

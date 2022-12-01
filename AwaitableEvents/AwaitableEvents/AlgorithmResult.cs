@@ -6,5 +6,6 @@ public class AlgorithmResult
     {
         Value = value;
     }
+
     public int Value { get; }
 }
