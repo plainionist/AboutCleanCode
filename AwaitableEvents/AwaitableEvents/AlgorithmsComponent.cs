@@ -7,7 +7,7 @@ public class AlgorithmsComponent : IAlgorithmsComponent
 {
     public event EventHandler<AlgorithmFinishedEventArgs> AlgorithmFinished;
 
-    public void RunAsync(AlgorithmInput input)
+    public void RunAlgorithm(AlgorithmInput input)
     {
         var requestId = input.RequestId;
 

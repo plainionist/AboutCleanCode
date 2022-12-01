@@ -4,7 +4,7 @@ namespace AwaitableEvents;
 
 public interface IAlgorithmsComponent
 {
-    void RunAsync(AlgorithmInput input);
+    void RunAlgorithm(AlgorithmInput input);
 
     event EventHandler<AlgorithmFinishedEventArgs> AlgorithmFinished;
 }

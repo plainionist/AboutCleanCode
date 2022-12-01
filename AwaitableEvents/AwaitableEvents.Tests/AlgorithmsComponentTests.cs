@@ -3,14 +3,14 @@ using NUnit.Framework;
 
 namespace AwaitableEvents.Tests;
 
-public class Tests
+public class AlgorithmsComponentTests
 {
     [Test]
     public void WaitForEvents()
     {
         var component = new AlgorithmsComponent();
 
-        component.RunAsync(new AlgorithmInput(21));
+        component.RunAlgorithm(new AlgorithmInput(21));
 
         // TODO: isn't there a better way?
 
