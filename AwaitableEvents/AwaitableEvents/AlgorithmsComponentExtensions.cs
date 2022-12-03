@@ -1,36 +1,54 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 
 namespace AwaitableEvents;
 
 public static class AlgorithmsComponentExtensions
 {
-    public record AlgoResultHandle(IAlgorithmsComponent Component, Guid RequestId);
+    public record AlgorithmFuture(IAlgorithmsComponent Component, Guid RequestId);
 
-    public static AlgoResultHandle RunAsync(this IAlgorithmsComponent self, AlgorithmInput input)
+    public static AlgorithmFuture RunAsync(this IAlgorithmsComponent self, AlgorithmInput input)
     {
         self.RunAlgorithm(input);
-        return new AlgoResultHandle(self, input.RequestId);
+        return new AlgorithmFuture(self, input.RequestId);
     }
 
-    public static TaskAwaiter<AlgorithmResult> GetAwaiter(this AlgoResultHandle handle)
-    {
-        var tcs = new TaskCompletionSource<AlgorithmResult>();
+    public static AlgorithmsAwaiter GetAwaiter(this AlgorithmFuture future) =>
+        new AlgorithmsAwaiter(future);
 
-        void OnAlgorithmFinished(object _, AlgorithmFinishedEventArgs e)
+    public class AlgorithmsAwaiter : INotifyCompletion
+    {
+        private readonly IAlgorithmsComponent myComponent;
+        private readonly Guid myRequestId;
+        private AlgorithmResult myResult;
+        private Action myContinuation;
+
+        public AlgorithmsAwaiter(AlgorithmFuture future)
         {
-            if ( e.Result.RequestId != handle.RequestId)
+            myComponent = future.Component;
+            myComponent.AlgorithmFinished += OnAlgorithmFinished;
+
+            myRequestId = future.RequestId;
+        }
+
+        private void OnAlgorithmFinished(object sender, AlgorithmFinishedEventArgs e)
+        {
+            if (myRequestId != e.Result.RequestId)
             {
                 return;
             }
 
-            handle.Component.AlgorithmFinished -= OnAlgorithmFinished;
-            tcs.SetResult(e.Result);
+            myComponent.AlgorithmFinished -= OnAlgorithmFinished;
+            myResult = e.Result;
+
+            myContinuation();
         }
 
-        handle.Component.AlgorithmFinished += OnAlgorithmFinished;
+        public bool IsCompleted => myResult != null;
 
-        return tcs.Task.GetAwaiter();
+        public AlgorithmResult GetResult() => myResult;
+
+        public void OnCompleted(Action continuation) =>
+            myContinuation = continuation;
     }
 }
