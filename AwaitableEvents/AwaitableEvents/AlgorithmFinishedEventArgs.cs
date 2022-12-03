@@ -4,12 +4,10 @@ namespace AwaitableEvents;
 
 public class AlgorithmFinishedEventArgs : EventArgs
 {
-    public AlgorithmFinishedEventArgs(Guid requestId, AlgorithmResult result)
+    public AlgorithmFinishedEventArgs(AlgorithmResult result)
     {
-        RequestId = requestId;
         Result = result;
     }
 
-    public Guid RequestId { get; }
     public AlgorithmResult Result { get; }
 }

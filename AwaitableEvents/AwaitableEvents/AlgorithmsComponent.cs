@@ -1,25 +1,41 @@
 ﻿using System;
-using System.Threading.Tasks;
+using System.ComponentModel;
+using System.Threading;
 
 namespace AwaitableEvents;
 
 public class AlgorithmsComponent : IAlgorithmsComponent
 {
+    private readonly BackgroundWorker myWorker;
+
+    public AlgorithmsComponent()
+    {
+        myWorker = new BackgroundWorker();
+        myWorker.DoWork += OnDoWork;
+        myWorker.RunWorkerCompleted += OnCompleted;
+    }
+
+    private void OnDoWork(object sender, DoWorkEventArgs e)
+    {
+        var input = (AlgorithmInput)e.Argument;
+
+        // dummy implementation
+
+        Thread.Sleep(2000);
+
+        e.Result = new AlgorithmResult(input.RequestId, input.Value * 2);
+    }
+
+    private void OnCompleted(object sender, RunWorkerCompletedEventArgs e)
+    {
+        var result = (AlgorithmResult)e.Result;
+        AlgorithmFinished?.Invoke(this, new AlgorithmFinishedEventArgs(result));
+    }
+
     public event EventHandler<AlgorithmFinishedEventArgs> AlgorithmFinished;
 
     public void RunAlgorithm(AlgorithmInput input)
     {
-        var requestId = input.RequestId;
-
-        ComputeAlgorithmResult(input)
-            .ContinueWith(t => RaiseAlgorithmFinished(requestId, t));
+        myWorker.RunWorkerAsync(input);
     }
-
-    private Task<AlgorithmResult> ComputeAlgorithmResult(AlgorithmInput input) =>
-        // dummy implmentation
-        Task.Delay(5000)
-            .ContinueWith(_ => new AlgorithmResult(input.Value * 2));
-
-    private void RaiseAlgorithmFinished(Guid requestId, Task<AlgorithmResult> response) =>
-        AlgorithmFinished?.Invoke(this, new AlgorithmFinishedEventArgs(requestId, response.Result));
 }
