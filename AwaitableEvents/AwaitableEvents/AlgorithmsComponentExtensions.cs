@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace AwaitableEvents;
 
-public static partial class AlgorithmsComponentExtensions
+public static class AlgorithmsComponentExtensions
 {
     public static AlgorithmPromise RunAsync(this IAlgorithmsComponent self, AlgorithmInput input)
     {
