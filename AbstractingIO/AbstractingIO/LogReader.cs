@@ -14,22 +14,10 @@ public partial class LogReader
     private LogMessage myLastMessage;
 
     public IReadOnlyCollection<LogMessage> ReadAllMessages(string file) =>
-        ReadLines(file)
+        File.ReadAllLines(file)
             .Select(Parse)
             .Where(x => x != null)
             .ToList();
-
-    private static IEnumerable<string> ReadLines(string path)
-    {
-        using var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite, 0x1000, FileOptions.SequentialScan);
-        using var reader = new StreamReader(stream);
-
-        string line;
-        while ((line = reader.ReadLine()) != null)
-        {
-            yield return line;
-        }
-    }
 
     private LogMessage Parse(string line)
     {
