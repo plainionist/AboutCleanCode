@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.IO.Abstractions;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -12,9 +13,19 @@ public partial class LogReader
     private static readonly Regex myLogPattern = new(@"^\[(\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d) ([A-Z]+)\] ([a-zA-Z0-9\.]+): (.*)$", RegexOptions.Compiled);
 
     private LogMessage myLastMessage;
+    private IFileSystem myFileSystem;
+
+    public LogReader() 
+        : this(new FileSystem())
+    { }
+
+    public LogReader(IFileSystem fileSystem)
+    {
+        myFileSystem = fileSystem;
+    }
 
     public IReadOnlyCollection<LogMessage> ReadAllMessages(string file) =>
-        File.ReadAllLines(file)
+        myFileSystem.File.ReadAllLines(file)
             .Select(Parse)
             .Where(x => x != null)
             .ToList();

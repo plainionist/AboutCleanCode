@@ -5,5 +5,9 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <LangVersion>Latest</LangVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IO.Abstractions" Version="19.1.1" />
+  </ItemGroup>
   
 </Project>
