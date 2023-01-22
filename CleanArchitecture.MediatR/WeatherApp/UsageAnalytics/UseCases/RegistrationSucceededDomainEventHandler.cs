@@ -1,9 +1,9 @@
-﻿using MediatR;
-using WeatherApp.Domain;
+﻿using WeatherApp.Domain;
+using WeatherApp.Mediator;
 
 namespace WeatherApp.UsageAnalytics.UseCases;
 
-class RegistrationSucceededDomainEventHandler : INotificationHandler<RegistrationSucceededDomainEvent>
+class RegistrationSucceededDomainEventHandler : IApplicationNotificationHandler<RegistrationSucceededDomainEvent>
 {
     private readonly ILogger<RegistrationSucceededDomainEventHandler> myLogger;
 

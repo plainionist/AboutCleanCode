@@ -1,13 +1,13 @@
-using MediatR;
 using WeatherApp.Domain;
+using WeatherApp.Mediator;
 
 namespace WeatherApp.Newsletter.UseCases;
 
-internal class RegistrationApplicationService : IRequestHandler<RegistrationRequest, Unit>
+internal class RegistrationApplicationService : IApplicationRequestHandler<RegistrationRequest, Unit>
 {
-    private readonly IMediator myMediator;
+    private readonly IApplicationMediator myMediator;
 
-    public RegistrationApplicationService(IMediator mediator)
+    public RegistrationApplicationService(IApplicationMediator mediator)
     {
         myMediator = mediator;
     }

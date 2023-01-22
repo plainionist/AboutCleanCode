@@ -1,8 +1,9 @@
-﻿using MediatR;
+﻿
+using WeatherApp.Mediator;
 
 namespace WeatherApp.Forecast.UseCases;
 
-internal class ForecastHandler : IRequestHandler<ForecastRequest, IReadOnlyCollection<Forecast>>
+internal class ForecastHandler : IApplicationRequestHandler<ForecastRequest, IReadOnlyCollection<Forecast>>
 {
     private static readonly string[] Summaries = new[]
     {

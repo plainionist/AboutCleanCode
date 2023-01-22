@@ -1,6 +1,6 @@
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using WeatherApp.Forecast.UseCases;
+using WeatherApp.Mediator;
 
 namespace WeatherApp.Forecast.Controllers;
 
@@ -8,9 +8,9 @@ namespace WeatherApp.Forecast.Controllers;
 [Route("[controller]")]
 public class ForecastController : ControllerBase
 {
-    private readonly IMediator myMediator;
+    private readonly IApplicationMediator myMediator;
 
-    public ForecastController(IMediator mediator)
+    public ForecastController(IApplicationMediator mediator)
     {
         myMediator = mediator;
     }
@@ -18,7 +18,7 @@ public class ForecastController : ControllerBase
     [HttpGet(Name = "GetWeatherForecast")]
     public async Task<IActionResult> Get()
     {
-        var weather = await myMediator.Send(new ForecastRequest());
+        var weather = await myMediator.Send<ForecastRequest, IReadOnlyCollection<UseCases.Forecast>>(new ForecastRequest());
 
         return Ok(weather);
     }
