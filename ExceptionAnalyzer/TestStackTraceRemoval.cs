@@ -5,11 +5,11 @@ namespace ExceptionAnalyzer;
 
 public class TestStackTraceRemoval
 {
-    public bool IsSame(string data1, string data2)
+    public bool IsSame(string exceptionText1, string exceptionText2)
     {
         var parser = new ExceptionParser();
-        var exception1 = parser.ExtractException(data1);
-        var exception2 = parser.ExtractException(data2);
+        var exception1 = parser.ExtractException(exceptionText1);
+        var exception2 = parser.ExtractException(exceptionText2);
 
         if (exception1.Type == exception2.Type && exception1.Message == exception2.Message)
         {
