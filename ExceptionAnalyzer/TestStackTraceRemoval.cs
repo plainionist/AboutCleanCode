@@ -4,14 +4,10 @@ using System.Text.RegularExpressions;
 
 namespace ExceptionAnalyzer;
 
-class TestClassInvariantExceptionComparer
+class TestClassInvariantComparer
 {
-    public bool IsSame(string exceptionText1, string exceptionText2)
+    public bool IsSame(ExceptionInfo exception1, ExceptionInfo exception2)
     {
-        var parser = new ExceptionParser();
-        var exception1 = parser.ExtractException(exceptionText1);
-        var exception2 = parser.ExtractException(exceptionText2);
-
         if (exception1.Type != exception2.Type || exception1.Message != exception2.Message)
         {
             return false;
