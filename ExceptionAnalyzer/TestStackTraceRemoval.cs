@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -18,32 +19,17 @@ public class TestStackTraceRemoval
 
         var stackTrace1 = exception1.StackTrace.Split('\n');
 
-        var filteredStackTrace1 = new StringBuilder();
+        var filteredStackTrace1 = stackTrace1
+            .Where(x => !IsStackTraceLineFromTestClass(x))
+            .ToList();
 
-        foreach (var line in stackTrace1)
-        {
-            if (IsStackTraceLineFromTestClass(line))
-            {
-                continue;
-            }
-
-            filteredStackTrace1.AppendLine(line);
-        }
-
-        var filteredStackTrace2 = new StringBuilder();
         var stackTrace2 = exception2.StackTrace.Split('\n');
 
-        foreach (var line in stackTrace2)
-        {
-            if (IsStackTraceLineFromTestClass(line))
-            {
-                continue;
-            }
+        var filteredStackTrace2 = stackTrace2
+            .Where(x => !IsStackTraceLineFromTestClass(x))
+            .ToList();
 
-            filteredStackTrace2.AppendLine(line);
-        }
-
-        return filteredStackTrace1.ToString() == filteredStackTrace2.ToString();
+        return !filteredStackTrace1.Except(filteredStackTrace2).Any();
     }
 
     private static bool IsStackTraceLineFromTestClass(string line) =>
