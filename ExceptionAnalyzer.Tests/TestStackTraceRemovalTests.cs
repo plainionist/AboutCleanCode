@@ -25,7 +25,7 @@ internal class TestStackTraceRemovalTests
             at Company.Product.IntegrationTests.TestAbstractions.ExceptionHelper.PrepareException(string data1, string data2)
             at Company.Product.IntegrationTests.TestStackTraceRemovalTests.NoTestStackTrace()";
 
-        Assert.That(new TestClassInvariantExceptionComparer().IsSame(ex1, ex2), Is.True);
+        Assert.That(new TestApi().IsSameExceptionIgnoringTestClass(ex1, ex2), Is.True);
     }
 
     [Test]
@@ -48,7 +48,7 @@ internal class TestStackTraceRemovalTests
             at Company.Product.IntegrationTests.TestAbstractions.ExceptionHelper.PrepareException(string data1, string data2)
             at Company.Product.IntegrationTests.TestStackTraceRemovalTests.TestCase2()";
 
-        Assert.That(new TestClassInvariantExceptionComparer().IsSame(ex1, ex2), Is.True);
+        Assert.That(new TestApi().IsSameExceptionIgnoringTestClass(ex1, ex2), Is.True);
     }
 
 
@@ -74,7 +74,7 @@ internal class TestStackTraceRemovalTests
             at Company.Product.IntegrationTests.TestStackTraceRemovalTests.Helper2()
             at Company.Product.IntegrationTests.TestStackTraceRemovalTests.TestCase2()";
 
-        Assert.That(new TestClassInvariantExceptionComparer().IsSame(ex1, ex2), Is.True);
+        Assert.That(new TestApi().IsSameExceptionIgnoringTestClass(ex1, ex2), Is.True);
     }
 
     [Test]
@@ -95,7 +95,7 @@ internal class TestStackTraceRemovalTests
             at Company.Product.IntegrationTests.TestAbstractions.ExceptionHelper.PrepareException(string data1, string data2)
             at Company.Product.IntegrationTests.TestStackTraceRemovalTests.TestCase1()";
 
-        Assert.That(new TestClassInvariantExceptionComparer().IsSame(ex1, ex2), Is.False);
+        Assert.That(new TestApi().IsSameExceptionIgnoringTestClass(ex1, ex2), Is.False);
     }
 
     [Test]
@@ -114,7 +114,7 @@ internal class TestStackTraceRemovalTests
             at Company.Product.TestStackTraceRemoval.IsSame(String data1, String data2)
             at Company.Product.IntegrationTests.TestStackTraceRemovalTests.TestCase2()";
 
-        Assert.That(new TestClassInvariantExceptionComparer().IsSame(ex1, ex2), Is.False);
+        Assert.That(new TestApi().IsSameExceptionIgnoringTestClass(ex1, ex2), Is.False);
     }
 
     [Test]
@@ -135,7 +135,7 @@ internal class TestStackTraceRemovalTests
             at Company.Product.TestStackTraceRemoval.IsSame(String data1, String data2)
             at Company.Product.IntegrationTests.TestStackTraceRemovalTests.NoTestStackTrace()";
 
-        Assert.That(new TestClassInvariantExceptionComparer().IsSame(ex1, ex2), Is.False);
+        Assert.That(new TestApi().IsSameExceptionIgnoringTestClass(ex1, ex2), Is.False);
     }
 
     [Test]
@@ -156,6 +156,6 @@ internal class TestStackTraceRemovalTests
             at Company.Product.TestStackTraceRemoval.IsSame(String data1, String data2)
             at Company.Product.IntegrationTests.TestStackTraceRemovalTests.NoTestStackTrace()";
 
-        Assert.That(new TestClassInvariantExceptionComparer().IsSame(ex1, ex2), Is.False);
+        Assert.That(new TestApi().IsSameExceptionIgnoringTestClass(ex1, ex2), Is.False);
     }
 }
