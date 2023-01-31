@@ -78,7 +78,7 @@ internal class TestStackTraceRemovalTests
     }
 
     [Test]
-    public void SameTestCasesDifferentRemainingStack_True()
+    public void SameTestCasesDifferentRemainingStack_False()
     {
         const string ex1 = @"
             System.NullReferenceException : Object reference not set to an instance of an object.
