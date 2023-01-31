@@ -11,45 +11,47 @@ public class TestStackTraceRemoval
         var exception1 = parser.ExtractException(exceptionText1);
         var exception2 = parser.ExtractException(exceptionText2);
 
-        if (exception1.Type == exception2.Type && exception1.Message == exception2.Message)
+        if (exception1.Type != exception2.Type || exception1.Message != exception2.Message)
         {
-            var exceptionLines1 = exception1.StackTrace.Split('\n');
+            return false;
+        }
 
-            var formattedException1 = new StringBuilder();
+        var exceptionLines1 = exception1.StackTrace.Split('\n');
 
-            foreach (var line in exceptionLines1)
+        var formattedException1 = new StringBuilder();
+
+        foreach (var line in exceptionLines1)
+        {
+            if ((Regex.IsMatch(line, @"Tests\.Company\..*")
+                || Regex.IsMatch(line, @"Company\.Product\..*(Integration|System)Tests\..*"))
+                && (Regex.IsMatch(line, @"Tests\.")
+                || Regex.IsMatch(line, @"HzTests\.")))
             {
-                if ((Regex.IsMatch(line, @"Tests\.Company\..*")
-                    || Regex.IsMatch(line, @"Company\.Product\..*(Integration|System)Tests\..*"))
-                    && (Regex.IsMatch(line, @"Tests\.")
-                    || Regex.IsMatch(line, @"HzTests\.")))
-                {
-                    continue;
-                }
-
-                formattedException1.AppendLine(line);
+                continue;
             }
 
-            var formattedException2 = new StringBuilder();
-            var exceptionLines2 = exception2.StackTrace.Split('\n');
+            formattedException1.AppendLine(line);
+        }
 
-            foreach (var line in exceptionLines2)
+        var formattedException2 = new StringBuilder();
+        var exceptionLines2 = exception2.StackTrace.Split('\n');
+
+        foreach (var line in exceptionLines2)
+        {
+            if ((Regex.IsMatch(line, @"Tests\.Company\..*")
+                || Regex.IsMatch(line, @"Company\.Product\..*(Integration|System)Tests\..*"))
+                && (Regex.IsMatch(line, @"Tests\.")
+                || Regex.IsMatch(line, @"HzTests\.")))
             {
-                if ((Regex.IsMatch(line, @"Tests\.Company\..*")
-                    || Regex.IsMatch(line, @"Company\.Product\..*(Integration|System)Tests\..*"))
-                    && (Regex.IsMatch(line, @"Tests\.")
-                    || Regex.IsMatch(line, @"HzTests\.")))
-                {
-                    continue;
-                }
-
-                formattedException2.AppendLine(line);
+                continue;
             }
 
-            if (formattedException1.ToString() == formattedException2.ToString())
-            {
-                return true;
-            }
+            formattedException2.AppendLine(line);
+        }
+
+        if (formattedException1.ToString() == formattedException2.ToString())
+        {
+            return true;
         }
 
         return false;
