@@ -22,10 +22,7 @@ public class TestStackTraceRemoval
 
         foreach (var line in exceptionLines1)
         {
-            if ((Regex.IsMatch(line, @"Tests\.Company\..*")
-                || Regex.IsMatch(line, @"Company\.Product\..*(Integration|System)Tests\..*"))
-                && (Regex.IsMatch(line, @"Tests\.")
-                || Regex.IsMatch(line, @"HzTests\.")))
+            if (IsStackTraceLineFromTestClass(line))
             {
                 continue;
             }
@@ -38,10 +35,7 @@ public class TestStackTraceRemoval
 
         foreach (var line in exceptionLines2)
         {
-            if ((Regex.IsMatch(line, @"Tests\.Company\..*")
-                || Regex.IsMatch(line, @"Company\.Product\..*(Integration|System)Tests\..*"))
-                && (Regex.IsMatch(line, @"Tests\.")
-                || Regex.IsMatch(line, @"HzTests\.")))
+            if (IsStackTraceLineFromTestClass(line))
             {
                 continue;
             }
@@ -51,4 +45,10 @@ public class TestStackTraceRemoval
 
         return formattedException1.ToString() == formattedException2.ToString();
     }
+
+    private static bool IsStackTraceLineFromTestClass(string line) =>
+        (Regex.IsMatch(line, @"Tests\.Company\..*")
+            || Regex.IsMatch(line, @"Company\.Product\..*(Integration|System)Tests\..*"))
+            && (Regex.IsMatch(line, @"Tests\.")
+            || Regex.IsMatch(line, @"HzTests\."));
 }
