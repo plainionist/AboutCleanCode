@@ -49,11 +49,6 @@ public class TestStackTraceRemoval
             formattedException2.AppendLine(line);
         }
 
-        if (formattedException1.ToString() == formattedException2.ToString())
-        {
-            return true;
-        }
-
-        return false;
+        return formattedException1.ToString() == formattedException2.ToString();
     }
 }
