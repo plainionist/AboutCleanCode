@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace ExceptionAnalyzer;
 
-public class TestStackTraceRemoval
+public class TestClassInvariantExceptionComparer
 {
     public bool IsSame(string exceptionText1, string exceptionText2)
     {
