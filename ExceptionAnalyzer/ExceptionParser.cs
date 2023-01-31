@@ -24,7 +24,7 @@ public class ExceptionParser
         {
             Type = exceptionType,
             Message = exceptionMessages.ToString(),
-            StackTrace = exceptionCallStacks.ToString()
+            StackTrace = exceptionCallStacks.ToString().Split('\n')
         };
     }
 

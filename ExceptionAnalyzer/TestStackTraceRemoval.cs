@@ -1,5 +1,4 @@
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace ExceptionAnalyzer;
@@ -13,15 +12,11 @@ class TestClassInvariantComparer
             return false;
         }
 
-        var stackTrace1 = exception1.StackTrace.Split('\n');
-
-        var filteredStackTrace1 = stackTrace1
+        var filteredStackTrace1 = exception1.StackTrace
             .Where(x => !IsStackTraceLineFromTestClass(x))
             .ToList();
 
-        var stackTrace2 = exception2.StackTrace.Split('\n');
-
-        var filteredStackTrace2 = stackTrace2
+        var filteredStackTrace2 = exception2.StackTrace
             .Where(x => !IsStackTraceLineFromTestClass(x))
             .ToList();
 
