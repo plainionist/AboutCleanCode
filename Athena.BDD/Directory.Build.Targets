@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <Target Name="GenerateFeatures"
-          BeforeTargets="BeforeBuild;BeforeRebuild"
+          BeforeTargets="BeforeCompile"
           Inputs="@(FeatureFiles);@(FeatureFixturesTemplate)"
           Outputs="$(MSBuildProjectDirectory)\FeatureFixtures.fs">
 
