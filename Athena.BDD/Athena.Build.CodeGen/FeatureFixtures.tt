@@ -1,0 +1,26 @@
+﻿<#@ template language="C#" hostspecific="true" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ parameter name='featuresFolder' #>
+
+namespace Specification
+
+open System.Reflection
+open Athena.TDK
+open NUnit.Framework
+
+<# foreach(var featureFile in Directory.GetFiles(featuresFolder, "*.feature")) { #>
+<#      
+    var fileName = Path.GetFileName(featureFile); 
+    var title = File.ReadAllLines(featureFile)
+        .Select(x => x.Trim())
+        .First(x => x.StartsWith("Feature: ", StringComparison.OrdinalIgnoreCase)); 
+    title = title.Substring("Feature: ".Length);
+#>
+[<TestFixture>]
+type ``<#= title #>``() = 
+    inherit AbstractFeatures()
+
+    static member Scenarios = AbstractFeatures.GetScenarios(Assembly.GetExecutingAssembly(), "<#= fileName #>")
+<# } #>
+

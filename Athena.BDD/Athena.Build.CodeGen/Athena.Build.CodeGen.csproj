@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <OutputType>exe</OutputType>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="FeatureFixtures.tt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mono.TextTemplating.Roslyn" Version="2.3.1" />
+  </ItemGroup>
+
+</Project>

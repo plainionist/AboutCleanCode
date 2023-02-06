@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="AbstractFeatures.fs" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="TickSpec" Version="2.0.2" />
+    <PackageReference Include="nunit" Version="3.13.3" />
+  </ItemGroup>
+
+</Project>

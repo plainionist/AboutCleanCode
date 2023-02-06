@@ -1,0 +1,28 @@
+﻿<Project>
+
+  <PropertyGroup>
+    <CodeGenSourceDirectory>$(MSBuildThisFileDirectory)\Athena.Build.CodeGen</CodeGenSourceDirectory>
+    <CodeGenBinDirectory>$(CodeGenSourceDirectory)\bin\$(Configuration)</CodeGenBinDirectory>
+  </PropertyGroup>
+  
+  <ItemGroup Condition="$(MSBuildProjectFile.EndsWith('.Specs.fsproj'))">
+    <FeatureFiles Include="*.feature" />
+    <FeatureFixturesTemplate Include="$(CodeGenSourceDirectory)\FeatureFixtures*.tt" />
+    <ProjectReference Include="$(CodeGenSourceDirectory)\Athena.Build.CodeGen.csproj" />
+  </ItemGroup>
+
+  <Target Name="GenerateFeatures"
+          BeforeTargets="BeforeBuild;BeforeRebuild"
+          Inputs="@(FeatureFiles);@(FeatureFixturesTemplate)"
+          Outputs="$(MSBuildProjectDirectory)\FeatureFixtures.fs">
+
+    <Exec Command="$(CodeGenBinDirectory)\Athena.Build.CodeGen.exe $(CodeGenSourceDirectory)\FeatureFixtures.tt $(MSBuildProjectDirectory)\FeatureFixtures.fs"
+          Outputs="$(MSBuildProjectDirectory)\FeatureFixtures.fs">
+      <Output ItemName="FeatureFixtures" TaskParameter="Outputs" />
+    </Exec>
+    <ItemGroup>
+      <FileWrites Include="@(FeatureFixtures)" />
+    </ItemGroup>
+  </Target>
+
+</Project>
