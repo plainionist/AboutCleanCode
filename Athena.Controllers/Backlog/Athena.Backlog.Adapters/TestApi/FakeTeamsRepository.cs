@@ -1,8 +1,8 @@
 using Athena.Backlog.UseCases;
 
-namespace Athena.Backlog.Tests;
+namespace Athena.Backlog.Adapters.TestApi;
 
-internal class FakeTeamsRepository : ITeamsRepository
+public class FakeTeamsRepository : ITeamsRepository
 {
     public Team TryFindByName(string name)
     {
@@ -12,7 +12,10 @@ internal class FakeTeamsRepository : ITeamsRepository
             {
                 Name = "TeamA",
                 AreaPath = @"Dev\Teams\A",
-                Members = new[] { "Bob", "Olivia" }
+                Members = new[] {
+                new Developer("Bob", "bob@company.com"),
+                new Developer("Olivia", "oliver@company.com")
+            }
             };
         }
         return null;

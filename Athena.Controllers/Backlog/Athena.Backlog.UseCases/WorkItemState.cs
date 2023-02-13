@@ -1,12 +1,11 @@
-﻿namespace Athena.Backlog.UseCases
+﻿namespace Athena.Backlog.UseCases;
+
+public enum WorkItemState
 {
-    public enum WorkItemState
-    {
-        Created,
-        Ready,
-        Committed,
-        InWork,
-        Done,
-        Terminated
-    }
+    Created,
+    Ready,
+    Committed,
+    InWork,
+    Done,
+    Terminated
 }

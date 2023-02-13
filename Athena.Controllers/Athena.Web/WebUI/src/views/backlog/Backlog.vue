@@ -24,19 +24,21 @@
 </template>
 
 <script>
-  import API from '@/api'
+import API from "@/api";
 
-  export default {
-    name: 'Backlog',
-    data () {
-      return {
-        items: []
-      }
-    },
-    async created () {
-      const response = await API.get('/backlog?team=TeamA')
+export default {
+  name: "Backlog",
 
-      this.items = response.data.workItems
-    }
-  }
+  data() {
+    return {
+      items: [],
+    };
+  },
+  
+  async created() {
+    const response = await API.get("/backlog/teams/TeamA");
+
+    this.items = response.data.workItems;
+  },
+};
 </script>

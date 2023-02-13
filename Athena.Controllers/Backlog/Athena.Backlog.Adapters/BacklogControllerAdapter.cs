@@ -29,7 +29,7 @@ public class BacklogControllerAdapter
                 {
                     Id = x.Id.ToString(),
                     Title = x.Title,
-                    AssignedTo = x.AssignedTo,
+                    AssignedTo = x.AssignedTo.Name,
                     State = x.State.ToString()
                 })
                 .ToList(),

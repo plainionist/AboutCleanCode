@@ -1,6 +1,6 @@
 using Athena.Backlog.Adapters;
+using Athena.Backlog.Adapters.TestApi;
 using Athena.Backlog.UseCases;
-using Athena.Web.Fakes;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -10,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSingleton(typeof(BacklogControllerAdapter));
 builder.Services.AddSingleton(typeof(BacklogInteractor));
 builder.Services.AddSingleton(typeof(IWorkItemRepository), typeof(FakeWorkItemRepository));
+builder.Services.AddSingleton(typeof(ITeamsRepository), typeof(FakeTeamsRepository));
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
