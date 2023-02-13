@@ -1,13 +1,15 @@
-using Athena.Backlog.Adapters;
+using Athena.Backlog.UseCases;
 
-namespace Athena.Backlog.TestApi;
+namespace Athena.Backlog.Adapters.TestApi;
 
 public class TestApi
 {
-    public BacklogVM GetBacklog(string team)
+    public BacklogVM GetBacklog(string team, string iteration)
     {
-        // TODO: setup fake implementation for the work item repository
-        // TODO: get the backlog using the controller
-        return null;
+        var adapter = new BacklogControllerAdapter(
+            new BacklogInteractor(new FakeWorkItemRepository()),
+            new FakeTeamsRepository());
+
+        return adapter.GetBacklog(team, iteration);
     }
 }

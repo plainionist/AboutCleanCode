@@ -11,14 +11,10 @@ public class BacklogTests
     [Test]
     public void WithoutIteration()
     {
-        var controller = new BacklogController(
-            new BacklogInteractor(new FakeWorkItemRepository()),
-            new FakeTeamsRepository());
+        var testApi = new TestApi();
 
-        var response = controller.GetBacklog("TeamA", null);
+        var vm = testApi.GetBacklog("TeamA", null);
 
-        Assert.That(response, Is.AssignableFrom<OkObjectResult>());
-        var vm = (BacklogResponseModel)((OkObjectResult)response).Value;
         Assert.That(vm.WorkItems, Is.Not.Empty);
     }
 }

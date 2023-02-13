@@ -1,5 +1,6 @@
 using Athena.Backlog.Adapters;
 using Athena.Backlog.Adapters.TestApi;
+using Athena.Backlog.IO;
 using Athena.Backlog.UseCases;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,6 +16,11 @@ builder.Services.AddSingleton(typeof(ITeamsRepository), typeof(FakeTeamsReposito
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<ControllerExceptionFilter>();
+});
 
 builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
 {
