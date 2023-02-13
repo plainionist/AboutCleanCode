@@ -15,7 +15,7 @@
         <tr v-for="item in items" v-bind:key="item.id">
           <td>{{ item.id }}</td>
           <td>{{ item.title }}</td>
-          <td>{{ item.assignedTo }}</td>
+          <td>{{ item.assignedTo.name }}</td>
           <td>{{ item.state }}</td>
         </tr>
       </tbody>
@@ -29,16 +29,16 @@ import API from "@/api";
 export default {
   name: "Backlog",
 
-  data() {
-    return {
-      items: [],
-    };
-  },
-  
   async created() {
     const response = await API.get("/backlog/teams/TeamA");
 
     this.items = response.data.workItems;
+  },
+
+  data() {
+    return {
+      items: [],
+    };
   },
 };
 </script>
