@@ -29,7 +29,8 @@ public class BacklogControllerAdapter
                 {
                     Id = x.Id.ToString(),
                     Title = x.Title,
-                    AssignedTo = x.AssignedTo
+                    AssignedTo = x.AssignedTo,
+                    State = x.State.ToString()
                 })
                 .ToList(),
             TotalEffort = string.Format("{0:0.00}", response.TotalEffort),

@@ -1,4 +1,4 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
@@ -14,8 +14,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Athena.Backlog.Adapters", "Backlog\Athena.Backlog.Adapters\Athena.Backlog.Adapters.csproj", "{8222ADE3-4FA2-4860-BA13-15848BFB6E37}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Athena.Backlog.IO", "Backlog\Athena.Backlog.IO\Athena.Backlog.IO.csproj", "{CCEAC6E3-80EA-45A1-AEBD-1FB674685102}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Athena.Backlog.Specs", "Backlog\Athena.Backlog.Specs\Athena.Backlog.Specs.csproj", "{222D9416-64E8-4806-821F-E6FB105F52F6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Athena.Backlog.Tests", "Backlog\Athena.Backlog.Tests\Athena.Backlog.Tests.csproj", "{4E25B8F6-C0FA-4394-A151-29F7448829CF}"
 EndProject
@@ -39,10 +37,6 @@ Global
 		{CCEAC6E3-80EA-45A1-AEBD-1FB674685102}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCEAC6E3-80EA-45A1-AEBD-1FB674685102}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCEAC6E3-80EA-45A1-AEBD-1FB674685102}.Release|Any CPU.Build.0 = Release|Any CPU
-		{222D9416-64E8-4806-821F-E6FB105F52F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{222D9416-64E8-4806-821F-E6FB105F52F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{222D9416-64E8-4806-821F-E6FB105F52F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{222D9416-64E8-4806-821F-E6FB105F52F6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4E25B8F6-C0FA-4394-A151-29F7448829CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4E25B8F6-C0FA-4394-A151-29F7448829CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E25B8F6-C0FA-4394-A151-29F7448829CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -58,7 +52,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{8222ADE3-4FA2-4860-BA13-15848BFB6E37} = {084E81BD-CDAC-4688-ABE1-9D4B4583DDC8}
 		{CCEAC6E3-80EA-45A1-AEBD-1FB674685102} = {084E81BD-CDAC-4688-ABE1-9D4B4583DDC8}
-		{222D9416-64E8-4806-821F-E6FB105F52F6} = {084E81BD-CDAC-4688-ABE1-9D4B4583DDC8}
 		{4E25B8F6-C0FA-4394-A151-29F7448829CF} = {084E81BD-CDAC-4688-ABE1-9D4B4583DDC8}
 		{590D8E02-B3CC-4405-A8C7-5211BF3B9719} = {084E81BD-CDAC-4688-ABE1-9D4B4583DDC8}
 	EndGlobalSection
