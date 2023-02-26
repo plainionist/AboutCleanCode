@@ -25,7 +25,7 @@ public class ExceptionParser
         };
     }
 
-    private List<string> GetStackTrance(List<string> lines)
+    private List<string> GetStackTrance(IEnumerable<string> lines)
     {
         return lines
             .Skip(1)
