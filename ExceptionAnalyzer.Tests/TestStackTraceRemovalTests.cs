@@ -158,4 +158,39 @@ internal class TestStackTraceRemovalTests
 
         Assert.That(new TestApi().IsSameExceptionIgnoringTestClass(ex1, ex2), Is.False);
     }
+
+    [Test]
+    public void StackTraceFromInfrastructure()
+    {
+        const string ex1 = @"
+            System.ApplicationException : That was unexpected
+            at Company.Product.Algorithms.Core.AlgorithmInterfaceProxy.Invoke(IMessage msg)
+            at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+            at Company.Product.Algorithms.IntegrationTests.ITestAlgoAsync.InitializeAsync()
+            at Company.Product.Algorithms.IntegrationTests.AlgorithmInterfaceProxyTests.AsyncInitFailsTest()
+            at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+            at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+            at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+            at NUnit.Core.Reflect.InvokeMethod(MethodInfo method, Object fixture, Object[] args)
+            at NUnit.Core.TestMethod.RunTestMethod(TestResult testResult)
+            at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+            at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+            at System.Threading.ThreadHelper.ThreadStart()";
+        const string ex2 = @"
+            System.ApplicationException : That was unexpected
+            at Company.Product.Algorithms.Core.AlgorithmInterfaceProxy.Invoke(IMessage msg)
+            at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+            at Company.Product.Algorithms.IntegrationTests.ITestAlgoAsync.InitializeAsync()
+            at Company.Product.Algorithms.IntegrationTests.AnotherAlgorithmInterfaceProxyTests.AsyncInitFailsTest()
+            at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+            at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+            at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+            at NUnit.Core.Reflect.InvokeMethod(MethodInfo method, Object fixture, Object[] args)
+            at NUnit.Core.TestMethod.RunTestMethod(TestResult testResult)
+            at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+            at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+            at System.Threading.ThreadHelper.ThreadStart()";
+
+        Assert.That(new TestApi().IsSameExceptionIgnoringTestClass(ex1, ex2), Is.False);
+    }
 }
