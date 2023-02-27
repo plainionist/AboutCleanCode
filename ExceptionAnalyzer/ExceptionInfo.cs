@@ -2,7 +2,7 @@
 
 namespace ExceptionAnalyzer;
 
-public class ExceptionInfo
+class ExceptionInfo
 {
     public string Type { get; init; }
     public string Message { get; init; }

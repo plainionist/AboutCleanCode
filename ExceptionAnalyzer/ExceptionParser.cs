@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace ExceptionAnalyzer;
 
-public class ExceptionParser
+class ExceptionParser
 {
     public ExceptionInfo ExtractException(string exceptionText)
     {
