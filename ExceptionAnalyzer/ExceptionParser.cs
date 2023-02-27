@@ -8,13 +8,9 @@ class ExceptionParser
 {
     public ExceptionInfo ExtractException(string exceptionText)
     {
-        var lines = exceptionText.Split(Environment.NewLine)
-            .Select(x => x.Trim())
-            .Where(x => !string.IsNullOrEmpty(x))
-            .ToList();
+        var lines = ParseText(exceptionText);
 
-        var exceptionType = lines[0].Split(':').First();
-        var exceptionMessage = lines[0].Substring(lines[0].IndexOf(':') + 1);
+        var (exceptionType, exceptionMessage) = ParseTypeAndMessage(lines);
         var stackTrace = GetStackTrance(lines);
 
         return new()
@@ -25,14 +21,29 @@ class ExceptionParser
         };
     }
 
-    private List<string> GetStackTrance(IEnumerable<string> lines)
+    private static (string, string) ParseTypeAndMessage(List<string> lines)
+    {
+        var exceptionType = lines[0].Split(':').First();
+        var exceptionMessage = lines[0][(lines[0].IndexOf(':') + 1)..];
+        return (exceptionType, exceptionMessage);
+    }
+
+    private static List<string> ParseText(string exceptionText)
+    {
+        return exceptionText.Split(Environment.NewLine)
+            .Select(x => x.Trim())
+            .Where(x => !string.IsNullOrEmpty(x))
+            .ToList();
+    }
+
+    private static List<string> GetStackTrance(IEnumerable<string> lines)
     {
         return lines
             .Skip(1)
             .Select(x => x.Trim())
             .Where(x => x.StartsWith("at "))
-            .Select(x => x.Substring(3))
-            .Select(x => x.Substring(0, x.IndexOf('(')))
+            .Select(x => x[3..])
+            .Select(x => x[..x.IndexOf('(')])
             .ToList();
     }
 }
