@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace ExceptionAnalyzer;
 
@@ -11,7 +12,7 @@ class ExceptionParser
         var lines = ParseText(exceptionText);
 
         var (exceptionType, exceptionMessage) = ParseTypeAndMessage(lines);
-        var stackTrace = GetStackTrance(lines);
+        var stackTrace = GetStackTrace(lines);
 
         return new()
         {
@@ -36,7 +37,7 @@ class ExceptionParser
             .ToList();
     }
 
-    private static List<string> GetStackTrance(IEnumerable<string> lines)
+    private static List<StackTraceLine> GetStackTrace(IEnumerable<string> lines)
     {
         return lines
             .Skip(1)
@@ -44,6 +45,13 @@ class ExceptionParser
             .Where(x => x.StartsWith("at "))
             .Select(x => x[3..])
             .Select(x => x[..x.IndexOf('(')])
+            .Select(x => new StackTraceLine(x, IsStackTraceLineFromTestClass(x)))
             .ToList();
     }
+
+    private static bool IsStackTraceLineFromTestClass(string line) =>
+        (Regex.IsMatch(line, @"Tests\.Company\..*")
+            || Regex.IsMatch(line, @"Company\.Product\..*(Integration|System)Tests\..*"))
+            && (Regex.IsMatch(line, @"Tests\.")
+            || Regex.IsMatch(line, @"HzTests\."));
 }
