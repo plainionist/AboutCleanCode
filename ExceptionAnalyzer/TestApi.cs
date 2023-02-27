@@ -9,4 +9,8 @@ public class TestApi
         var exception2 = parser.ExtractException(exceptionText2);
         return new TestClassInvariantComparer().IsSame(exception1, exception2);
     }
+
+    public StackTraceLine ParseStackTraceLine(string line){
+        return ExceptionParser.CreateStackTraceLine(line);
+    }
 }

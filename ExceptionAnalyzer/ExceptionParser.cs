@@ -44,9 +44,22 @@ class ExceptionParser
             .Select(x => x.Trim())
             .Where(x => x.StartsWith("at "))
             .Select(x => x[3..])
-            .Select(x => x[..x.IndexOf('(')])
-            .Select(x => new StackTraceLine(x, IsStackTraceLineFromTestClass(x)))
+            .Select(x => CreateStackTraceLine(x))
             .ToList();
+    }
+
+    public static StackTraceLine CreateStackTraceLine(string line)
+    {
+        var apiWithoutParams = line[..line.IndexOf('(')];
+        var parameters = line[line.IndexOf('(')..].Trim('(', ')');
+        var tokens = apiWithoutParams.Split('.');
+        return new StackTraceLine(
+            line,
+            IsStackTraceLineFromTestClass(line),
+            NameSpace: string.Join(".", tokens.Take(tokens.Length - 2)),
+            ClassName: tokens[^2],
+            Method: tokens[^1],
+            Parameters: parameters);
     }
 
     private static bool IsStackTraceLineFromTestClass(string line) =>

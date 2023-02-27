@@ -9,4 +9,4 @@ class ExceptionInfo
     public IReadOnlyCollection<StackTraceLine> StackTrace { get; init; }
 }
 
-record StackTraceLine(string Value, bool IsTestClass);
+public record StackTraceLine(string Value, bool IsTestClass, string NameSpace, string ClassName, string Method, string Parameters);
