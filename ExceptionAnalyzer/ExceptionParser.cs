@@ -55,16 +55,9 @@ class ExceptionParser
         var tokens = apiWithoutParams.Split('.');
         return new StackTraceLine(
             line,
-            IsStackTraceLineFromTestClass(line),
             NameSpace: string.Join(".", tokens.Take(tokens.Length - 2)),
             ClassName: tokens[^2],
             Method: tokens[^1],
             Parameters: parameters);
     }
-
-    private static bool IsStackTraceLineFromTestClass(string line) =>
-        (Regex.IsMatch(line, @"Tests\.Company\..*")
-            || Regex.IsMatch(line, @"Company\.Product\..*(Integration|System)Tests\..*"))
-            && (Regex.IsMatch(line, @"Tests\.")
-            || Regex.IsMatch(line, @"HzTests\."));
 }
