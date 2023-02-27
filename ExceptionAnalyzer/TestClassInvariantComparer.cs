@@ -12,11 +12,11 @@ class TestClassInvariantComparer
         }
 
         var filteredStackTrace1 = exception1.StackTrace
-            .Where(x => !x.IsTestClass)
+            .Where(x => x.GetApiType() != ApiType.TestClass)
             .ToList();
 
         var filteredStackTrace2 = exception2.StackTrace
-            .Where(x => !x.IsTestClass)
+            .Where(x => x.GetApiType() != ApiType.TestClass)
             .ToList();
 
         return !filteredStackTrace1.Except(filteredStackTrace2).Any();
