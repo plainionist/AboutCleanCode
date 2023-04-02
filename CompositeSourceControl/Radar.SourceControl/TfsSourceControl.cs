@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Microsoft.TeamFoundation.SourceControl.WebApi;
@@ -21,10 +22,11 @@ class TfsSourceControl : ISourceControl
         return null;
     }
 
-    public Changeset Query(CodeBase codeBase, int changesetId)
+    public Option<Changeset> Query(CodeBase codeBase, SourceControlId id)
     {
-        var changeset = myConnection.GetChangesetAsync(changesetId).Result;
-        return CreateChangeset(changeset, codeBase);
+        return id
+            .Select(x => Option.Some(x.Value), _ => Option.None<int>("Not a TFS changeset id"))
+            .Select(id => CreateChangeset(myConnection.GetChangesetAsync(id).Result, codeBase));
     }
 
     private Changeset CreateChangeset(TfvcChangesetRef arg, CodeBase codeBase)
@@ -44,8 +46,18 @@ class TfsSourceControl : ISourceControl
             ItemPath = $"$/project/{codeBase}/Main"
         };
 
-        fromVersion.Match(id => criteria.FromId = id.Id, date => criteria.FromDate = date.Date.ToString("yyyy-MM-dd HH:mm:ss"));
-        toVersion.Match(id => criteria.ToId = id.Id, date => criteria.ToDate = date.Date.ToString("yyyy-MM-dd HH:mm:ss"));
+        fromVersion.Match(
+            id => criteria.FromId = id.Id.Select(x => x.Value, _ => 0),
+            date => criteria.FromDate = date.Date.ToString("yyyy-MM-dd HH:mm:ss"));
+        toVersion.Match(
+            id => criteria.ToId = id.Id.Select(x => x.Value, _ => 0),
+            date => criteria.ToDate = date.Date.ToString("yyyy-MM-dd HH:mm:ss"));
+
+        if (criteria.FromId == 0 && criteria.FromDate == null)
+        {
+            // cannot handle input parameter
+            return new List<Changeset>();
+        }
 
         return myConnection.GetChangesetsAsync(project: "", searchCriteria: criteria, top: int.MaxValue).Result
             .AsParallel()
@@ -53,13 +65,20 @@ class TfsSourceControl : ISourceControl
             .ToList();
     }
 
-    public string GetContent(int changesetId, CodeBaseItem item)
+    public Option<string> GetContent(SourceControlId id, CodeBaseItem item)
     {
-        var serverPath = $"$/project/{item.CodeBase}/" + item.RelativePath;
+        return id
+            .Select(x => Option.Some(x.Value), _ => Option.None<int>("Not a valid TFS changeset id"))
+            .Select(id => ReadContent(id));
 
-        var stream = myConnection.GetItemContentAsync(path: serverPath, versionDescriptor: new TfvcVersionDescriptor(null, TfvcVersionType.Changeset, changesetId.ToString())).Result;
-        using var streamReader = new StreamReader(stream);
-        var content = streamReader.ReadToEnd();
-        return content;
+        string ReadContent(int id)
+        {
+            var serverPath = $"$/project/{item.CodeBase}/" + item.RelativePath;
+
+            var stream = myConnection.GetItemContentAsync(path: serverPath, versionDescriptor: new TfvcVersionDescriptor(null, TfvcVersionType.Changeset, id.ToString())).Result;
+            using var streamReader = new StreamReader(stream);
+            var content = streamReader.ReadToEnd();
+            return content;
+        }
     }
 }

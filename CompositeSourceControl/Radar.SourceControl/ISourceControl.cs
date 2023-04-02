@@ -5,9 +5,9 @@ namespace Radar.SourceControl;
 
 public interface ISourceControl
 {
-    Changeset Query(CodeBase codeBase, int changesetId);
+    Option<Changeset> Query(CodeBase codeBase, SourceControlId id);
 
     IReadOnlyCollection<Changeset> Query(CodeBase codeBase, VersionSpec fromVersion, VersionSpec toVersion);
 
-    string GetContent(int changesetId, CodeBaseItem item);
+    Option<string> GetContent(SourceControlId id, CodeBaseItem item);
 }

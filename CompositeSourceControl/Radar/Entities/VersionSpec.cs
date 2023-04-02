@@ -25,12 +25,12 @@ public abstract record VersionSpec
 
 public record ChangesetVersionSpec : VersionSpec
 {
-    public ChangesetVersionSpec(int id)
+    public ChangesetVersionSpec(SourceControlId id)
     {
         Id = id;
     }
 
-    public int Id { get; }
+    public SourceControlId Id { get; }
 }
 
 public record DateTimeVersionSpec : VersionSpec
