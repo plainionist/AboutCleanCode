@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Radar\Radar.csproj" />
+    <ProjectReference Include="..\Radar.SourceControl\Radar.SourceControl.csproj" />
+  </ItemGroup>
+
+</Project>
