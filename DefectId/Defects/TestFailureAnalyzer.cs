@@ -14,17 +14,13 @@ public class TestFailureAnalyzer
     public void Analyze(TestCase testCase)
     {
         var defectId = myRepository.FindByTitle(testCase.Fullname);
-        if (defectId == -1)
-        {
-            CreateNewDefect(testCase);
-        }
-        else
-        {
-            UpdateDefectWithOccurrence(defectId, testCase);
-        }
+        defectId.Match(
+            id => UpdateDefectWithOccurrence(id, testCase),
+            () => CreateNewDefect(testCase)
+        );
     }
 
-    private void UpdateDefectWithOccurrence(int defectId, TestCase testCase)
+    private void UpdateDefectWithOccurrence(DefectId defectId, TestCase testCase)
     {
         throw new NotImplementedException();
     }

@@ -2,27 +2,37 @@ using System;
 
 namespace Defects;
 
+public record DefectId
+{
+    public DefectId(int value)
+    {
+        Contract.Requires(value > 0, "DefectId > 0");
+
+        Value = value;
+    }
+
+    public int Value { get; }
+}
+
 public class DefectRepository
 {
     /// <summary>
     /// ...
     /// </summary>
-    /// <returns>-1 if the defect was not found</returns>
-    public int FindByTitle(string title)
+    public Option<DefectId> FindByTitle(string title)
     {
         var defect = Query($"Select * from ... where title = '{title}'");
         return defect != null
-            ? defect.Id
-            : -1;
+            ? Option.Some(new DefectId(defect.Id))
+            : Option.None<DefectId>("not found");
     }
 
     /// <summary>
     /// ...
     /// </summary>
-    /// <param name="defectId">expected to be a valid defect id</param>
-    public void Update(int defectId, string title, string description)
+    public void Update(DefectId defectId, string title, string description)
     {
-        Contract.Requires(defectId > 0, "DefectId > 0");
+        Contract.RequiresNotNull(defectId);
 
         // ...
     }
