@@ -33,3 +33,17 @@ public class Component : IComponent
         Finished?.Invoke(this, new FinishedEventArgs(new Response()));
     }
 }
+
+public class Client
+{
+    public void Run(IComponent component)
+    {
+        component.Finished += OnFinished;
+        component.Execute(new Request());
+    }
+
+    private void OnFinished(object sender, FinishedEventArgs e)
+    {
+        Console.WriteLine("Response: " + e.Response);
+    }
+}

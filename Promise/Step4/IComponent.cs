@@ -12,28 +12,16 @@ public class Response { }
 
 public class Promise
 {
-    private Action<Promise> myContinuation;
-    private Response myResult;
+    private Action<Response> myContinuation;
 
-    public Response Result
-    {
-        get
-        {
-            return HasResult ? myResult : throw new InvalidOperationException("Result not yet available");
-        }
-    }
-
-    public bool HasResult => myResult != null;
-
-    public void ContinueWith(Action<Promise> continuation)
+    public void ContinueWith(Action<Response> continuation)
     {
         myContinuation = continuation;
     }
 
     internal void SetResult(Response result)
     {
-        myResult = result;
-        myContinuation(this);
+        myContinuation(result);
     }
 }
 
@@ -60,6 +48,6 @@ public class Client
     public void Run(IComponent component)
     {
         component.Execute(new Request())
-            .ContinueWith(x => Console.WriteLine("Response: " + x.Result));
+            .ContinueWith(response => Console.WriteLine("Response: " + response));
     }
 }
