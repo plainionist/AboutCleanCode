@@ -18,26 +18,6 @@ public class WordsAnalyzerTests
     }
 
     [Test]
-    public void CaseIsIgnored()
-    {
-        var analyzer = new WordsAnalyzer();
-
-        var response = analyzer.CountWords("red Red RED");
-
-        Assert.That(response["red"], Is.EqualTo(3));
-    }
-
-    [Test]
-    public void NumbersAreIgnored()
-    {
-        var analyzer = new WordsAnalyzer();
-
-        var response = analyzer.CountWords("The count is 123");
-
-        Assert.That(response.ContainsKey("123"), Is.False);
-    }
-
-    [Test]
     public void NumbersAreCutOffFromWords()
     {
         var analyzer = new WordsAnalyzer();
@@ -59,4 +39,34 @@ public class WordsAnalyzerTests
         Assert.That(response.Keys, Is.EquivalentTo(new[] { "developer" }));
     }
 
+    [Test]
+    public void OnlyCamelCaseWordsAreCounted()
+    {
+        var analyzer = new WordsAnalyzer();
+
+        var response = analyzer.CountWords("The WordAnalyzer component needs to detect CamelCase words.");
+
+        Assert.That(response.Keys, Is.EquivalentTo(new[] { "WordAnalyzer", "CamelCase" }));
+        Assert.That(response["WordAnalyzer"], Is.EqualTo(1));
+        Assert.That(response["CamelCase"], Is.EqualTo(1));
+    }
+
+    [Test]
+    public void CaseIsIgnored()
+    {
+        var analyzer = new WordsAnalyzer();
+
+        var response = analyzer.CountWords("red Red RED");
+
+        Assert.That(response["red"], Is.EqualTo(3));
+    }
+
+    [Test]
+    public void NumbersAreIgnored()
+    {
+        var analyzer = new WordsAnalyzer();
+        var response = analyzer.CountWords("The count is 123");
+
+        Assert.That(response.ContainsKey("123"), Is.False);
+    }
 }
