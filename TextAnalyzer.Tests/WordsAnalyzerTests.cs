@@ -30,13 +30,13 @@ public class WordsAnalyzerTests
     }
 
     [Test]
-    public void WordsShorterThanTwoCharactersAreIgnored()
+    public void OnlyAcronymsAreCounted()
     {
-        var analyzer = new WordsAnalyzer();
+        var analyzer = new WordsAnalyzer(new FakeWordSelectionStrategy());
 
-        var response = analyzer.CountWords("i am a developer");
+        var response = analyzer.CountWords("i AM a DEVELOPER");
 
-        Assert.That(response.Keys, Is.EquivalentTo(new[] { "developer" }));
+        Assert.That(response.Keys, Is.EquivalentTo(new[] { "AM", "DEVELOPER" }));
     }
 
     [Test]
