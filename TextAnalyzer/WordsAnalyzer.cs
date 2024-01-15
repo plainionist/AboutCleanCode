@@ -7,11 +7,16 @@ namespace TextAnalyzer;
 
 public class WordsAnalyzer
 {
-    private readonly DefaultWordSelectionStrategy myWordSelectionStrategy;
+    private readonly IWordSelectionStrategy myWordSelectionStrategy;
 
     public WordsAnalyzer()
+        : this(new DefaultWordSelectionStrategy())
     {
-        myWordSelectionStrategy = new DefaultWordSelectionStrategy();
+    }
+
+    public WordsAnalyzer(IWordSelectionStrategy strategy)
+    {
+        myWordSelectionStrategy = strategy;
     }
 
     public IDictionary<string, int> CountWords(string text)
