@@ -7,12 +7,19 @@ namespace TextAnalyzer;
 
 public class WordsAnalyzer
 {
+    private readonly DefaultWordSelectionStrategy myWordSelectionStrategy;
+
+    public WordsAnalyzer()
+    {
+        myWordSelectionStrategy = new DefaultWordSelectionStrategy();
+    }
+
     public IDictionary<string, int> CountWords(string text)
     {
         var words = ExtractAllWords(text);
 
         var relevantWords = words
-            .Where(x => x.Length > 2)
+            .Where(myWordSelectionStrategy.IsRelevant)
             .ToList();
 
         var wordCounts = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
