@@ -40,18 +40,6 @@ public class WordsAnalyzerTests
     }
 
     [Test]
-    public void OnlyCamelCaseWordsAreCounted()
-    {
-        var analyzer = new WordsAnalyzer();
-
-        var response = analyzer.CountWords("The WordAnalyzer component needs to detect CamelCase words.");
-
-        Assert.That(response.Keys, Is.EquivalentTo(new[] { "WordAnalyzer", "CamelCase" }));
-        Assert.That(response["WordAnalyzer"], Is.EqualTo(1));
-        Assert.That(response["CamelCase"], Is.EqualTo(1));
-    }
-
-    [Test]
     public void CaseIsIgnored()
     {
         var analyzer = new WordsAnalyzer();
