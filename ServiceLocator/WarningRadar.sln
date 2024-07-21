@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WarningRadar", "WarningRadar\WarningRadar.csproj", "{B34F296C-117E-4B5A-AF0F-8FAAA5876A05}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WarningRadar.Tests", "WarningRadar.Tests\WarningRadar.Tests.csproj", "{8C40048C-C3C0-4669-B433-38FF11E343E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B34F296C-117E-4B5A-AF0F-8FAAA5876A05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B34F296C-117E-4B5A-AF0F-8FAAA5876A05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B34F296C-117E-4B5A-AF0F-8FAAA5876A05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B34F296C-117E-4B5A-AF0F-8FAAA5876A05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C40048C-C3C0-4669-B433-38FF11E343E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C40048C-C3C0-4669-B433-38FF11E343E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C40048C-C3C0-4669-B433-38FF11E343E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C40048C-C3C0-4669-B433-38FF11E343E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {36D514BD-E970-49E5-816F-F83DCD197584}
+	EndGlobalSection
+EndGlobal
