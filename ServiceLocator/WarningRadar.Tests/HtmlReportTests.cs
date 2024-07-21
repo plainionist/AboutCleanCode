@@ -22,7 +22,7 @@ namespace WarningRadar.Tests
         }
 
         [Test]
-        public void Generate_ShouldWriteHtmlReport()
+        public void Generate_ShouldWriteHtmlReport_Alerts()
         {
             var writer = new StringWriter();
             var alerts = new List<CompilerAlert>
