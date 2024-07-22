@@ -1,11 +1,11 @@
 ﻿using WarningRadar;
 
-var msbuildOutput = args[0];
+var buildLog = args[0];
 
-Console.WriteLine($"Analyzing {msbuildOutput}");
+Console.WriteLine($"BuildLog: {buildLog}");
 
 var parser = new LogParser();
-var alerts = parser.Parse(new StreamReader(msbuildOutput));
+var alerts = parser.Parse(new StreamReader(buildLog));
 
 var report = new HtmlReport(Console.Out);
 report.Generate(alerts);
