@@ -5,39 +5,19 @@ namespace WarningRadar.Tests
     public partial class HtmlReportTests
     {
         [Test]
-        public void Generate_ShouldWriteHtmlReport_NoAlerts()
-        {
-            var writer = new StringWriter();
-            var alerts = new List<CompilerAlert>();
-
-            var report = new HtmlReport(writer);
-
-            report.Generate(alerts);
-
-            var html = writer.ToString();
-
-            var expectedHtml = @"<html><body></body></html>";
-
-            Assert.That(WhiteSpacePattern().Replace(html, ""), Is.EqualTo(WhiteSpacePattern().Replace(expectedHtml, "")));
-        }
-
-        [Test]
         public void Generate_ShouldWriteHtmlReport_Alerts()
         {
-            var writer = new StringWriter();
             var alerts = new List<CompilerAlert>
                     {
-                        new CompilerAlert("File1.cs", 12, "C1001"),
-                        new CompilerAlert("File2.cs", 22, "C1001"),
-                        new CompilerAlert("File3.cs", 57, "C2001"),
-                        new CompilerAlert("File4.cs", 111, "C2001"),
-                        new CompilerAlert("File5.cs", 124, "C2001")
+                        new("File1.cs", 12, "C1001"),
+                        new("File2.cs", 22, "C1001"),
+                        new("File3.cs", 57, "C2001"),
+                        new("File4.cs", 111, "C2001"),
+                        new("File5.cs", 124, "C2001")
                     };
 
-            var report = new HtmlReport(writer);
-
-            report.Generate(alerts);
-
+            var writer = new StringWriter();
+            new HtmlReport(writer).Generate(alerts);
             var html = writer.ToString();
 
             var expectedHtml = @"<html>
@@ -55,6 +35,20 @@ namespace WarningRadar.Tests
                         </ul>
                         </body>
                         </html>";
+
+            Assert.That(WhiteSpacePattern().Replace(html, ""), Is.EqualTo(WhiteSpacePattern().Replace(expectedHtml, "")));
+        }
+
+        [Test]
+        public void Generate_ShouldWriteHtmlReport_NoAlerts()
+        {
+            var alerts = new List<CompilerAlert>();
+
+            var writer = new StringWriter();
+            new HtmlReport(writer).Generate(alerts);
+            var html = writer.ToString();
+
+            var expectedHtml = @"<html><body></body></html>";
 
             Assert.That(WhiteSpacePattern().Replace(html, ""), Is.EqualTo(WhiteSpacePattern().Replace(expectedHtml, "")));
         }

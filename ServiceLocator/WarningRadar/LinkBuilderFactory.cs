@@ -1,6 +1,6 @@
 namespace WarningRadar;
 
-public class LinkProviderFactory
+public class LinkBuilderFactory
 {
     private static Uri myBaseUri;
     private static string myWorkspaceRoot;
