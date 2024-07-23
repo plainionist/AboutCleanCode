@@ -10,7 +10,7 @@ public class LinkBuilderFactory
         // TODO: implement
     }
 
-    public static ILinkBuilder CreateProvider()
+    public static ILinkBuilder CreateBuilder()
     {
         return new GitHubLinkBuilder(myBaseUri, myWorkspaceRoot);
     }
