@@ -4,18 +4,6 @@
 public class ServiceLocatorTests
 {
     [Test]
-    public void Register_WithValidService_ShouldResolveService()
-    {
-        var serviceLocator = new ServiceLocator();
-        var service = new DummyService();
-
-        serviceLocator.Register<IDummyService>(service);
-        var resolvedService = serviceLocator.Resolve<IDummyService>();
-
-        Assert.That(resolvedService, Is.EqualTo(service));
-    }
-
-    [Test]
     public void Resolve_WithRegisteredService_ShouldReturnService()
     {
         var serviceLocator = new ServiceLocator();
@@ -55,17 +43,6 @@ public class ServiceLocatorTests
         var resolvedService = serviceLocator.TryResolve<IDummyService>();
 
         Assert.That(resolvedService, Is.EqualTo(default(IDummyService)));
-    }
-
-    [Test]
-    public void Singleton()
-    {
-        var service = new DummyService();
-        ServiceLocator.Instance.Register<IDummyService>(service);
-
-        var resolvedService = ServiceLocator.Instance.TryResolve<IDummyService>();
-
-        Assert.That(resolvedService, Is.EqualTo(service));
     }
 }
 

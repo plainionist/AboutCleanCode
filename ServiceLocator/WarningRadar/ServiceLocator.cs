@@ -2,13 +2,7 @@ namespace WarningRadar;
 
 public class ServiceLocator
 {
-    private static ServiceLocator myInstance;
     private readonly Dictionary<Type, object> myServices = [];
-
-    public static ServiceLocator Instance
-    {
-        get { return myInstance ??= new ServiceLocator(); }
-    }
 
     public void Register<T>(T service)
     {
@@ -22,7 +16,7 @@ public class ServiceLocator
             return (T)service;
         }
 
-        throw new InvalidOperationException($"No service registered for type {typeof(T)}");
+        throw new InvalidOperationException($"No instance registered for type {typeof(T)}");
     }
 
     public T TryResolve<T>()
