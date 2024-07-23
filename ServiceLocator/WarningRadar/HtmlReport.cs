@@ -26,5 +26,3 @@ public class HtmlReport
         writer.WriteLine("</html>");
     }
 }
-
-

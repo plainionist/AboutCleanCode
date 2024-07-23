@@ -53,8 +53,5 @@ public interface IDummyService
 
 public class DummyService : IDummyService
 {
-    public void DoSomething()
-    {
-
-    }
+    public void DoSomething() { }
 }
