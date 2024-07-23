@@ -6,6 +6,11 @@ public class ServiceLocator
 
     public void Register<T>(T service)
     {
+        if (myServices.ContainsKey(typeof(T)))
+        {
+            throw new InvalidOperationException($"An instance of type {typeof(T)} is already registered.");
+        }
+
         myServices[typeof(T)] = service;
     }
 
