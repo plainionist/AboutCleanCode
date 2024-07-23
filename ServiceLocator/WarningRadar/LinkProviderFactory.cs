@@ -10,8 +10,8 @@ public class LinkProviderFactory
         // TODO: implement
     }
 
-    public static ILinkProvider CreateProvider()
+    public static ILinkBuilder CreateProvider()
     {
-        return new GitHubLinkProvider(myBaseUri, myWorkspaceRoot);
+        return new GitHubLinkBuilder(myBaseUri, myWorkspaceRoot);
     }
 }

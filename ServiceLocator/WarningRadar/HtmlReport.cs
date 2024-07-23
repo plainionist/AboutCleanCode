@@ -33,3 +33,9 @@ public class HtmlReport
         myWriter.WriteLine("</html>");
     }
 }
+
+
+
+
+
+// <a href=\"{url}\">
