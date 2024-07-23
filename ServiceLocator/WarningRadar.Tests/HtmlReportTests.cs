@@ -17,7 +17,7 @@ namespace WarningRadar.Tests
                     };
 
             var writer = new StringWriter();
-            new HtmlReport(writer).Generate(alerts);
+            new HtmlReport().Generate(alerts, writer);
             var html = writer.ToString();
 
             var expectedHtml = @"<html>
@@ -45,7 +45,7 @@ namespace WarningRadar.Tests
             var alerts = new List<CompilerAlert>();
 
             var writer = new StringWriter();
-            new HtmlReport(writer).Generate(alerts);
+            new HtmlReport().Generate(alerts, writer);
             var html = writer.ToString();
 
             var expectedHtml = @"<html><body></body></html>";
