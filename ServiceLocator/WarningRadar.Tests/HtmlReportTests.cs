@@ -15,19 +15,19 @@ namespace WarningRadar.Tests
                     };
 
             var writer = new StringWriter();
-            new HtmlReport().Generate(alerts, writer);
+            new HtmlReport(new FakeLinkBuilder("http://dummy/")).Generate(alerts, writer);
             var html = writer.ToString();
 
             var expectedHtml = @"<html>
                         <body>
                         <h2>C1001</h2>
                         <ul>
-                            <li>File1.cs</li>
+                            <li><a href=""http://dummy/File1.cs"">File1.cs</a></li>
                         </ul>
                         <h2>C3201</h2>
                         <ul>
-                            <li>Dir1/File3.cs</li>
-                            <li>Dir2/File4.cs</li>
+                            <li><a href=""http://dummy/Dir1/File2.cs"">Dir1/File2.cs</a></li>
+                            <li><a href=""http://dummy/Dir2/File3.cs"">Dir2/File3.cs</a></li>
                         </ul>
                         </body>
                         </html>";
@@ -41,7 +41,7 @@ namespace WarningRadar.Tests
             var alerts = new List<CompilerAlert>();
 
             var writer = new StringWriter();
-            new HtmlReport().Generate(alerts, writer);
+            new HtmlReport(null).Generate(alerts, writer);
             var html = writer.ToString();
 
             var expectedHtml = @"<html><body></body></html>";

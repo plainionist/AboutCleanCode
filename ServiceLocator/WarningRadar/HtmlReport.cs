@@ -1,8 +1,14 @@
-﻿
-namespace WarningRadar;
+﻿namespace WarningRadar;
 
 public class HtmlReport
 {
+    private readonly ILinkBuilder myLinkBuilder;
+
+    public HtmlReport(ILinkBuilder linkBuilder)
+    {
+        myLinkBuilder = linkBuilder;
+    }
+
     public void Generate(IReadOnlyCollection<CompilerAlert> alerts, TextWriter writer)
     {
         writer.WriteLine("<html>");
@@ -15,7 +21,8 @@ public class HtmlReport
 
             foreach (var file in group.Select(x => x.File).Distinct())
             {
-                writer.WriteLine($"    <li>{file}</li>");
+                var url = myLinkBuilder.BuildLink(file);
+                writer.WriteLine($"    <li><a href=\"{url}\">{file}</a></li>");
             }
 
             writer.WriteLine("  </ul>");

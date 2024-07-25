@@ -5,7 +5,7 @@ public class GitHubLinkBuilder(Uri baseUri, string workspaceRoot) : ILinkBuilder
     public Uri BuildLink(string localFilePath)
     {
         var relativePath = localFilePath[workspaceRoot.Length..]
-            .Replace("\\","/")
+            .Replace("\\", "/")
             .Trim('/');
 
         var builder = new UriBuilder(baseUri)
