@@ -1,7 +1,6 @@
-const attachResizeObserver = (id) => {
+const attach = (id) => {
   const observer = new ResizeObserver((entries) => {
     entries.forEach((entry) => {
-      console.log(entry.target.scrollHeight)
       parent.postMessage(entry.target.scrollHeight, '*')
     })
   })
@@ -11,5 +10,5 @@ const attachResizeObserver = (id) => {
 }
 
 export default {
-  attachResizeObserver
+  attach
 }

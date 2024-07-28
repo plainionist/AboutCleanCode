@@ -15,7 +15,6 @@
   import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 
   const props = defineProps({
-    api: String,
     url: String
   })
 
@@ -28,8 +27,9 @@
   })
 
   const resizeIFrame = (e) => {
+    const url = new URL(props.url)
     // only react if message comes from the integrated app/plug-in
-    if (e.origin.trim() === props.api.trim()) {
+    if (e.origin === `${url.protocol}//${url.host}`) {
       iFrameHeight.value = e.data + 'px'
     }
   }

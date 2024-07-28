@@ -30,12 +30,12 @@
 
 <script setup>
   import { ref, onMounted } from 'vue'
-  import responsiveIFrame from './responsiveIFrame.js'
+  import observer from './resizeObserver'
 
   const loading = ref(true)
 
   onMounted(() => {
-    responsiveIFrame.attachResizeObserver('plugin-content-container')
+    observer.attach('plugin-content-container')
 
     setTimeout(() => {
       loading.value = false

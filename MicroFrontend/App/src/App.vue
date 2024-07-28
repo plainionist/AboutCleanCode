@@ -2,12 +2,14 @@
   <h1>MyApp</h1>
 
   <div>This paragraph comes from the shell of the App.</div>
-  
+
   <br />
 
-  <PlugIn />
+  <div style="border: blue solid 1px">
+    <ResponsiveFrame url="http://localhost:5174" />
+  </div>
 </template>
 
 <script setup>
-  import PlugIn from './components/PlugInProxy.vue'
+  import ResponsiveFrame from './components/ResponsiveFrame.vue'
 </script>
