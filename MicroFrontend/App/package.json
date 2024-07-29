@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "library": "link:..\\Library",
     "vue": "^3.4.31"
   },
   "devDependencies": {

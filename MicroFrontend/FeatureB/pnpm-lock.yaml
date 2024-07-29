@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  library:
+    specifier: link:..\Library
+    version: link:../Library
   vue:
     specifier: ^3.4.31
     version: 3.4.34

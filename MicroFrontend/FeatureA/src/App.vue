@@ -30,12 +30,12 @@
 
 <script setup>
   import { ref, onMounted } from 'vue'
-  import observer from './resizeObserver'
+  import { resizeObserver } from 'library'
 
   const loading = ref(true)
 
   onMounted(() => {
-    observer.attach('content-container')
+    resizeObserver.attach('content-container')
 
     setTimeout(() => {
       loading.value = false

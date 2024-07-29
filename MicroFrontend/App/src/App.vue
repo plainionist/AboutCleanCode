@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-  import ResponsiveFrame from './components/ResponsiveFrame.vue'
+  import { ResponsiveFrame } from 'library'
 
   // In production we would retrieve these URIs from backend which 
   // would probably read those from some configuration.
