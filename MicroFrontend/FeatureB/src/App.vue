@@ -27,19 +27,22 @@
 
 <script setup>
   import { ref, onMounted } from 'vue'
+  import { resizeObserver } from 'library'
 
   const loading = ref(true)
 
   onMounted(() => {
+    resizeObserver.attach('content-container')
+
     setTimeout(() => {
       loading.value = false
-    }, 3000)
+    }, 1000)
   })
 </script>
 
 <style scoped>
   #content-container {
     padding: 8px;
-    background-color: lightgreen
+    background-color: lightgreen;
   }
 </style>
