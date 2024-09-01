@@ -25,19 +25,16 @@
   </div>
 </template>
 
-<script>
-  export default {
-    data() {
-      return {
-        loading: true
-      }
-    },
-    mounted() {
-      setTimeout(() => {
-        this.loading = false
-      }, 1000)
-    }
-  }
+<script setup>
+  import { ref, onMounted } from 'vue'
+
+  const loading = ref(true)
+
+  onMounted(() => {
+    setTimeout(() => {
+      loading.value = false
+    }, 1000)
+  })
 </script>
 
 <style scoped>

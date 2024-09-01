@@ -15,6 +15,13 @@ module.exports = {
         filename: 'remoteEntry.js',
         exposes: {
           './App': './src/App.vue'
+        },
+        shared: {
+          vue: {
+            singleton: true,
+            eager: true,
+            requiredVersion: '^3.0.0'
+          }
         }
       })
     ]

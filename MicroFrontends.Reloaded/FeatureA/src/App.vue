@@ -28,24 +28,21 @@
   </div>
 </template>
 
-<script>
-  export default {
-    data() {
-      return {
-        loading: true
-      }
-    },
-    mounted() {
-      setTimeout(() => {
-        this.loading = false
-      }, 2000)
-    }
-  }
+<script setup>
+  import { ref, onMounted } from 'vue'
+
+  const loading = ref(true)
+
+  onMounted(() => {
+    setTimeout(() => {
+      loading.value = false
+    }, 2000)
+  })
 </script>
 
 <style scoped>
   #feature-a-container {
     padding: 8px;
-    background-color: lightblue;
+    background-color: lightblue
   }
 </style>
