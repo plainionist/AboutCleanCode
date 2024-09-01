@@ -4,18 +4,16 @@
   <div>Welcome to the micro frontends demo</div>
 
   <div class="container">
-    <FragmentContainer :url="featureA" />
-    <FragmentContainer :url="featureB" />
+    <FeatureA />
+    <FeatureB />
   </div>
 </template>
 
 <script setup>
-  import { FragmentContainer } from 'library'
+  import { defineAsyncComponent } from 'vue'
 
-  // In production we would retrieve these URIs from backend which 
-  // would probably read those from some configuration.
-  const featureA = 'http://localhost:7070'
-  const featureB = 'http://localhost:6060'
+  const FeatureA = defineAsyncComponent(() => import('featureA/App'))
+  const FeatureB = defineAsyncComponent(() => import('featureB/App'))
 </script>
 
 <style scoped>
