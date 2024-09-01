@@ -7,7 +7,6 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "library": "link:..\\Library",
     "vue": "^3.4.31"
   },
   "devDependencies": {
