@@ -4,7 +4,11 @@ module.exports = {
   devServer: {
     port: 7070
   },
+  publicPath: 'http://localhost:7070',
   configureWebpack: {
+    optimization: {
+      splitChunks: false
+    },
     plugins: [
       new ModuleFederationPlugin({
         name: 'featureA',
