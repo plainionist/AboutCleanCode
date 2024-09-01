@@ -8,6 +8,13 @@ module.exports = {
         remotes: {
           featureA: 'featureA@http://localhost:7070/remoteEntry.js',
           featureB: 'featureB@http://localhost:6060/remoteEntry.js'
+        },
+        shared: {
+          vue: {
+            singleton: true,
+            eager: true,
+            requiredVersion: '^3.0.0'
+          }
         }
       })
     ]
