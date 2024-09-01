@@ -14,7 +14,7 @@ module.exports = {
         name: 'featureB',
         filename: 'remoteEntry.js',
         exposes: {
-          './App': './src/App.vue'
+          './FeatureB': './src/FeatureB.vue'
         },
         shared: {
           vue: {

@@ -12,8 +12,8 @@
 <script setup>
   import { defineAsyncComponent } from 'vue'
 
-  const FeatureA = defineAsyncComponent(() => import('featureA/App'))
-  const FeatureB = defineAsyncComponent(() => import('featureB/App'))
+  const FeatureA = defineAsyncComponent(() => import('featureA/FeatureA'))
+  const FeatureB = defineAsyncComponent(() => import('featureB/FeatureB'))
 </script>
 
 <style scoped>
