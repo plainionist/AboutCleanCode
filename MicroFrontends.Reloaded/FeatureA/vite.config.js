@@ -10,9 +10,13 @@ export default defineConfig({
       filename: 'remoteEntry.js',
       exposes: {
         './App': './src/App.vue'
-      }
+      },
+      shared: ['vue']
     })
   ],
+  build: {
+    target: 'esnext', // to support shared modules
+  },
   server: {
     port: 7070
   }

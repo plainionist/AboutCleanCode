@@ -1,5 +1,5 @@
 <template>
-  <div id="content-container">
+  <div id="feature-b-container">
     <h2>Feature B</h2>
 
     <div v-if="loading">Loading ...</div>
@@ -38,7 +38,7 @@
 </script>
 
 <style scoped>
-  #content-container {
+  #feature-b-container {
     padding: 8px;
     background-color: lightgreen;
   }

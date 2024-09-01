@@ -10,7 +10,11 @@ export default defineConfig({
       remotes: {
         featureA: 'http://localhost:7070/assets/remoteEntry.js',
         featureB: 'http://localhost:6060/assets/remoteEntry.js'
-      }
+      },
+      shared: ['vue']
     })
-  ]
+  ],
+  build: {
+    target: 'esnext', // to support shared modules
+  },
 })
