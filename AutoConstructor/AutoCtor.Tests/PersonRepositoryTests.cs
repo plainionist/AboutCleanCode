@@ -6,8 +6,8 @@ public class PersonRepositoryTests
     public void InitializerIsCalled()
     {
         var logger = new FakeLogger();
-        
-        new PersonRepository(logger, "FakeConnectionString");
+
+        new PersonRepository(logger, null, null);
 
         Assert.That(logger.Messages, Contains.Item("Creating Person table on demand at 'FakeConnectionString' ..."));
     }

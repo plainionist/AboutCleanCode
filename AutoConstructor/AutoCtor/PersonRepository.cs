@@ -1,18 +1,51 @@
 namespace AutoCtor;
 
-[AutoConstructor]
-public partial class PersonRepository
+public class PersonRepository
 {
     private readonly ILogger myLogger;
-    private readonly string myConnectionString;
+    private readonly ISqlConnectionFactory myConnectionFactory;
+    private readonly Configuration myConfiguration;
 
-    [AutoConstructorInitializer]
-    private void  Initializer()
+    public PersonRepository(
+        ILogger logger,
+        ISqlConnectionFactory connectionFactory,
+        Configuration configuration)
     {
-        myLogger.Information($"Creating Person table on demand at '{myConnectionString}' ...");
+        myLogger = logger;
+        myConnectionFactory = connectionFactory;
+        myConfiguration = configuration;
+    }
+
+    public IReadOnlyCollection<Person> Read()
+    {
+        using var connection = myConnectionFactory.Create();
+
+        myLogger.Information("Reading ...");
 
         // TODO: implement
+        var config = myConfiguration.GetSection("Persons");
 
-        myLogger.Information("Person table created!");
+        return null;
     }
 }
+
+// [AutoConstructor]
+// public partial class PersonRepository
+// {
+//     private readonly ILogger myLogger;
+//     private readonly string myConnectionString;
+
+//     [AutoConstructorInitializer]
+//     private void  Initializer()
+//     {
+//         myLogger.Information($"Creating Person table on demand at '{myConnectionString}' ...");
+
+//         // TODO: implement
+
+//         myLogger.Information("Person table created!");
+//     }
+// }
+
+
+
+
