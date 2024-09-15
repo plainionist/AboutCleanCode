@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoCtor", "AutoCtor\AutoCtor.csproj", "{803677A6-817B-4024-A9B4-BCEE27683F2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoCtor.Tests", "AutoCtor.Tests\AutoCtor.Tests.csproj", "{C8A86253-B394-4EB4-92D4-C76C628FE4AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{803677A6-817B-4024-A9B4-BCEE27683F2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{803677A6-817B-4024-A9B4-BCEE27683F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{803677A6-817B-4024-A9B4-BCEE27683F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{803677A6-817B-4024-A9B4-BCEE27683F2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8A86253-B394-4EB4-92D4-C76C628FE4AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8A86253-B394-4EB4-92D4-C76C628FE4AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8A86253-B394-4EB4-92D4-C76C628FE4AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8A86253-B394-4EB4-92D4-C76C628FE4AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
