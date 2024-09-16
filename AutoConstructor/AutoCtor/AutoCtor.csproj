@@ -4,6 +4,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <AutoConstructor_GenerateArgumentNullExceptionChecks>true</AutoConstructor_GenerateArgumentNullExceptionChecks>
   </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="AutoConstructor" Version="5.5.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

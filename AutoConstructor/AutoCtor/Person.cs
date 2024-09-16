@@ -1,13 +1,9 @@
 namespace AutoCtor;
 
-[AutoConstructor]
-public partial class Person
-{
-    public string FirstName { get; }
-    public string LastName { get; }
-}
+// [AutoConstructor] --> not supported
+// public partial record Person(string FirstName, string LastName);
 
-//  [AutoConstructor]
-//  public partial record Person(string FirstName, string LastName);
+public record Person(string FirstName, string LastName);
+
 
 

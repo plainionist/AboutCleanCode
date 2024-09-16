@@ -1,20 +1,33 @@
 namespace AutoCtor;
 
-public class PersonRepository
+[AutoConstructor]
+public partial class PersonRepository
 {
     private readonly ILogger myLogger;
     private readonly ISqlConnectionFactory myConnectionFactory;
     private readonly Configuration myConfiguration;
 
-    public PersonRepository(
-        ILogger logger,
-        ISqlConnectionFactory connectionFactory,
-        Configuration configuration)
+    [AutoConstructorInitializer]
+    private void Initialize()
     {
-        myLogger = logger;
-        myConnectionFactory = connectionFactory;
-        myConfiguration = configuration;
+        if (!TableExists())
+        {
+            myLogger.Information("Initializing Person table");
+
+            CreateTable();
+        }
     }
+
+    private void CreateTable()
+    {
+        // TODO: implement
+    }
+
+    private bool TableExists()
+    {
+        return false;
+    }
+
 
     public IReadOnlyCollection<Person> Read()
     {
@@ -27,25 +40,6 @@ public class PersonRepository
 
         return null;
     }
+
 }
-
-// [AutoConstructor]
-// public partial class PersonRepository
-// {
-//     private readonly ILogger myLogger;
-//     private readonly string myConnectionString;
-
-//     [AutoConstructorInitializer]
-//     private void  Initializer()
-//     {
-//         myLogger.Information($"Creating Person table on demand at '{myConnectionString}' ...");
-
-//         // TODO: implement
-
-//         myLogger.Information("Person table created!");
-//     }
-// }
-
-
-
 
