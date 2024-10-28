@@ -1,29 +1,15 @@
-﻿namespace HowToInCA.DataAccess.NuGet;
+namespace HowToInCA.DataAccess.NuGet;
 
-using System.Net.Http;
 using System.Text.Json;
-using System.Threading.Tasks;
 using HowToInCA.Application.FeatureA;
 
-public class NuGetClient : INuGetClient
+public class NuGetResponseParser
 {
-    private const string NuGetApiBaseUrl = "https://api.nuget.org/v3/";
-
-    private readonly HttpClient myClient = new();
-
-    public async Task<Result<Version, string>> GetLatestVersionAsync(string packageName)
+    public Result<Version, string> GetLatestVersion(string responseContent)
     {
-        Contract.RequiresNotNullNotEmpty(packageName);
+        Contract.RequiresNotNullNotEmpty(responseContent);
 
-        var response = await myClient.GetAsync($"{NuGetApiBaseUrl}flatcontainer/{packageName.ToLowerInvariant()}/index.json");
-        if (!response.IsSuccessStatusCode)
-        {
-            return $"Failed to get package information. Status Code: {response.StatusCode}";
-        }
-
-        var content = await response.Content.ReadAsStringAsync();
-
-        var jsonDoc = JsonDocument.Parse(content);
+        var jsonDoc = JsonDocument.Parse(responseContent);
 
         if (!jsonDoc.RootElement.TryGetProperty("versions", out var versions))
         {
@@ -50,33 +36,27 @@ public class NuGetClient : INuGetClient
         return Version.TryParse(versionString, out var version) ? version : null;
     }
 
-    public async Task<IReadOnlyCollection<Result<TargetFramework, string>>> GetSupportedFrameworksAsync(string packageName, Version version)
+    public Result<Uri, string> GetCatalogUri(string responseContent)
     {
-        Contract.RequiresNotNullNotEmpty(packageName);
-        Contract.RequiresNotNull(version);
+        Contract.RequiresNotNullNotEmpty(responseContent);
 
-        var response = await myClient.GetAsync($"{NuGetApiBaseUrl}registration5-semver1/{packageName.ToLowerInvariant()}/{version}.json");
-        if (!response.IsSuccessStatusCode)
-        {
-            return [$"Failed to get package version information. Status Code: {response.StatusCode}"];
-        }
-
-        var content = await response.Content.ReadAsStringAsync();
-        var jsonDoc = JsonDocument.Parse(content);
+        var jsonDoc = JsonDocument.Parse(responseContent);
 
         if (!jsonDoc.RootElement.TryGetProperty("catalogEntry", out JsonElement catalogEntry))
         {
-            return [$"'catalogEntry' property not found in the response"];
+            return $"'catalogEntry' property not found in the response";
         }
 
-        response = await myClient.GetAsync(catalogEntry.GetString());
-        if (!response.IsSuccessStatusCode)
-        {
-            return [$"Failed to get catalog entry information. Status Code: {response.StatusCode}"];
-        }
+        var catalogUri = catalogEntry.GetString();
 
-        content = await response.Content.ReadAsStringAsync();
-        jsonDoc = JsonDocument.Parse(content);
+        return string.IsNullOrEmpty(catalogUri)
+            ? $"Failed to parse catalog entry information"
+            : new Uri(catalogUri);
+    }
+
+    public IReadOnlyCollection<Result<TargetFramework, string>> GetSupportedFrameworks(string responseContent)
+    {
+        var jsonDoc = JsonDocument.Parse(responseContent);
 
         if (!jsonDoc.RootElement.TryGetProperty("dependencyGroups", out var dependencyGroups))
         {
