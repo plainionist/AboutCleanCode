@@ -1,12 +1,22 @@
-using System.ComponentModel.Design.Serialization;
 using HowToInCA.Application.FeatureA;
 using NUnit.Framework;
 
-namespace HowToInCA.DataAccess.NuGet;
+namespace HowToInCA.DataAccess.NuGet.Tests;
 
 [TestFixture]
-public class Tests
+public class NuGetClientTests
 {
+    [Test]
+    public async Task GetLatestVersionAsync()
+    {
+        var nuGetClient = new NuGetClient();
+
+        var response = await nuGetClient.GetLatestVersionAsync("Newtonsoft.Json");
+
+        Assert.That(response.IsSuccess, Is.True);
+        Assert.That(response.Value.Major, Is.GreaterThanOrEqualTo(12));
+    }
+
     [Test]
     public async Task GetSupportedFrameworksAsync()
     {
@@ -20,16 +30,5 @@ public class Tests
             .ToList();
 
         Assert.That(supportedFrameworks, Contains.Item(new TargetFramework(FrameworkType.NetStandard, new Version(2, 0))));
-    }
-
-    [Test]
-    public async Task GetLatestVersionAsync()
-    {
-        var nuGetClient = new NuGetClient();
-
-        var response = await nuGetClient.GetLatestVersionAsync("Newtonsoft.Json");
-
-        Assert.That(response.IsSuccess, Is.True);
-        Assert.That(response.Value.Major, Is.GreaterThanOrEqualTo(12));
     }
 }

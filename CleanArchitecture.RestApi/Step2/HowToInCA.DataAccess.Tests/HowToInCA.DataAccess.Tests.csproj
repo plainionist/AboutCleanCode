@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -7,7 +6,6 @@
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.2">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -21,9 +19,7 @@
     </PackageReference>
     <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\HowToInCA.DataAccess\HowToInCA.DataAccess.csproj" />
   </ItemGroup>
-
 </Project>
