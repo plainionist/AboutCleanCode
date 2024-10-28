@@ -1,6 +1,6 @@
-﻿using System.Runtime.CompilerServices;
+﻿namespace System;
 
-namespace System;
+using System.Runtime.CompilerServices;
 
 /// <summary>
 /// Convenience APIs for "Design by Contract".

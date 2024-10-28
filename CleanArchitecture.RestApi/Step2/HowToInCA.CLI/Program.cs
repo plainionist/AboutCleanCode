@@ -1,7 +1,7 @@
-﻿using HowToInCA.Application.FeatureA;
-using HowToInCA.DataAccess.NuGet;
+﻿namespace HowToInCA.CLI;
 
-namespace HowToInCA.CLI;
+using HowToInCA.Application.FeatureA;
+using HowToInCA.DataAccess.NuGet;
 
 public class Program
 {

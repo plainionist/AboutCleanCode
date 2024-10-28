@@ -1,7 +1,7 @@
+namespace HowToInCA.DataAccess.NuGet.Tests;
+
 using HowToInCA.Application.FeatureA;
 using NUnit.Framework;
-
-namespace HowToInCA.DataAccess.NuGet.Tests;
 
 [TestFixture]
 public class NuGetClientTests

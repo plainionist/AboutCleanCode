@@ -1,4 +1,4 @@
-namespace HowToInCA.DataAccess.NuGet.Tests;
+namespace HowToInCA.Adapters.NuGet.Tests;
 
 using HowToInCA.Application.FeatureA;
 using NUnit.Framework;

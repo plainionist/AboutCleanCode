@@ -45,7 +45,7 @@ public class NuGetClient : INuGetClient
             return [contentUri.Error];
         }
 
-        response = await myClient.GetAsync(contentUri.ToString());
+        response = await myClient.GetAsync(contentUri.Value);
         if (!response.IsSuccessStatusCode)
         {
             return [$"Failed to get catalog entry information. Status Code: {response.StatusCode}"];

@@ -1,6 +1,4 @@
-﻿
-
-namespace HowToInCA.Application.FeatureA;
+﻿namespace HowToInCA.Application.FeatureA;
 
 public class NuGetService
 {
