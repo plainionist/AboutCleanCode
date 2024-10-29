@@ -11,8 +11,6 @@ public class NuGetResponseParser
 
         var jsonDoc = JsonDocument.Parse(responseContent);
 
-        File.WriteAllText(@"c:\temp\1.json", JsonSerializer.Serialize(jsonDoc, new JsonSerializerOptions { WriteIndented = true }));
-
         if (!jsonDoc.RootElement.TryGetProperty("versions", out var versions))
         {
             return $"'versions' property not found in the response";
@@ -44,8 +42,6 @@ public class NuGetResponseParser
 
         var jsonDoc = JsonDocument.Parse(responseContent);
 
-        File.WriteAllText(@"c:\temp\2.json", JsonSerializer.Serialize(jsonDoc, new JsonSerializerOptions { WriteIndented = true }));
-
         if (!jsonDoc.RootElement.TryGetProperty("catalogEntry", out JsonElement catalogEntry))
         {
             return $"'catalogEntry' property not found in the response";
@@ -61,8 +57,6 @@ public class NuGetResponseParser
     public IReadOnlyCollection<Result<TargetFramework, string>> GetSupportedFrameworks(string responseContent)
     {
         var jsonDoc = JsonDocument.Parse(responseContent);
-
-        File.WriteAllText(@"c:\temp\3.json", JsonSerializer.Serialize(jsonDoc, new JsonSerializerOptions { WriteIndented = true }));
 
         if (!jsonDoc.RootElement.TryGetProperty("dependencyGroups", out var dependencyGroups))
         {
