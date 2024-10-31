@@ -4,7 +4,7 @@ using HowToInCA.Application.FeatureA;
 using NUnit.Framework;
 
 [TestFixture]
-public class Tests
+public class NuGetResponseParserTests
 {
     [Test]
     public void GetLatestVersionAsync()
