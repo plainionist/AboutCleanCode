@@ -4,7 +4,7 @@ using HowToInCA.Application.FeatureA;
 using NUnit.Framework;
 
 [TestFixture]
-public class Tests
+public class NuGetResponseParserTests
 {
     [Test]
     public void GetLatestVersionAsync()
@@ -42,124 +42,6 @@ public class Tests
 
         Assert.That(supportedFrameworks, Contains.Item(new TargetFramework(FrameworkType.NetStandard, new Version(2, 0))));
     }
-
-    private const string VersionResponse =
-        """
-        {
-            "versions": [
-                "3.5.8",
-                "4.0.1",
-                "4.0.2",
-                "4.0.3",
-                "4.0.4",
-                "4.0.5",
-                "4.0.6",
-                "4.0.7",
-                "4.0.8",
-                "4.5.1",
-                "4.5.2",
-                "4.5.3",
-                "4.5.4",
-                "4.5.5",
-                "4.5.6",
-                "4.5.7",
-                "4.5.8",
-                "4.5.9",
-                "4.5.10",
-                "4.5.11",
-                "5.0.1",
-                "5.0.2",
-                "5.0.3",
-                "5.0.4",
-                "5.0.5",
-                "5.0.6",
-                "5.0.7",
-                "5.0.8",
-                "6.0.1-beta1",
-                "6.0.1",
-                "6.0.2",
-                "6.0.3",
-                "6.0.4",
-                "6.0.5",
-                "6.0.6",
-                "6.0.7",
-                "6.0.8",
-                "7.0.1-beta1",
-                "7.0.1-beta2",
-                "7.0.1-beta3",
-                "7.0.1",
-                "8.0.1-beta1",
-                "8.0.1-beta2",
-                "8.0.1-beta3",
-                "8.0.1-beta4",
-                "8.0.1",
-                "8.0.2",
-                "8.0.3",
-                "8.0.4-beta1",
-                "9.0.1-beta1",
-                "9.0.1",
-                "9.0.2-beta1",
-                "9.0.2-beta2",
-                "10.0.1-beta1",
-                "10.0.1",
-                "10.0.2",
-                "10.0.3",
-                "11.0.1-beta1",
-                "11.0.1-beta2",
-                "11.0.1-beta3",
-                "11.0.1",
-                "11.0.2",
-                "12.0.1-beta1",
-                "12.0.1-beta2",
-                "12.0.1",
-                "12.0.2-beta1",
-                "12.0.2-beta2",
-                "12.0.2-beta3",
-                "12.0.2",
-                "12.0.3-beta1",
-                "12.0.3-beta2",
-                "12.0.3",
-                "13.0.1-beta1",
-                "13.0.1-beta2",
-                "13.0.1",
-                "13.0.2-beta1",
-                "13.0.2-beta2",
-                "13.0.2-beta3",
-                "13.0.2",
-                "13.0.3-beta1",
-                "13.0.3"
-            ]
-        }
-        """;
-
-    private const string CatalogUriResponse =
-        """
-        {
-            "@id": "https://api.nuget.org/v3/registration5-semver1/newtonsoft.json/12.0.3.json",
-            "@type": ["Package", "http://schema.nuget.org/catalog#Permalink"],
-            "catalogEntry": "https://api.nuget.org/v3/catalog0/data/2022.12.08.16.43.03/newtonsoft.json.12.0.3.json",
-            "listed": true,
-            "packageContent": "https://api.nuget.org/v3-flatcontainer/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg",
-            "published": "2019-11-09T01:27:30.723\u002B00:00",
-            "registration": "https://api.nuget.org/v3/registration5-semver1/newtonsoft.json/index.json",
-            "@context": {
-                "@vocab": "http://schema.nuget.org/schema#",
-                "xsd": "http://www.w3.org/2001/XMLSchema#",
-                "catalogEntry": {
-                "@type": "@id"
-                },
-                "registration": {
-                "@type": "@id"
-                },
-                "packageContent": {
-                "@type": "@id"
-                },
-                "published": {
-                "@type": "xsd:dateTime"
-                }
-            }
-        }
-        """;
 
     private const string SupportedFrameworksResponse =
         """
@@ -534,6 +416,123 @@ public class Tests
                 },
                 "reasons": {
                 "@container": "@set"
+                }
+            }
+        }
+        """;
+    private const string VersionResponse =
+        """
+        {
+            "versions": [
+                "3.5.8",
+                "4.0.1",
+                "4.0.2",
+                "4.0.3",
+                "4.0.4",
+                "4.0.5",
+                "4.0.6",
+                "4.0.7",
+                "4.0.8",
+                "4.5.1",
+                "4.5.2",
+                "4.5.3",
+                "4.5.4",
+                "4.5.5",
+                "4.5.6",
+                "4.5.7",
+                "4.5.8",
+                "4.5.9",
+                "4.5.10",
+                "4.5.11",
+                "5.0.1",
+                "5.0.2",
+                "5.0.3",
+                "5.0.4",
+                "5.0.5",
+                "5.0.6",
+                "5.0.7",
+                "5.0.8",
+                "6.0.1-beta1",
+                "6.0.1",
+                "6.0.2",
+                "6.0.3",
+                "6.0.4",
+                "6.0.5",
+                "6.0.6",
+                "6.0.7",
+                "6.0.8",
+                "7.0.1-beta1",
+                "7.0.1-beta2",
+                "7.0.1-beta3",
+                "7.0.1",
+                "8.0.1-beta1",
+                "8.0.1-beta2",
+                "8.0.1-beta3",
+                "8.0.1-beta4",
+                "8.0.1",
+                "8.0.2",
+                "8.0.3",
+                "8.0.4-beta1",
+                "9.0.1-beta1",
+                "9.0.1",
+                "9.0.2-beta1",
+                "9.0.2-beta2",
+                "10.0.1-beta1",
+                "10.0.1",
+                "10.0.2",
+                "10.0.3",
+                "11.0.1-beta1",
+                "11.0.1-beta2",
+                "11.0.1-beta3",
+                "11.0.1",
+                "11.0.2",
+                "12.0.1-beta1",
+                "12.0.1-beta2",
+                "12.0.1",
+                "12.0.2-beta1",
+                "12.0.2-beta2",
+                "12.0.2-beta3",
+                "12.0.2",
+                "12.0.3-beta1",
+                "12.0.3-beta2",
+                "12.0.3",
+                "13.0.1-beta1",
+                "13.0.1-beta2",
+                "13.0.1",
+                "13.0.2-beta1",
+                "13.0.2-beta2",
+                "13.0.2-beta3",
+                "13.0.2",
+                "13.0.3-beta1",
+                "13.0.3"
+            ]
+        }
+        """;
+
+    private const string CatalogUriResponse =
+        """
+        {
+            "@id": "https://api.nuget.org/v3/registration5-semver1/newtonsoft.json/12.0.3.json",
+            "@type": ["Package", "http://schema.nuget.org/catalog#Permalink"],
+            "catalogEntry": "https://api.nuget.org/v3/catalog0/data/2022.12.08.16.43.03/newtonsoft.json.12.0.3.json",
+            "listed": true,
+            "packageContent": "https://api.nuget.org/v3-flatcontainer/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg",
+            "published": "2019-11-09T01:27:30.723\u002B00:00",
+            "registration": "https://api.nuget.org/v3/registration5-semver1/newtonsoft.json/index.json",
+            "@context": {
+                "@vocab": "http://schema.nuget.org/schema#",
+                "xsd": "http://www.w3.org/2001/XMLSchema#",
+                "catalogEntry": {
+                "@type": "@id"
+                },
+                "registration": {
+                "@type": "@id"
+                },
+                "packageContent": {
+                "@type": "@id"
+                },
+                "published": {
+                "@type": "xsd:dateTime"
                 }
             }
         }
