@@ -1,0 +1,727 @@
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+  xmlns="http://www.w3.org/2000/svg" height="1919px" width="2874px">
+  <rect x="0" y="0" width="2874" height="1919" fill="#252525"></rect>
+  <svg x="100" y="100" overflow="visible">
+    <svg class="subLines" overflow="visible" x="65" y="45">
+      <path d="M 958 408 C 928 408 959.2 96 898 96 H 692" stroke="#FFD700" fill="none" stroke-width="2"></path>
+      <path d="M 692 96 C 662 96 666.8 48 632 48 H 356" stroke="#FFD700" fill="none" stroke-width="2"></path>
+      <path d="M 692 96 C 662 96 662 96 632 96 H 492" stroke="#FFD700" fill="none" stroke-width="2"></path>
+      <path d="M 692 96 C 662 96 666.8 144 632 144 H 362" stroke="#FFD700" fill="none" stroke-width="2"></path>
+      <path d="M 958 408 C 928 408 944.8 240 898 240 H 742" stroke="#FFD700" fill="none" stroke-width="2"></path>
+      <path d="M 742 240 C 712 240 716.8 192 682 192 H 404" stroke="#FFD700" fill="none" stroke-width="2"></path>
+      <path d="M 742 240 C 712 240 712 240 682 240 H 430" stroke="#FFD700" fill="none" stroke-width="2"></path>
+      <path d="M 742 240 C 712 240 716.8 288 682 288 H 451" stroke="#FFD700" fill="none" stroke-width="2"></path>
+      <path d="M 958 408 C 928 408 930.4 384 898 384 H 701" stroke="#FFD700" fill="none" stroke-width="2"></path>
+      <path d="M 701 384 C 671 384 675.8 336 641 336 H 183" stroke="#FFD700" fill="none" stroke-width="2"></path>
+      <path d="M 701 384 C 671 384 671 384 641 384 H 209" stroke="#FFD700" fill="none" stroke-width="2"></path>
+      <path d="M 701 384 C 671 384 675.8 432 641 432 H 243" stroke="#FFD700" fill="none" stroke-width="2"></path>
+      <path d="M 958 408 C 928 408 942.4 552 898 552 H 703" stroke="#FFD700" fill="none" stroke-width="2"></path>
+      <path d="M 703 552 C 673 552 680.2 480 643 480 H 400" stroke="#FFD700" fill="none" stroke-width="2"></path>
+      <path d="M 703 552 C 673 552 675.4 528 643 528 H 122" stroke="#FFD700" fill="none" stroke-width="2"></path>
+      <path d="M 703 552 C 673 552 675.4 576 643 576 H 215" stroke="#FFD700" fill="none" stroke-width="2"></path>
+      <path d="M 703 552 C 673 552 680.2 624 643 624 H 232" stroke="#FFD700" fill="none" stroke-width="2"></path>
+      <path d="M 958 408 C 928 408 961.6 744 898 744 H 588" stroke="#FFD700" fill="none" stroke-width="2"></path>
+      <path d="M 588 744 C 558 744 565.2 672 528 672 H 65" stroke="#FFD700" fill="none" stroke-width="2"></path>
+      <path d="M 588 744 C 558 744 560.4 720 528 720 H 85" stroke="#FFD700" fill="none" stroke-width="2"></path>
+      <path d="M 588 744 C 558 744 560.4 768 528 768 H 143" stroke="#FFD700" fill="none" stroke-width="2"></path>
+      <path d="M 588 744 C 558 744 565.2 816 528 816 H 30" stroke="#FFD700" fill="none" stroke-width="2"></path>
+    </svg>
+    <svg class="subLines" overflow="visible" x="164" y="906">
+      <path d="M 850 384 C 820 384 848.8 96 790 96 H 539" stroke="#FFA500" fill="none" stroke-width="2"></path>
+      <path d="M 539 96 C 509 96 513.8 48 479 48 H 209" stroke="#FFA500" fill="none" stroke-width="2"></path>
+      <path d="M 539 96 C 509 96 509 96 479 96 H 142" stroke="#FFA500" fill="none" stroke-width="2"></path>
+      <path d="M 539 96 C 509 96 513.8 144 479 144 H 230" stroke="#FFA500" fill="none" stroke-width="2"></path>
+      <path d="M 850 384 C 820 384 834.4 240 790 240 H 505" stroke="#FFA500" fill="none" stroke-width="2"></path>
+      <path d="M 505 240 C 475 240 479.8 192 445 192 H 86" stroke="#FFA500" fill="none" stroke-width="2"></path>
+      <path d="M 505 240 C 475 240 475 240 445 240 H 92" stroke="#FFA500" fill="none" stroke-width="2"></path>
+      <path d="M 505 240 C 475 240 479.8 288 445 288 H 30" stroke="#FFA500" fill="none" stroke-width="2"></path>
+      <path d="M 850 384 C 820 384 820 384 790 384 H 628" stroke="#FFA500" fill="none" stroke-width="2"></path>
+      <path d="M 628 384 C 598 384 602.8 336 568 336 H 162" stroke="#FFA500" fill="none" stroke-width="2"></path>
+      <path d="M 628 384 C 598 384 598 384 568 384 H 246" stroke="#FFA500" fill="none" stroke-width="2"></path>
+      <path d="M 628 384 C 598 384 602.8 432 568 432 H 204" stroke="#FFA500" fill="none" stroke-width="2"></path>
+      <path d="M 850 384 C 820 384 832 504 790 504 H 564" stroke="#FFA500" fill="none" stroke-width="2"></path>
+      <path d="M 564 504 C 534 504 536.4 480 504 480 H 135" stroke="#FFA500" fill="none" stroke-width="2"></path>
+      <path d="M 564 504 C 534 504 536.4 528 504 528 H 79" stroke="#FFA500" fill="none" stroke-width="2"></path>
+      <path d="M 850 384 C 820 384 844 624 790 624 H 567" stroke="#FFA500" fill="none" stroke-width="2"></path>
+      <path d="M 567 624 C 537 624 541.8 576 507 576 H 41" stroke="#FFA500" fill="none" stroke-width="2"></path>
+      <path d="M 567 624 C 537 624 537 624 507 624 H 249" stroke="#FFA500" fill="none" stroke-width="2"></path>
+      <path d="M 567 624 C 537 624 541.8 672 507 672 H 205" stroke="#FFA500" fill="none" stroke-width="2"></path>
+      <path d="M 850 384 C 820 384 856 744 790 744 H 526" stroke="#FFA500" fill="none" stroke-width="2"></path>
+      <path d="M 526 744 C 496 744 498.4 720 466 720 H 52" stroke="#FFA500" fill="none" stroke-width="2"></path>
+      <path d="M 526 744 C 496 744 498.4 768 466 768 H 140" stroke="#FFA500" fill="none" stroke-width="2"></path>
+    </svg>
+    <svg class="subLines" overflow="visible" x="1586" y="116">
+      <path d="M 109 744 C 139 744 71.8 72 169 72 H 370" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 370 72 C 400 72 397.6 48 430 48 H 670" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 370 72 C 400 72 397.6 96 430 96 H 761" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 109 744 C 139 744 86.2 216 169 216 H 360" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 360 216 C 390 216 382.8 144 420 144 H 847" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 360 216 C 390 216 387.6 192 420 192 H 718" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 360 216 C 390 216 387.6 240 420 240 H 722" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 360 216 C 390 216 382.8 288 420 288 H 713" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 109 744 C 139 744 103 384 169 384 H 403" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 403 384 C 433 384 428.2 336 463 336 H 770" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 403 384 C 433 384 433 384 463 384 H 722" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 403 384 C 433 384 428.2 432 463 432 H 714" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 109 744 C 139 744 117.4 528 169 528 H 420" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 420 528 C 450 528 445.2 480 480 480 H 777" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 420 528 C 450 528 450 528 480 528 H 946" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 420 528 C 450 528 445.2 576 480 576 H 824" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 109 744 C 139 744 131.8 672 169 672 H 385" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 385 672 C 415 672 410.2 624 445 624 H 923" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 385 672 C 415 672 415 672 445 672 H 861" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 385 672 C 415 672 410.2 720 445 720 H 732" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 109 744 C 139 744 131.8 816 169 816 H 346" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 346 816 C 376 816 371.2 768 406 768 H 750" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 346 816 C 376 816 376 816 406 816 H 791" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 346 816 C 376 816 371.2 864 406 864 H 824" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 109 744 C 139 744 119.8 936 169 936 H 380" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 380 936 C 410 936 407.6 912 440 912 H 909" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 380 936 C 410 936 407.6 960 440 960 H 698" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 109 744 C 139 744 107.8 1056 169 1056 H 388" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 388 1056 C 418 1056 413.2 1008 448 1008 H 691" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 388 1056 C 418 1056 418 1056 448 1056 H 693" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 388 1056 C 418 1056 413.2 1104 448 1104 H 757" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 109 744 C 139 744 91 1224 169 1224 H 402" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 402 1224 C 432 1224 424.8 1152 462 1152 H 860" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 402 1224 C 432 1224 429.6 1200 462 1200 H 874" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 402 1224 C 432 1224 429.6 1248 462 1248 H 847" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 402 1224 C 432 1224 424.8 1296 462 1296 H 726" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 109 744 C 139 744 71.8 1416 169 1416 H 415" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 415 1416 C 445 1416 437.8 1344 475 1344 H 782" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 415 1416 C 445 1416 442.6 1392 475 1392 H 970" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 415 1416 C 445 1416 442.6 1440 475 1440 H 993" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+      <path d="M 415 1416 C 445 1416 437.8 1488 475 1488 H 742" stroke="#BA55D3" fill="none" stroke-width="2"></path>
+    </svg>
+    <svg class="lines" overflow="visible">
+      <path d="M 1286.9533449680048 860 Q 1286.9533449680048 453 1109 453" stroke="#FFD700" fill="none" stroke-width="3"></path>
+      <path d="M 1287.5186445607912 860 Q 1287.5186445607912 1290 1108 1290" stroke="#FFA500" fill="none" stroke-width="3"></path>
+      <path d="M 1429.05 860 Q 1429.05 860 1596 860" stroke="#BA55D3" fill="none" stroke-width="3"></path>
+    </svg>
+    <svg class="topiclinks" overflow="visible"></svg>
+    <svg class="summary" overflow="visible"></svg>
+    <rect x="993" y="433" rx="20px" ry="20px" width="115.766px" height="40px" fill="rgb(30, 30, 30)" stroke="rgb(255, 215, 0)" stroke-width="2px"></rect>
+    <g>
+      <rect x="1018" y="441" rx="0px" ry="0px" width="61.7656px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(255, 255, 255)" stroke-width="0px"></rect>
+      <foreignObject x="1018" y="441" width="61.7656px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(255, 255, 255); white-space: pre-wrap;">Essential</div>
+      </foreignObject>
+    </g>
+    <rect x="757" y="109" rx="3px" ry="3px" width="196.297px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="760" y="112" rx="0px" ry="0px" width="190.297px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="760" y="112" width="190.297px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⌨ Algorithmic Complexity</div>
+      </foreignObject>
+    </g>
+    <rect x="421" y="61" rx="3px" ry="3px" width="275.266px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="424" y="64" rx="0px" ry="0px" width="269.266px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="424" y="64" width="269.266px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Required computational efficiency</div>
+      </foreignObject>
+    </g>
+    <rect x="557" y="109" rx="3px" ry="3px" width="139.547px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="560" y="112" rx="0px" ry="0px" width="133.547px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="560" y="112" width="133.547px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Volume of data</div>
+      </foreignObject>
+    </g>
+    <rect x="427" y="157" rx="3px" ry="3px" width="269.969px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="430" y="160" rx="0px" ry="0px" width="263.969px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="430" y="160" width="263.969px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Number of steps in the algorithm</div>
+      </foreignObject>
+    </g>
+    <rect x="807" y="253" rx="3px" ry="3px" width="146.109px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="810" y="256" rx="0px" ry="0px" width="140.109px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="810" y="256" width="140.109px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⌨ Data Complexity</div>
+      </foreignObject>
+    </g>
+    <rect x="469" y="205" rx="3px" ry="3px" width="277.547px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="472" y="208" rx="0px" ry="0px" width="271.547px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="472" y="208" width="271.547px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Number of relationships per entity</div>
+      </foreignObject>
+    </g>
+    <rect x="495" y="253" rx="3px" ry="3px" width="251.438px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="498" y="256" rx="0px" ry="0px" width="245.438px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="498" y="256" width="245.438px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Overall density of relationships</div>
+      </foreignObject>
+    </g>
+    <rect x="516" y="301" rx="3px" ry="3px" width="230.703px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="519" y="304" rx="0px" ry="0px" width="224.703px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="519" y="304" width="224.703px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Schema evolution over time</div>
+      </foreignObject>
+    </g>
+    <rect x="766" y="397" rx="3px" ry="3px" width="187.141px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="769" y="400" rx="0px" ry="0px" width="181.141px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="769" y="400" width="181.141px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">👨‍💼👩‍💼 Domain Complexity</div>
+      </foreignObject>
+    </g>
+    <rect x="248" y="349" rx="3px" ry="3px" width="457.672px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="251" y="352" rx="0px" ry="0px" width="451.672px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="251" y="352" width="451.672px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Number of business rules, their variability, and special cases</div>
+      </foreignObject>
+    </g>
+    <rect x="274" y="397" rx="3px" ry="3px" width="432.094px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="277" y="400" rx="0px" ry="0px" width="426.094px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="277" y="400" width="426.094px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Number of interconnected domain concepts per feature</div>
+      </foreignObject>
+    </g>
+    <rect x="308" y="445" rx="3px" ry="3px" width="397.328px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="311" y="448" rx="0px" ry="0px" width="391.328px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="311" y="448" width="391.328px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Amount of specialized domain knowledge required</div>
+      </foreignObject>
+    </g>
+    <rect x="768" y="565" rx="3px" ry="3px" width="184.422px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="771" y="568" rx="0px" ry="0px" width="178.422px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="771" y="568" width="178.422px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">🌍 Hardware Complexity</div>
+      </foreignObject>
+    </g>
+    <rect x="465" y="493" rx="3px" ry="3px" width="243.016px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="468" y="496" rx="0px" ry="0px" width="237.016px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="468" y="496" width="237.016px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Limited CPU, RAM, or storage</div>
+      </foreignObject>
+    </g>
+    <rect x="187" y="541" rx="3px" ry="3px" width="521.547px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="190" y="544" rx="0px" ry="0px" width="515.547px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="190" y="544" width="515.547px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Hardware-specific behavior, like CPU architectures or instruction sets</div>
+      </foreignObject>
+    </g>
+    <rect x="280" y="589" rx="3px" ry="3px" width="428.656px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="283" y="592" rx="0px" ry="0px" width="422.656px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="283" y="592" width="422.656px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Unreliable hardware conditions, like sensor inaccuracies</div>
+      </foreignObject>
+    </g>
+    <rect x="297" y="637" rx="3px" ry="3px" width="411.5px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="300" y="640" rx="0px" ry="0px" width="405.5px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="300" y="640" width="405.5px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Variable network conditions, like latency and outages</div>
+      </foreignObject>
+    </g>
+    <rect x="653" y="757" rx="3px" ry="3px" width="300.234px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="656" y="760" rx="0px" ry="0px" width="294.234px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="656" y="760" width="294.234px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">🌍 Regulatory &amp; Compliance Complexity</div>
+      </foreignObject>
+    </g>
+    <rect x="130" y="685" rx="3px" ry="3px" width="462.844px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="133" y="688" rx="0px" ry="0px" width="456.844px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="133" y="688" width="456.844px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Number of regulatory standards and compliance constraints</div>
+      </foreignObject>
+    </g>
+    <rect x="150" y="733" rx="3px" ry="3px" width="442.297px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="153" y="736" rx="0px" ry="0px" width="436.297px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="153" y="736" width="436.297px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Number of industry certification &amp; auditing requirements</div>
+      </foreignObject>
+    </g>
+    <rect x="208" y="781" rx="3px" ry="3px" width="384.703px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="211" y="784" rx="0px" ry="0px" width="378.703px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="211" y="784" width="378.703px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Frequency of changes to regulatory requirements</div>
+      </foreignObject>
+    </g>
+    <rect x="95" y="829" rx="3px" ry="3px" width="497.625px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="98" y="832" rx="0px" ry="0px" width="491.625px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="98" y="832" width="491.625px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Mandated multi-vendor collaboration to prevent monopolization</div>
+      </foreignObject>
+    </g>
+    <rect x="984" y="1270" rx="20px" ry="20px" width="124.391px" height="40px" fill="rgb(30, 30, 30)" stroke="rgb(255, 165, 0)" stroke-width="2px"></rect>
+    <g>
+      <rect x="1009" y="1278" rx="0px" ry="0px" width="70.3906px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(255, 255, 255)" stroke-width="0px"></rect>
+      <foreignObject x="1009" y="1278" width="70.3906px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(255, 255, 255); white-space: pre-wrap;">Incidental</div>
+      </foreignObject>
+    </g>
+    <rect x="703" y="970" rx="3px" ry="3px" width="240.5px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="706" y="973" rx="0px" ry="0px" width="234.5px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="706" y="973" width="234.5px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">🏛️ Technology Stack Complexity</div>
+      </foreignObject>
+    </g>
+    <rect x="373" y="922" rx="3px" ry="3px" width="270.5px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="376" y="925" rx="0px" ry="0px" width="264.5px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="376" y="925" width="264.5px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Number of different technologies</div>
+      </foreignObject>
+    </g>
+    <rect x="306" y="970" rx="3px" ry="3px" width="337.156px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="309" y="973" rx="0px" ry="0px" width="331.156px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="309" y="973" width="331.156px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Number and age of outdated technologies</div>
+      </foreignObject>
+    </g>
+    <rect x="394" y="1018" rx="3px" ry="3px" width="249.75px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="397" y="1021" rx="0px" ry="0px" width="243.75px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="397" y="1021" width="243.75px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Number of 'reinvented wheels'</div>
+      </foreignObject>
+    </g>
+    <rect x="669" y="1114" rx="3px" ry="3px" width="275.078px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="672" y="1117" rx="0px" ry="0px" width="269.078px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="672" y="1117" width="269.078px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">🏛️ Architecture Evolution Complexity</div>
+      </foreignObject>
+    </g>
+    <rect x="250" y="1066" rx="3px" ry="3px" width="358.781px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="253" y="1069" rx="0px" ry="0px" width="352.781px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="253" y="1069" width="352.781px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Number of coexisting architectural paradigms</div>
+      </foreignObject>
+    </g>
+    <rect x="256" y="1114" rx="3px" ry="3px" width="352.547px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="259" y="1117" rx="0px" ry="0px" width="346.547px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="259" y="1117" width="346.547px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Degree of legacy code maintenance required</div>
+      </foreignObject>
+    </g>
+    <rect x="194" y="1162" rx="3px" ry="3px" width="414.75px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="197" y="1165" rx="0px" ry="0px" width="408.75px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="197" y="1165" width="408.75px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Amount of specific knowledge required per paradigm</div>
+      </foreignObject>
+    </g>
+    <rect x="792" y="1258" rx="3px" ry="3px" width="152.297px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="795" y="1261" rx="0px" ry="0px" width="146.297px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="795" y="1261" width="146.297px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">🏛️ State Complexity</div>
+      </foreignObject>
+    </g>
+    <rect x="326" y="1210" rx="3px" ry="3px" width="405.047px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="329" y="1213" rx="0px" ry="0px" width="399.047px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="329" y="1213" width="399.047px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Degree of interdependence between different states</div>
+      </foreignObject>
+    </g>
+    <rect x="410" y="1258" rx="3px" ry="3px" width="321.828px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="413" y="1261" rx="0px" ry="0px" width="315.828px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="413" y="1261" width="315.828px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Level of consistency guarantees required</div>
+      </foreignObject>
+    </g>
+    <rect x="368" y="1306" rx="3px" ry="3px" width="363.688px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="371" y="1309" rx="0px" ry="0px" width="357.688px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="371" y="1309" width="357.688px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Amount of data redundancy across the system</div>
+      </foreignObject>
+    </g>
+    <rect x="728" y="1378" rx="3px" ry="3px" width="215.531px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="731" y="1381" rx="0px" ry="0px" width="209.531px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="731" y="1381" width="209.531px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">🏛️ Configuration Complexity</div>
+      </foreignObject>
+    </g>
+    <rect x="299" y="1354" rx="3px" ry="3px" width="369.562px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="302" y="1357" rx="0px" ry="0px" width="363.562px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="302" y="1357" width="363.562px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Amount of variability affecting system behavior</div>
+      </foreignObject>
+    </g>
+    <rect x="243" y="1402" rx="3px" ry="3px" width="425.328px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="246" y="1405" rx="0px" ry="0px" width="419.328px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="246" y="1405" width="419.328px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Degree of interdependence between variability options</div>
+      </foreignObject>
+    </g>
+    <rect x="731" y="1498" rx="3px" ry="3px" width="213.047px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="734" y="1501" rx="0px" ry="0px" width="207.047px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="734" y="1501" width="207.047px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">🔄 Development Complexity</div>
+      </foreignObject>
+    </g>
+    <rect x="205" y="1450" rx="3px" ry="3px" width="466.156px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="208" y="1453" rx="0px" ry="0px" width="460.156px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="208" y="1453" width="460.156px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Amount of required knowledge beyond just the feature itself</div>
+      </foreignObject>
+    </g>
+    <rect x="413" y="1498" rx="3px" ry="3px" width="257.344px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="416" y="1501" rx="0px" ry="0px" width="251.344px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="416" y="1501" width="251.344px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Development process overhead</div>
+      </foreignObject>
+    </g>
+    <rect x="369" y="1546" rx="3px" ry="3px" width="301.656px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="372" y="1549" rx="0px" ry="0px" width="295.656px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="372" y="1549" width="295.656px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Effort needed to integrate the change</div>
+      </foreignObject>
+    </g>
+    <rect x="690" y="1618" rx="3px" ry="3px" width="253.359px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="693" y="1621" rx="0px" ry="0px" width="247.359px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="693" y="1621" width="247.359px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">👨‍💼👩‍💼 Product Portfolio Complexity</div>
+      </foreignObject>
+    </g>
+    <rect x="216" y="1594" rx="3px" ry="3px" width="414.422px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="219" y="1597" rx="0px" ry="0px" width="408.422px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="219" y="1597" width="408.422px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Number of product families with distinct functionality</div>
+      </foreignObject>
+    </g>
+    <rect x="304" y="1642" rx="3px" ry="3px" width="326.391px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="307" y="1645" rx="0px" ry="0px" width="320.391px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="307" y="1645" width="320.391px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Number of feature variations per product</div>
+      </foreignObject>
+    </g>
+    <g>
+      <rect x="1184" y="815" rx="30px" ry="30px" width="337.859px" height="90px" fill="rgb(76, 79, 105)" stroke="rgba(0, 0, 0, 0)" stroke-width="2px"></rect>
+      <foreignObject x="1184" y="825" width="337.859px" height="90px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 25px; font-weight: 400; color: rgb(255, 255, 255); white-space: pre-wrap;text-align:center">Complexity in<br></br>Software Development</div>
+      </foreignObject>
+    </g>
+    <rect x="1596" y="840" rx="20px" ry="20px" width="128.812px" height="40px" fill="rgb(30, 30, 30)" stroke="rgb(186, 85, 211)" stroke-width="2px"></rect>
+    <g>
+      <rect x="1621" y="848" rx="0px" ry="0px" width="74.8125px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(255, 255, 255)" stroke-width="0px"></rect>
+      <foreignObject x="1621" y="848" width="74.8125px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(255, 255, 255); white-space: pre-wrap;">Accidental</div>
+      </foreignObject>
+    </g>
+    <rect x="1765" y="156" rx="3px" ry="3px" width="190.906px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="1768" y="159" rx="0px" ry="0px" width="184.906px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="1768" y="159" width="184.906px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⌨ Cyclomatic Complexity</div>
+      </foreignObject>
+    </g>
+    <rect x="2016" y="132" rx="3px" ry="3px" width="239.703px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2019" y="135" rx="0px" ry="0px" width="233.703px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2019" y="135" width="233.703px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Number of if-then conditions</div>
+      </foreignObject>
+    </g>
+    <rect x="2016" y="180" rx="3px" ry="3px" width="330.719px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2019" y="183" rx="0px" ry="0px" width="324.719px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2019" y="183" width="324.719px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Number of logical operators in conditions</div>
+      </foreignObject>
+    </g>
+    <rect x="1765" y="300" rx="3px" ry="3px" width="180.781px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="1768" y="303" rx="0px" ry="0px" width="174.781px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="1768" y="303" width="174.781px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⌨ Cognitive Complexity</div>
+      </foreignObject>
+    </g>
+    <rect x="2006" y="228" rx="3px" ry="3px" width="427.078px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2009" y="231" rx="0px" ry="0px" width="421.078px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2009" y="231" width="421.078px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Naming inconsistencies within the codebase or domain</div>
+      </foreignObject>
+    </g>
+    <rect x="2006" y="276" rx="3px" ry="3px" width="298.484px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2009" y="279" rx="0px" ry="0px" width="292.484px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2009" y="279" width="292.484px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Missing or inappropriate abstractions</div>
+      </foreignObject>
+    </g>
+    <rect x="2006" y="324" rx="3px" ry="3px" width="302.312px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2009" y="327" rx="0px" ry="0px" width="296.312px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2009" y="327" width="296.312px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Implicit knowledge and dependencies</div>
+      </foreignObject>
+    </g>
+    <rect x="2006" y="372" rx="3px" ry="3px" width="293.172px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2009" y="375" rx="0px" ry="0px" width="287.172px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2009" y="375" width="287.172px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Design erosion and architecture drift</div>
+      </foreignObject>
+    </g>
+    <rect x="1765" y="468" rx="3px" ry="3px" width="223.688px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="1768" y="471" rx="0px" ry="0px" width="217.688px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="1768" y="471" width="217.688px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⌨ Structural Code Complexity</div>
+      </foreignObject>
+    </g>
+    <rect x="2049" y="420" rx="3px" ry="3px" width="307.109px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2052" y="423" rx="0px" ry="0px" width="301.109px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2052" y="423" width="301.109px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Number of responsibilities per module</div>
+      </foreignObject>
+    </g>
+    <rect x="2049" y="468" rx="3px" ry="3px" width="259.422px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2052" y="471" rx="0px" ry="0px" width="253.422px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2052" y="471" width="253.422px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Depth of inheritance hierarchies</div>
+      </foreignObject>
+    </g>
+    <rect x="2049" y="516" rx="3px" ry="3px" width="251.328px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2052" y="519" rx="0px" ry="0px" width="245.328px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2052" y="519" width="245.328px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Unnecessary abstraction layers</div>
+      </foreignObject>
+    </g>
+    <rect x="1765" y="612" rx="3px" ry="3px" width="241px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="1768" y="615" rx="0px" ry="0px" width="235px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="1768" y="615" width="235px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">🏛️ Structural System Complexity</div>
+      </foreignObject>
+    </g>
+    <rect x="2066" y="564" rx="3px" ry="3px" width="297.469px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2069" y="567" rx="0px" ry="0px" width="291.469px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2069" y="567" width="291.469px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Lack of clear architectural boundaries</div>
+      </foreignObject>
+    </g>
+    <rect x="2066" y="612" rx="3px" ry="3px" width="465.516px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2069" y="615" rx="0px" ry="0px" width="459.516px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2069" y="615" width="459.516px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Overall dependency density across components and services</div>
+      </foreignObject>
+    </g>
+    <rect x="2066" y="660" rx="3px" ry="3px" width="344.297px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2069" y="663" rx="0px" ry="0px" width="338.297px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2069" y="663" width="338.297px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Amount of scattered cross-cutting concerns</div>
+      </foreignObject>
+    </g>
+    <rect x="1765" y="756" rx="3px" ry="3px" width="206.344px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="1768" y="759" rx="0px" ry="0px" width="200.344px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="1768" y="759" width="200.344px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">🏛️ Concurrency Complexity</div>
+      </foreignObject>
+    </g>
+    <rect x="2031" y="708" rx="3px" ry="3px" width="477.969px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2034" y="711" rx="0px" ry="0px" width="471.969px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2034" y="711" width="471.969px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Number of parallel executions competing for shared resources</div>
+      </foreignObject>
+    </g>
+    <rect x="2031" y="756" rx="3px" ry="3px" width="415.531px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2034" y="759" rx="0px" ry="0px" width="409.531px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2034" y="759" width="409.531px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Degree of interdependence between concurrent tasks</div>
+      </foreignObject>
+    </g>
+    <rect x="2031" y="804" rx="3px" ry="3px" width="287.141px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2034" y="807" rx="0px" ry="0px" width="281.141px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2034" y="807" width="281.141px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Reliance on implicit execution order</div>
+      </foreignObject>
+    </g>
+    <rect x="1765" y="900" rx="3px" ry="3px" width="167.109px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="1768" y="903" rx="0px" ry="0px" width="161.109px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="1768" y="903" width="161.109px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">🔄 Testing Complexity</div>
+      </foreignObject>
+    </g>
+    <rect x="1992" y="852" rx="3px" ry="3px" width="343.5px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="1995" y="855" rx="0px" ry="0px" width="337.5px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="1995" y="855" width="337.5px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Degree of insufficient 'design for testability'</div>
+      </foreignObject>
+    </g>
+    <rect x="1992" y="900" rx="3px" ry="3px" width="384.891px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="1995" y="903" rx="0px" ry="0px" width="378.891px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="1995" y="903" width="378.891px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Effort needed for setting up the test environment</div>
+      </foreignObject>
+    </g>
+    <rect x="1992" y="948" rx="3px" ry="3px" width="418.047px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="1995" y="951" rx="0px" ry="0px" width="412.047px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="1995" y="951" width="412.047px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Combinatorial test case growth from variability of SUT</div>
+      </foreignObject>
+    </g>
+    <rect x="1765" y="1020" rx="3px" ry="3px" width="201.281px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="1768" y="1023" rx="0px" ry="0px" width="195.281px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="1768" y="1023" width="195.281px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">🔄 Operational Complexity</div>
+      </foreignObject>
+    </g>
+    <rect x="2026" y="996" rx="3px" ry="3px" width="468.938px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2029" y="999" rx="0px" ry="0px" width="462.938px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2029" y="999" width="462.938px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Amount of manual procedures for deployment and upgrades</div>
+      </foreignObject>
+    </g>
+    <rect x="2026" y="1044" rx="3px" ry="3px" width="257.719px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2029" y="1047" rx="0px" ry="0px" width="251.719px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2029" y="1047" width="251.719px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Low observability &amp; monitoring</div>
+      </foreignObject>
+    </g>
+    <rect x="1765" y="1140" rx="3px" ry="3px" width="209.281px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="1768" y="1143" rx="0px" ry="0px" width="203.281px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="1768" y="1143" width="203.281px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">🔄 Maintenance Complexity</div>
+      </foreignObject>
+    </g>
+    <rect x="2034" y="1092" rx="3px" ry="3px" width="242.812px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2037" y="1095" rx="0px" ry="0px" width="236.812px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2037" y="1095" width="236.812px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Low automated test coverage</div>
+      </foreignObject>
+    </g>
+    <rect x="2034" y="1140" rx="3px" ry="3px" width="245.422px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2037" y="1143" rx="0px" ry="0px" width="239.422px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2037" y="1143" width="239.422px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Low quality of documentation</div>
+      </foreignObject>
+    </g>
+    <rect x="2034" y="1188" rx="3px" ry="3px" width="309.188px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2037" y="1191" rx="0px" ry="0px" width="303.188px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2037" y="1191" width="303.188px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Amount of accumulated technical debt</div>
+      </foreignObject>
+    </g>
+    <rect x="1765" y="1308" rx="3px" ry="3px" width="222.688px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="1768" y="1311" rx="0px" ry="0px" width="216.688px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="1768" y="1311" width="216.688px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">👨‍💼👩‍💼 Requirement Complexity</div>
+      </foreignObject>
+    </g>
+    <rect x="2048" y="1236" rx="3px" ry="3px" width="398.203px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2051" y="1239" rx="0px" ry="0px" width="392.203px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2051" y="1239" width="392.203px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Ambiguous, incomplete &amp; conflicting requirements</div>
+      </foreignObject>
+    </g>
+    <rect x="2048" y="1284" rx="3px" ry="3px" width="411.516px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2051" y="1287" rx="0px" ry="0px" width="405.516px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2051" y="1287" width="405.516px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Lack of clear conceptual abstractions in requirements</div>
+      </foreignObject>
+    </g>
+    <rect x="2048" y="1332" rx="3px" ry="3px" width="385.453px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2051" y="1335" rx="0px" ry="0px" width="379.453px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2051" y="1335" width="379.453px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Number of interconnected features and scenarios</div>
+      </foreignObject>
+    </g>
+    <rect x="2048" y="1380" rx="3px" ry="3px" width="264.297px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2051" y="1383" rx="0px" ry="0px" width="258.297px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2051" y="1383" width="258.297px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Changing scope of requirements</div>
+      </foreignObject>
+    </g>
+    <rect x="1765" y="1500" rx="3px" ry="3px" width="235.766px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="1768" y="1503" rx="0px" ry="0px" width="229.766px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="1768" y="1503" width="229.766px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">👨‍💼👩‍💼 Organizational Complexity</div>
+      </foreignObject>
+    </g>
+    <rect x="2061" y="1428" rx="3px" ry="3px" width="307.297px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2064" y="1431" rx="0px" ry="0px" width="301.297px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2064" y="1431" width="301.297px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Number of teams &amp; suppliers involved</div>
+      </foreignObject>
+    </g>
+    <rect x="2061" y="1476" rx="3px" ry="3px" width="494.891px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2064" y="1479" rx="0px" ry="0px" width="488.891px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2064" y="1479" width="488.891px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Frequency of reorganizations, role shifts, and ownership changes</div>
+      </foreignObject>
+    </g>
+    <rect x="2061" y="1524" rx="3px" ry="3px" width="517.703px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2064" y="1527" rx="0px" ry="0px" width="511.703px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2064" y="1527" width="511.703px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Number of concurrent projects requiring frequent context switching</div>
+      </foreignObject>
+    </g>
+    <rect x="2061" y="1572" rx="3px" ry="3px" width="267.188px" height="26px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+    <g>
+      <rect x="2064" y="1575" rx="0px" ry="0px" width="261.188px" height="20px" fill="rgba(0, 0, 0, 0)" stroke="rgb(204, 204, 204)" stroke-width="0px"></rect>
+      <foreignObject x="2064" y="1575" width="261.188px" height="20px">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Source Han Sans SC&quot;, &quot;Noto Sans CJK SC&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; font-size: 15px; font-weight: 400; color: rgb(204, 204, 204); white-space: pre-wrap;">⚡ Geographic distribution of teams</div>
+      </foreignObject>
+    </g>
+  </svg>
+</svg>

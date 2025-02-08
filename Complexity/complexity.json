@@ -1,0 +1,434 @@
+{
+  "nodeData": {
+    "id": "root",
+    "topic": "",
+    "dangerouslySetInnerHTML": "<div style='text-align:center'>Complexity in<br/>Software Development</div>",
+    "style": { "text-align": "center" },
+    "children": [
+      {
+        "topic": "Essential",
+        "id": "essential",
+        "description": "Inherent to the nature of the problem itself or its environment",
+        "children": [
+          {
+            "id": "essential-algo",
+            "topic": "⌨ Algorithmic Complexity",
+            "description": "How difficult is it to implement an algorithm efficiently in terms of time, space, and correctness",
+            "children": [
+              {
+                "id": "essential-algo-1",
+                "topic": "⚡ Required computational efficiency"
+              },
+              {
+                "id": "essential-algo-2",
+                "topic": "⚡ Volume of data"
+              },
+              {
+                "id": "essential-algo-3",
+                "topic": "⚡ Number of steps in the algorithm"
+              }
+            ]
+          },
+          {
+            "id": "essential-data",
+            "topic": "⌨ Data Complexity",
+            "description": "How difficult is it to accurately model data relationships while minimizing redundancy",
+            "children": [
+              {
+                "id": "essential-data-1",
+                "topic": "⚡ Number of relationships per entity"
+              },
+              {
+                "id": "essential-data-2",
+                "topic": "⚡ Overall density of relationships"
+              },
+              {
+                "id": "essential-data-3",
+                "topic": "⚡ Schema evolution over time"
+              }
+            ]
+          },
+          {
+            "id": "essential-domain",
+            "topic": "👨‍💼👩‍💼 Domain Complexity",
+            "description": "How complex is the real-world problem the software is trying to solve",
+            "children": [
+              {
+                "id": "essential-domain-1",
+                "topic": "⚡ Number of business rules, their variability, and special cases"
+              },
+              {
+                "id": "essential-domain-2",
+                "topic": "⚡ Number of interconnected domain concepts per feature"
+              },
+              {
+                "id": "essential-domain-3",
+                "topic": "⚡ Amount of specialized domain knowledge required"
+              }
+            ]
+          },
+          {
+            "id": "essential-hardware",
+            "topic": "🌍 Hardware Complexity",
+            "description": "How hardware constraints impact software design",
+            "children": [
+              {
+                "id": "essential-hardware-1",
+                "topic": "⚡ Limited CPU, RAM, or storage"
+              },
+              {
+                "id": "essential-hardware-2",
+                "topic": "⚡ Hardware-specific behavior, like CPU architectures or instruction sets"
+              },
+              {
+                "id": "essential-hardware-3",
+                "topic": "⚡ Unreliable hardware conditions, like sensor inaccuracies"
+              },
+              {
+                "id": "essential-hardware-4",
+                "topic": "⚡ Variable network conditions, like latency and outages"
+              }
+            ]
+          },
+          {
+            "id": "essential-regulatory",
+            "topic": "🌍 Regulatory & Compliance Complexity",
+            "description": "How legal, industry, and security regulations impose constraints on software design",
+            "children": [
+              {
+                "id": "essential-regulatory-1",
+                "topic": "⚡ Number of regulatory standards and compliance constraints"
+              },
+              {
+                "id": "essential-regulatory-2",
+                "topic": "⚡ Number of industry certification & auditing requirements"
+              },
+              {
+                "id": "essential-regulatory-3",
+                "topic": "⚡ Frequency of changes to regulatory requirements"
+              },
+              {
+                "id": "essential-regulatory-4",
+                "topic": "⚡ Mandated multi-vendor collaboration to prevent monopolization"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Accidental",
+        "id": "accidental",
+        "description": "Introduced by human decisions at the time of creation",
+        "children": [
+          {
+            "id": "accidental-cyclomatic",
+            "topic": "⌨ Cyclomatic Complexity",
+            "description": "How many independent execution paths exist in a function or module",
+            "children": [
+              {
+                "id": "accidental-cyclomatic-1",
+                "topic": "⚡ Number of if-then conditions"
+              },
+              {
+                "id": "accidental-cyclomatic-2",
+                "topic": "⚡ Number of logical operators in conditions"
+              }
+            ]
+          },
+          {
+            "id": "accidental-cognitive",
+            "topic": "⌨ Cognitive Complexity",
+            "description": "How difficult is it to read, understand, and reason about the code",
+            "children": [
+              {
+                "id": "accidental-cognitive-1",
+                "topic": "⚡ Naming inconsistencies within the codebase or domain"
+              },
+              {
+                "id": "accidental-cognitive-2",
+                "topic": "⚡ Missing or inappropriate abstractions"
+              },
+              {
+                "id": "accidental-cognitive-3",
+                "topic": "⚡ Implicit knowledge and dependencies"
+              },
+              {
+                "id": "accidental-cognitive-4",
+                "topic": "⚡ Design erosion and architecture drift"
+              }
+            ]
+          },
+          {
+            "id": "accidental-structure_code",
+            "topic": "⌨ Structural Code Complexity",
+            "description": "How poorly is the code structured into functions and modules",
+            "children": [
+              {
+                "id": "accidental-structure_code-1",
+                "topic": "⚡ Number of responsibilities per module"
+              },
+              {
+                "id": "accidental-structure_code-2",
+                "topic": "⚡ Depth of inheritance hierarchies"
+              },
+              {
+                "id": "accidental-structure_code-3",
+                "topic": "⚡ Unnecessary abstraction layers"
+              }
+            ]
+          },
+          {
+            "id": "accidental-structure_system",
+            "topic": "🏛️ Structural System Complexity",
+            "description": "How tightly coupled and weakly cohesive components and services are within the system",
+            "children": [
+              {
+                "id": "accidental-structure_system-1",
+                "topic": "⚡ Lack of clear architectural boundaries"
+              },
+              {
+                "id": "accidental-structure_system-2",
+                "topic": "⚡ Overall dependency density across components and services"
+              },
+              {
+                "id": "accidental-structure_system-3",
+                "topic": "⚡ Amount of scattered cross-cutting concerns"
+              }
+            ]
+          },
+          {
+            "id": "accidental-concurrency",
+            "topic": "🏛️ Concurrency Complexity",
+            "description": "How difficult is it to manage concurrent activities while maintaining deterministic behavior",
+            "children": [
+              {
+                "id": "accidental-concurrency-1",
+                "topic": "⚡ Number of parallel executions competing for shared resources"
+              },
+              {
+                "id": "accidental-concurrency-2",
+                "topic": "⚡ Degree of interdependence between concurrent tasks"
+              },
+              {
+                "id": "accidental-concurrency-3",
+                "topic": "⚡ Reliance on implicit execution order"
+              }
+            ]
+          },
+          {
+            "id": "accidental-testing",
+            "topic": "🔄 Testing Complexity",
+            "description": "How difficult is it to efficiently and reliably test the software",
+            "children": [
+              {
+                "id": "accidental-testing-1",
+                "topic": "⚡ Degree of insufficient 'design for testability'"
+              },
+              {
+                "id": "accidental-testing-2",
+                "topic": "⚡ Effort needed for setting up the test environment"
+              },
+              {
+                "id": "accidental-testing-3",
+                "topic": "⚡ Combinatorial test case growth from variability of SUT"
+              }
+            ]
+          },
+          {
+            "id": "accidental-operation",
+            "topic": "🔄 Operational Complexity",
+            "description": "How difficult is it to operate the software in production",
+            "children": [
+              {
+                "id": "accidental-operation-1",
+                "topic": "⚡ Amount of manual procedures for deployment and upgrades"
+              },
+              {
+                "id": "accidental-operation-2",
+                "topic": "⚡ Low observability & monitoring"
+              }
+            ]
+          },
+          {
+            "id": "accidental-maintenance",
+            "topic": "🔄 Maintenance Complexity",
+            "description": "How much effort is required to investigate, diagnose, and safely fix issues",
+            "children": [
+              {
+                "id": "accidental-maintenance-1",
+                "topic": "⚡ Low automated test coverage"
+              },
+              {
+                "id": "accidental-maintenance-2",
+                "topic": "⚡ Low quality of documentation"
+              },
+              {
+                "id": "accidental-maintenance-3",
+                "topic": "⚡ Amount of accumulated technical debt"
+              }
+            ]
+          },
+          {
+            "id": "accidental-requirements",
+            "topic": "👨‍💼👩‍💼 Requirement Complexity",
+            "description": "How the definition, structure, and evolution of requirements impact complexity",
+            "children": [
+              {
+                "id": "accidental-requirements-1",
+                "topic": "⚡ Ambiguous, incomplete & conflicting requirements"
+              },
+              {
+                "id": "accidental-requirements-2",
+                "topic": "⚡ Lack of clear conceptual abstractions in requirements"
+              },
+              {
+                "id": "accidental-requirements-3",
+                "topic": "⚡ Number of interconnected features and scenarios"
+              },
+              {
+                "id": "accidental-requirements-4",
+                "topic": "⚡ Changing scope of requirements"
+              }
+            ]
+          },
+          {
+            "id": "accidental-organization",
+            "topic": "👨‍💼👩‍💼 Organizational Complexity",
+            "description": "The impact of team structure, distribution, and dynamics on collaboration and coordination",
+            "children": [
+              {
+                "id": "accidental-organization-1",
+                "topic": "⚡ Number of teams & suppliers involved"
+              },
+              {
+                "id": "accidental-organization-2",
+                "topic": "⚡ Frequency of reorganizations, role shifts, and ownership changes"
+              },
+              {
+                "id": "accidental-organization-3",
+                "topic": "⚡ Number of concurrent projects requiring frequent context switching"
+              },
+              {
+                "id": "accidental-organization-4",
+                "topic": "⚡ Geographic distribution of teams"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Incidental",
+        "id": "incidental",
+        "description": "Accumulated over time as software, project or organization evolves",
+        "children": [
+          {
+            "id": "incidental-tech_stack",
+            "topic": "🏛️ Technology Stack Complexity",
+            "description": "How many technologies, frameworks, and tools must be maintained",
+            "children": [
+              {
+                "id": "incidental-tech_stack-1",
+                "topic": "⚡ Number of different technologies"
+              },
+              {
+                "id": "incidental-tech_stack-2",
+                "topic": "⚡ Number and age of outdated technologies"
+              },
+              {
+                "id": "incidental-tech_stack-3",
+                "topic": "⚡ Number of 'reinvented wheels'"
+              }
+            ]
+          },
+          {
+            "id": "incidental-arch_evolution",
+            "topic": "🏛️ Architecture Evolution Complexity",
+            "description": "How architectural inconsistencies increase cognitive load",
+            "children": [
+              {
+                "id": "incidental-arch_evolution-1",
+                "topic": "⚡ Number of coexisting architectural paradigms"
+              },
+              {
+                "id": "incidental-arch_evolution-2",
+                "topic": "⚡ Degree of legacy code maintenance required"
+              },
+              {
+                "id": "incidental-arch_evolution-3",
+                "topic": "⚡ Amount of specific knowledge required per paradigm"
+              }
+            ]
+          },
+          {
+            "id": "incidental-state",
+            "topic": "🏛️ State Complexity",
+            "description": "How difficult is it to manage and update mutable state while ensuring consistency",
+            "children": [
+              {
+                "id": "incidental-state-1",
+                "topic": "⚡ Degree of interdependence between different states"
+              },
+              {
+                "id": "incidental-state-2",
+                "topic": "⚡ Level of consistency guarantees required"
+              },
+              {
+                "id": "incidental-state-3",
+                "topic": "⚡ Amount of data redundancy across the system"
+              }
+            ]
+          },
+          {
+            "id": "incidental-config",
+            "topic": "🏛️ Configuration Complexity",
+            "description": "How system behavior changes due to configurable settings and feature toggles",
+            "children": [
+              {
+                "id": "incidental-config-1",
+                "topic": "⚡ Amount of variability affecting system behavior"
+              },
+              {
+                "id": "incidental-config-2",
+                "topic": "⚡ Degree of interdependence between variability options"
+              }
+            ]
+          },
+          {
+            "id": "incidental-development",
+            "topic": "🔄 Development Complexity",
+            "description": "How difficult is it for a developer to contribute new functionality to the project",
+            "children": [
+              {
+                "id": "incidental-development-1",
+                "topic": "⚡ Amount of required knowledge beyond just the feature itself"
+              },
+              {
+                "id": "incidental-development-2",
+                "topic": "⚡ Development process overhead"
+              },
+              {
+                "id": "incidental-development-3",
+                "topic": "⚡ Effort needed to integrate the change"
+              }
+            ]
+          },
+          {
+            "id": "incidental-portfolio",
+            "topic": "👨‍💼👩‍💼 Product Portfolio Complexity",
+            "description": "How many product families and variations exist",
+            "children": [
+              {
+                "id": "incidental-portfolio-1",
+                "topic": "⚡ Number of product families with distinct functionality"
+              },
+              {
+                "id": "incidental-portfolio-2",
+                "topic": "⚡ Number of feature variations per product"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
