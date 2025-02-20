@@ -3,14 +3,8 @@
 [Serializable]
 public class Graph
 {
-    private readonly Dictionary<string, Node> myNodes;
-    private readonly Dictionary<string, Edge> myEdges;
-
-    public Graph()
-    {
-        myNodes = [];
-        myEdges = [];
-    }
+    private readonly Dictionary<string, Node> myNodes = [];
+    private readonly Dictionary<string, Edge> myEdges = [];
 
     public IReadOnlyCollection<Node> Nodes { get { return myNodes.Values; } }
     public IReadOnlyCollection<Edge> Edges { get { return myEdges.Values; } }
