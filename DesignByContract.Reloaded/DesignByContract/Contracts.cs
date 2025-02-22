@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Runtime.Serialization;
 
 namespace DesignByContract;
 
@@ -30,7 +29,7 @@ public static class Contract
         }
     }
 
-    public static void RequiresNotNullNotEmpty(string argument, string argumentName)
+    public static void RequiresNotNullNotEmpty(string argument, [CallerArgumentExpression("argument")] string argumentName = "")
     {
         if (string.IsNullOrEmpty(argument))
         {
@@ -38,7 +37,7 @@ public static class Contract
         }
     }
 
-    public static void RequiresNotNullNotEmpty<T>(IEnumerable<T> argument, string argumentName)
+    public static void RequiresNotNullNotEmpty<T>(IEnumerable<T> argument, [CallerArgumentExpression("argument")] string argumentName = "")
     {
         if (argument == null)
         {
@@ -100,10 +99,6 @@ public static class Contract
         }
 
         public ReturnValueException(string message, Exception innerException) : base(message, innerException)
-        {
-        }
-
-        protected ReturnValueException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
         }
     }
