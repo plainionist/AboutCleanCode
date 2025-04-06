@@ -1,0 +1,18 @@
+openapi: 3.0.3
+info:
+  title: Shared Types
+  version: 1.0.0
+paths: {} 
+
+components:
+  schemas:
+    TodoItem:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        isDone:
+          type: boolean
+      required: [id, title, isDone]
