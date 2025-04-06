@@ -11,11 +11,13 @@
 <script lang="ts" setup>
   import { ref, onMounted } from 'vue'
   import type { TodoItem } from './api/models'
+  import { DefaultApi } from './api/apis/DefaultApi'
+  import { Configuration } from './api/runtime'
 
   const todos = ref<TodoItem[]>([])
 
   onMounted(async () => {
-    const response = await fetch('http://localhost:5101/todos')
-    todos.value = await response.json()
+    const api = new DefaultApi(new Configuration({ basePath: 'http://localhost:5101' }))
+    todos.value = await api.getTodos()
   })
 </script>
