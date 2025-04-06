@@ -10,7 +10,7 @@
 
 <script lang="ts" setup>
   import { ref, onMounted } from 'vue'
-  import type { TodoItem } from './shared/types'
+  import type { TodoItem } from './api/models'
 
   const todos = ref<TodoItem[]>([])
 

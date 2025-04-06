@@ -22,9 +22,13 @@ if %ERRORLEVEL% NEQ 0 (
 )
 
 xcopy /Y  build\openapi\src\ViewModels\Model\*.cs .
-
 rmdir /S /Q build\openapi
 
-rem java -jar %JAR_PATH% generate -i %OPENAPI_FILE% -g typescript-fetch -o webui/src/api --additional-properties=supportsES6=true
+java -jar %JAR_PATH% generate -i %OPENAPI_FILE% -g typescript-fetch -o WebUI/src/api --additional-properties=supportsES6=true > build\generate.log 2>&1
+
+if %ERRORLEVEL% NEQ 0 (
+    echo OpenAPI Generator failed. Check build\generate.log for details.
+    exit /b %ERRORLEVEL%
+)
 
 endlocal
