@@ -1,3 +1,5 @@
+using ViewModels.Model;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddCors();

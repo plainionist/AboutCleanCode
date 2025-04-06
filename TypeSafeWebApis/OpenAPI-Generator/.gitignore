@@ -1,1 +1,1 @@
-build/*.jar
+build/**
