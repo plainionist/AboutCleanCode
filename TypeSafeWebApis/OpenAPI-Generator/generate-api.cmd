@@ -22,7 +22,7 @@ if %ERRORLEVEL% NEQ 0 (
 )
 
 xcopy /Y  build\openapi\src\Todo.Api\Models\*.cs WebApi
-rem rmdir /S /Q build\openapi
+rmdir /S /Q build\openapi
 
 exit /b 1
 
