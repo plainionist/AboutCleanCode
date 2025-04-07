@@ -1,4 +1,4 @@
-using ViewModels.Model;
+using Todo.Api.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,8 +17,16 @@ app.MapGet("/todos", () =>
 {
     return new[]
     {
-        new TodoItem("1", "Learn type-safe web API", false),
-        new TodoItem("2", "Try out manually", true)
+        new TodoItem {
+            Id = "1",
+            Title = "Learn type-safe web API",
+            IsDone = false
+        },
+        new TodoItem {
+            Id = "2",
+            Title = "Try out manually",
+            IsDone = true
+        }
     };
 });
 
