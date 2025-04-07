@@ -1,0 +1,25 @@
+{
+    "runtime": "Net80",
+    "documentGenerator": {
+      "fromDocument": {
+        "url": "openapi.yaml"
+      }
+    },
+    "codeGenerators": {
+      "openApiToCSharpController": {
+        "output": "Generated/Controllers.cs",
+        "controllerBaseClass": "ControllerBase",
+        "generateControllerBaseClass": false,
+        "namespace": "ToDo",
+        "additionalNamespaceUsages": [ "Microsoft.AspNetCore.Mvc" ]
+      },
+      "openApiToTypeScriptClient": {
+        "output": "WebUi/src/api/client.ts",
+        "template": "Fetch",
+        "generateClientClasses": true,
+        "generateDtoTypes": true,
+        "typeStyle": "Interface"
+      }
+    }
+  }
+  
