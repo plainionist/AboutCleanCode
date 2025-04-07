@@ -4,6 +4,8 @@ VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo", "WebApi\Todo.csproj", "{84A93743-CFD1-C0CC-7EC7-47C32B4320C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.OpenApi", "WebApi.OpenApi\WebApi.OpenApi.csproj", "{7E6EEB2E-1E2F-F750-9363-55B2858C4EA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,11 +16,15 @@ Global
 		{84A93743-CFD1-C0CC-7EC7-47C32B4320C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84A93743-CFD1-C0CC-7EC7-47C32B4320C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84A93743-CFD1-C0CC-7EC7-47C32B4320C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E6EEB2E-1E2F-F750-9363-55B2858C4EA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E6EEB2E-1E2F-F750-9363-55B2858C4EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E6EEB2E-1E2F-F750-9363-55B2858C4EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E6EEB2E-1E2F-F750-9363-55B2858C4EA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {DCFEC582-1AE0-4F0F-89A9-C15A72595274}
+		SolutionGuid = {0C6606EE-1F4E-4FD0-AEF8-1DE912F2BD80}
 	EndGlobalSection
 EndGlobal

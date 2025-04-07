@@ -16,14 +16,15 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
+using WebApi.OpenApi.Converters;
 
-namespace Todo.Api.Models
+namespace WebApi.OpenApi.Models
 { 
     /// <summary>
     /// 
     /// </summary>
     [DataContract]
-    public partial class TodoItem : IEquatable<TodoItem>
+    public class TodoItem : IEquatable<TodoItem>
     {
         /// <summary>
         /// Gets or Sets Id

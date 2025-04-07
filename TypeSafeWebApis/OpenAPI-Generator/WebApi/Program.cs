@@ -1,8 +1,7 @@
-using Todo.Api.Models;
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddCors();
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
@@ -13,21 +12,6 @@ app.UseCors(policy =>
         .AllowAnyMethod()
 );
 
-app.MapGet("/todos", () =>
-{
-    return new[]
-    {
-        new TodoItem {
-            Id = "1",
-            Title = "Learn type-safe web API",
-            IsDone = false
-        },
-        new TodoItem {
-            Id = "2",
-            Title = "Try out manually",
-            IsDone = true
-        }
-    };
-});
+app.MapControllers();
 
 app.Run();
