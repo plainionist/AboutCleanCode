@@ -10,4 +10,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.3.0" />
   </ItemGroup>
 
+  <Target Name="NSwag" BeforeTargets="Build">
+    <Exec Command="nswag run nswag.json /variables:Configuration=$(Configuration)" />
+  </Target>
+
 </Project>
