@@ -7,11 +7,10 @@
     },
     "codeGenerators": {
       "openApiToCSharpController": {
-        "output": "Generated/Controllers.cs",
-        "controllerBaseClass": "ControllerBase",
+        "output": "OpenApi.generated.cs",
+        "controllerBaseClass": "Microsoft.AspNetCore.Mvc.ControllerBase",
         "generateControllerBaseClass": false,
-        "namespace": "ToDo",
-        "additionalNamespaceUsages": [ "Microsoft.AspNetCore.Mvc" ]
+        "namespace": "ToDo"
       },
       "openApiToTypeScriptClient": {
         "output": "WebUi/src/api/client.ts",
