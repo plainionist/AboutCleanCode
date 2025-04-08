@@ -8,6 +8,15 @@
 
   <ItemGroup>
     <PackageReference Include="NSwag.AspNetCore" Version="14.3.0" />
+    <PackageReference Include="NSwag.MSBuild" Version="14.3.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
+  <Target Name="NSwag" AfterTargets="Build">
+    <Exec EnvironmentVariables="ASPNETCORE_ENVIRONMENT=Development" Command="$(NSwagExe_Net80) aspnetcore2openapi /NoBuild:true /Output:$(OutputPath)swagger.json" />
+    <Exec Command="$(NSwagExe_Net80) openapi2tsclient /input:$(OutputPath)swagger.json /output:webui/src/api/client.ts" />
+  </Target>
+  
 </Project>

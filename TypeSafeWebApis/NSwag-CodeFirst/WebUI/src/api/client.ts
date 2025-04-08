@@ -15,7 +15,7 @@ export class Client {
 
     constructor(baseUrl?: string, http?: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> }) {
         this.http = http ? http : window as any;
-        this.baseUrl = baseUrl ?? "http://localhost:5101";
+        this.baseUrl = baseUrl ?? "";
     }
 
     getTodos(): Promise<TodoItem[]> {
