@@ -3,7 +3,9 @@
     <h1>Todo List</h1>
 
     <ul>
-      <li v-for="todo in todos" :key="todo.id">{{ todo.title }} – {{ todo.isDone ? '✅' : '❌' }}</li>
+      <li v-for="todo in todos" :key="todo.id">
+        {{ todo.title }} – {{ todo.isDone ? '✅' : '❌' }}
+      </li>
     </ul>
   </div>
 </template>
